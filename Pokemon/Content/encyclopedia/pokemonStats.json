@@ -1,0 +1,630 @@
+[
+  {
+    "Name": "Bulbasaur",
+    "StatSet": {
+        "HP": 45,
+        "Attack": 49,
+        "Defense": 49,
+        "SpecialAttack": 65,
+        "SpecialDefense": 65,
+        "Speed": 45
+    },
+    "EV": 1,
+    "CatchRate": 65,
+    "Types": ["Grass"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 15},
+        {"MoveName": "Growl", "Level": 1, "Rank": 14},
+        {"MoveName": "Vine_Whip", "Level": 3, "Rank": 8},
+        {"MoveName": "Growth", "Level": 6, "Rank": 13},
+        {"MoveName": "Leech_Seed", "Level": 9, "Rank": 12},
+        {"MoveName": "Razor_Leaf", "Level": 12, "Rank": 5},
+        {"MoveName": "Poison_Powder", "Level": 15, "Rank": 8},
+        {"MoveName": "Sleep_Powder", "Level": 15, "Rank": 3},
+        {"MoveName": "Seed_Bomb", "Level": 18, "Rank": 2},
+        {"MoveName": "Take_Down", "Level": 21, "Rank": 7},
+        {"MoveName": "Sweet_Scent", "Level": 24, "Rank": 11},
+        {"MoveName": "Synthesis", "Level": 27, "Rank": 4},
+        {"MoveName": "Worry_Seed", "Level": 30, "Rank": 10},
+        {"MoveName": "Double_Edge", "Level": 33, "Rank": 6},
+        {"MoveName": "Solar_Beam", "Level": 36, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Ivysaur",
+    "StatSet": {
+        "HP": 60,
+        "Attack": 62,
+        "Defense": 63,
+        "SpecialAttack": 80,
+        "SpecialDefense": 80,
+        "Speed": 60
+    },
+    "EV": 2,
+    "CatchRate": 55,
+    "Types": ["Grass", "Poison"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 15},
+        {"MoveName": "Growl", "Level": 1, "Rank": 14},
+        {"MoveName": "Vine_Whip", "Level": 1, "Rank": 8},
+        {"MoveName": "Growth", "Level": 1, "Rank": 13},
+        {"MoveName": "Leech_Seed", "Level": 9, "Rank": 12},
+        {"MoveName": "Razor_Leaf", "Level": 12, "Rank": 5},
+        {"MoveName": "Poison_Powder", "Level": 15, "Rank": 8},
+        {"MoveName": "Sleep_Powder", "Level": 15, "Rank": 3},
+        {"MoveName": "Seed_Bomb", "Level": 20, "Rank": 2},
+        {"MoveName": "Take_Down", "Level": 25, "Rank": 7},
+        {"MoveName": "Sweet_Scent", "Level": 30, "Rank": 11},
+        {"MoveName": "Synthesis", "Level": 35, "Rank": 4},
+        {"MoveName": "Worry_Seed", "Level": 40, "Rank": 10},
+        {"MoveName": "Double_Edge", "Level": 45, "Rank": 6},
+        {"MoveName": "Solar_Beam", "Level": 50, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Venusaur",
+    "StatSet": {
+        "HP": 80,
+        "Attack": 82,
+        "Defense": 83,
+        "SpecialAttack": 100,
+        "SpecialDefense": 80,
+        "Speed": 80
+    },
+    "EV": 3,
+    "CatchRate": 45,
+    "Types": ["Grass", "Poison"],
+    "Moves": [
+        {"MoveName": "Petal_Blizzard", "Level": 1, "Rank": 5},
+        {"MoveName": "Petal_Dance", "Level": 1, "Rank": 2},
+        {"MoveName": "Tackle", "Level": 1, "Rank": 15},
+        {"MoveName": "Growl", "Level": 1, "Rank": 14},
+        {"MoveName": "Vine_Whip", "Level": 3, "Rank": 8},
+        {"MoveName": "Growth", "Level": 6, "Rank": 13},
+        {"MoveName": "Leech_Seed", "Level": 9, "Rank": 12},
+        {"MoveName": "Razor_Leaf", "Level": 12, "Rank": 5},
+        {"MoveName": "Poison_Powder", "Level": 15, "Rank": 8},
+        {"MoveName": "Sleep_Powder", "Level": 15, "Rank": 3},
+        {"MoveName": "Seed_Bomb", "Level": 20, "Rank": 2},
+        {"MoveName": "Take_Down", "Level": 25, "Rank": 7},
+        {"MoveName": "Sweet_Scent", "Level": 30, "Rank": 11},
+        {"MoveName": "Synthesis", "Level": 37, "Rank": 4},
+        {"MoveName": "Worry_Seed", "Level": 44, "Rank": 10},
+        {"MoveName": "Double_Edge", "Level": 51, "Rank": 6},
+        {"MoveName": "Solar_Beam", "Level": 58, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Charmander",
+    "StatSet": {
+        "HP": 39,
+        "Attack": 52,
+        "Defense": 43,
+        "SpecialAttack": 60,
+        "SpecialDefense": 50,
+        "Speed": 65
+    },
+    "EV": 1,
+    "CatchRate": 45,
+    "Types": ["Fire"],
+    "Moves": [
+        {"MoveName": "Growl", "Level": 1, "Rank": 10},
+        {"MoveName": "Scratch", "Level": 1, "Rank": 9},
+        {"MoveName": "Ember", "Level": 7, "Rank": 5},
+        {"MoveName": "Metal_Claw", "Level": 13, "Rank": 6},
+        {"MoveName": "Smokescreen", "Level": 19, "Rank": 8},
+        {"MoveName": "Scary_Face", "Level": 25, "Rank": 7},
+        {"MoveName": "Flamethrower", "Level": 31, "Rank": 2},
+        {"MoveName": "Slash", "Level": 37, "Rank": 4},
+        {"MoveName": "Dragon_Rage", "Level": 43, "Rank": 3},
+        {"MoveName": "Fire_Spin", "Level": 49, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Charmeleon",
+    "StatSet": {
+        "HP": 58,
+        "Attack": 64,
+        "Defense": 58,
+        "SpecialAttack": 80,
+        "SpecialDefense": 65,
+        "Speed": 80
+    },
+    "EV": 2,
+    "CatchRate": 55,
+    "Types": ["Fire"],
+    "Moves": [
+        {"MoveName": "Growl", "Level": 1, "Rank": 10},
+        {"MoveName": "Scratch", "Level": 1, "Rank": 9},
+        {"MoveName": "Ember", "Level": 1, "Rank": 5},
+        {"MoveName": "Metal_Claw", "Level": 13, "Rank": 6},
+        {"MoveName": "Smokescreen", "Level": 20, "Rank": 8},
+        {"MoveName": "Scary_Face", "Level": 27, "Rank": 7},
+        {"MoveName": "Flamethrower", "Level": 34, "Rank": 2},
+        {"MoveName": "Slash", "Level": 41, "Rank": 4},
+        {"MoveName": "Dragon_Rage", "Level": 48, "Rank": 3},
+        {"MoveName": "Fire_Spin", "Level": 55, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Charizard",
+    "StatSet": {
+        "HP": 78,
+        "Attack": 84,
+        "Defense": 78,
+        "SpecialAttack": 109,
+        "SpecialDefense": 85,
+        "Speed": 100
+    },
+    "EV": 3,
+    "CatchRate": 65,
+    "Types": ["Fire", "Flying"],
+    "Moves": [
+        {"MoveName": "Growl", "Level": 1, "Rank": 11},
+        {"MoveName": "Scratch", "Level": 1, "Rank": 10},
+        {"MoveName": "Ember", "Level": 1, "Rank": 5},
+        {"MoveName": "Smokescreen", "Level": 1, "Rank": 9},
+        {"MoveName": "Rage", "Level": 13, "Rank": 8},
+        {"MoveName": "Scary_Face", "Level": 27, "Rank": 7},
+        {"MoveName": "Flamethrower", "Level": 34, "Rank": 2},
+        {"MoveName": "Wing_Attack", "Level": 41, "Rank": 6},
+        {"MoveName": "Slash", "Level": 41, "Rank": 4},
+        {"MoveName": "Dragon_Rage", "Level": 48, "Rank": 3},
+        {"MoveName": "Fire_Spin", "Level": 55, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Squirtle",
+    "StatSet": {
+        "HP": 44,
+        "Attack": 48,
+        "Defense": 65,
+        "SpecialAttack": 50,
+        "SpecialDefense": 64,
+        "Speed": 43
+    },
+    "EV": 1,
+    "CatchRate": 45,
+    "Types": ["Water"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 11},
+        {"MoveName": "Tail_Whip", "Level": 4, "Rank": 10},
+        {"MoveName": "Bubble", "Level": 7, "Rank": 8},
+        {"MoveName": "Withdraw", "Level": 10, "Rank": 9},
+        {"MoveName": "Water_Gun", "Level": 13, "Rank": 5},
+        {"MoveName": "Bite", "Level": 18, "Rank": 6},
+        {"MoveName": "Rapid_Spin", "Level": 23, "Rank": 7},
+        {"MoveName": "Protect", "Level": 28, "Rank": 4},
+        {"MoveName": "Rain_Dance", "Level": 33, "Rank": 2},
+        {"MoveName": "Skull_Bash", "Level": 40, "Rank": 3},
+        {"MoveName": "Hydro_Pump", "Level": 47, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Warturtle",
+    "StatSet": {
+        "HP": 59,
+        "Attack": 63,
+        "Defense": 80,
+        "SpecialAttack": 65,
+        "SpecialDefense": 80,
+        "Speed": 58
+    },
+    "EV": 2,
+    "CatchRate": 55,
+    "Types": ["Water"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 11},
+        {"MoveName": "Tail_Whip", "Level": 1, "Rank": 10},
+        {"MoveName": "Bubble", "Level": 7, "Rank": 8},
+        {"MoveName": "Withdraw", "Level": 10, "Rank": 9},
+        {"MoveName": "Water_Gun", "Level": 13, "Rank": 5},
+        {"MoveName": "Bite", "Level": 19, "Rank": 6},
+        {"MoveName": "Rapid_Spin", "Level": 25, "Rank": 7},
+        {"MoveName": "Protect", "Level": 31, "Rank": 4},
+        {"MoveName": "Rain_Dance", "Level": 37, "Rank": 2},
+        {"MoveName": "Skull_Bash", "Level": 45, "Rank": 3},
+        {"MoveName": "Hydro_Pump", "Level": 53, "Rank": 1}
+   ]
+  },
+  {
+    "Name": "Blastoise",
+    "StatSet": {
+        "HP": 79,
+        "Attack": 83,
+        "Defense": 100,
+        "SpecialAttack": 85,
+        "SpecialDefense": 105,
+        "Speed": 78
+    },
+    "EV": 3,
+    "CatchRate": 65,
+    "Types": ["Water"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 11},
+        {"MoveName": "Tail_Whip", "Level": 1, "Rank": 10},
+        {"MoveName": "Bubble", "Level": 7, "Rank": 8},
+        {"MoveName": "Withdraw", "Level": 1, "Rank": 9},
+        {"MoveName": "Water_Gun", "Level": 13, "Rank": 5},
+        {"MoveName": "Bite", "Level": 19, "Rank": 6},
+        {"MoveName": "Rapid_Spin", "Level": 25, "Rank": 7},
+        {"MoveName": "Protect", "Level": 31, "Rank": 4},
+        {"MoveName": "Rain_Dance", "Level": 42, "Rank": 2},
+        {"MoveName": "Skull_Bash", "Level": 55, "Rank": 3},
+        {"MoveName": "Hydro_Pump", "Level": 68, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Caterpie",
+    "StatSet": {
+        "HP": 45,
+        "Attack": 30,
+        "Defense": 35,
+        "SpecialAttack": 20,
+        "SpecialDefense": 20,
+        "Speed": 45
+    },
+    "EV": 1,
+    "CatchRate": 255,
+    "Types": ["Bug"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 2},
+        {"MoveName": "String_Shot", "Level": 1, "Rank": 3},
+        {"MoveName": "Bug_Bite", "Level": 7, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Metapod",
+    "StatSet": {
+        "HP": 50,
+        "Attack": 20,
+        "Defense": 55,
+        "SpecialAttack": 25,
+        "SpecialDefense": 25,
+        "Speed": 30
+    },
+    "EV": 2,
+    "CatchRate": 120,
+    "Types": ["Bug"],
+    "Moves": [
+        {"MoveName": "Harden", "Level": 1, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Butterfree",
+    "StatSet": {
+        "HP": 60,
+        "Attack": 45,
+        "Defense": 50,
+        "SpecialAttack": 80,
+        "SpecialDefense": 80,
+        "Speed": 70
+    },
+    "EV": 3,
+    "CatchRate": 45,
+    "Types": ["Bug", "Flying"],
+    "Moves": [
+        {"MoveName": "Confusion", "Level": 1, "Rank": 7},
+        {"MoveName": "Gust", "Level": 12, "Rank": 3},
+        {"MoveName": "Poison_Powder", "Level": 13, "Rank": 9},
+        {"MoveName": "Stun_Spore", "Level": 14, "Rank": 8},
+        {"MoveName": "Sleep_Powder", "Level": 15, "Rank": 4},
+        {"MoveName": "Supersonic", "Level": 18, "Rank": 5},
+        {"MoveName": "Psybeam", "Level": 34, "Rank": 2},
+        {"MoveName": "Safeguard", "Level": 40, "Rank": 6},
+        {"MoveName": "Silver_Wind", "Level": 47, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Weedle",
+    "StatSet": {
+        "HP": 40,
+        "Attack": 35,
+        "Defense": 30,
+        "SpecialAttack": 20,
+        "SpecialDefense": 20,
+        "Speed": 50
+    },
+    "EV": 1,
+    "CatchRate": 255,
+    "Types": ["Bug", "Poison"],
+    "Moves": [
+        {"MoveName": "Poison_Sting", "Level": 1, "Rank": 1},
+        {"MoveName": "String_Shot", "Level": 1, "Rank": 2}
+    ]
+  },
+  {
+    "Name": "Kakuna",
+    "StatSet": {
+        "HP": 45,
+        "Attack": 25,
+        "Defense": 50,
+        "SpecialAttack": 25,
+        "SpecialDefense": 25,
+        "Speed": 35
+    },
+    "EV": 2,
+    "CatchRate": 120,
+    "Types": ["Bug", "Poison"],
+    "Moves": [
+        {"MoveName": "Harden", "Level": 1, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Beedrill",
+    "StatSet": {
+        "HP": 65,
+        "Attack": 80,
+        "Defense": 40,
+        "SpecialAttack": 45,
+        "SpecialDefense": 80,
+        "Speed": 75
+    },
+    "EV": 3,
+    "CatchRate": 45,
+    "Types": ["Bug", "Poison"],
+    "Moves": [
+        {"MoveName": "Fury_Attack", "Level": 1, "Rank": 8},
+        {"MoveName": "Focus_Energy", "Level": 10, "Rank": 7},
+        {"MoveName": "Twineedle", "Level": 15, "Rank": 6},
+        {"MoveName": "Rage", "Level": 25, "Rank": 5},
+        {"MoveName": "Pursuit", "Level": 30, "Rank": 3},
+        {"MoveName": "Pin_Missile", "Level": 35, "Rank": 2},
+        {"MoveName": "Agility", "Level": 40, "Rank": 4},
+        {"MoveName": "Endeavor", "Level": 45, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Pidgey",
+    "StatSet": {
+        "HP": 40,
+        "Attack": 45,
+        "Defense": 40,
+        "SpecialAttack": 35,
+        "SpecialDefense": 35,
+        "Speed": 56
+    },
+    "EV": 1,
+    "CatchRate": 255,
+    "Types": ["Normal", "Flying"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 9},
+        {"MoveName": "Sand_Attack", "Level": 5, "Rank": 8},
+        {"MoveName": "Gust", "Level": 9, "Rank": 5},
+        {"MoveName": "Quick_Attack", "Level": 13, "Rank": 7},
+        {"MoveName": "Whirlwind", "Level": 19, "Rank": 6},
+        {"MoveName": "Wing_Attack", "Level": 25, "Rank": 2},
+        {"MoveName": "Feather_Dance", "Level": 31, "Rank": 3},
+        {"MoveName": "Agility", "Level": 39, "Rank": 4},
+        {"MoveName": "Mirror_Move", "Level": 47, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Pidgeotto",
+    "StatSet": {
+        "HP": 63,
+        "Attack": 60,
+        "Defense": 55,
+        "SpecialAttack": 50,
+        "SpecialDefense": 50,
+        "Speed": 71
+    },
+    "EV": 2,
+    "CatchRate": 120,
+    "Types": ["Normal", "Flying"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 9},
+        {"MoveName": "Sand_Attack", "Level": 1, "Rank": 8},
+        {"MoveName": "Gust", "Level": 1, "Rank": 5},
+        {"MoveName": "Quick_Attack", "Level": 13, "Rank": 7},
+        {"MoveName": "Whirlwind", "Level": 20, "Rank": 6},
+        {"MoveName": "Wing_Attack", "Level": 27, "Rank": 2},
+        {"MoveName": "Feather_Dance", "Level": 34, "Rank": 3},
+        {"MoveName": "Agility", "Level": 43, "Rank": 4},
+        {"MoveName": "Mirror_Move", "Level": 52, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Pidgeot",
+    "StatSet": {
+        "HP": 83,
+        "Attack": 80,
+        "Defense": 75,
+        "SpecialAttack": 70,
+        "SpecialDefense": 70,
+        "Speed": 91
+    },
+    "EV": 3,
+    "CatchRate": 45,
+    "Types": ["Normal", "Flying"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 9},
+        {"MoveName": "Sand_Attack", "Level": 5, "Rank": 8},
+        {"MoveName": "Gust", "Level": 7, "Rank": 5},
+        {"MoveName": "Quick_Attack", "Level": 13, "Rank": 7},
+        {"MoveName": "Whirlwind", "Level": 20, "Rank": 6},
+        {"MoveName": "Wing_Attack", "Level": 27, "Rank": 2},
+        {"MoveName": "Feather_Dance", "Level": 34, "Rank": 3},
+        {"MoveName": "Agility", "Level": 48, "Rank": 4},
+        {"MoveName": "Mirror_Move", "Level": 62, "Rank": 1}
+    ]
+  },
+  {
+    "Name": "Rattata",
+    "StatSet": {
+        "HP": 30,
+        "Attack": 56,
+        "Defense": 35,
+        "SpecialAttack": 25,
+        "SpecialDefense": 35,
+        "Speed": 72
+    },
+    "EV": 1,
+    "CatchRate": 255,
+    "Types": ["Normal"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 7},
+        {"MoveName": "Tail_Whip", "Level": 1, "Rank": 6},
+        {"MoveName": "Quick_Attack", "Level": 7, "Rank": 5},
+        {"MoveName": "Hyper_Fang", "Level": 13, "Rank": 1},
+        {"MoveName": "Focus_Energy", "Level": 20, "Rank": 6},
+        {"MoveName": "Pursuit", "Level": 27, "Rank": 4},
+        {"MoveName": "Super_Fang", "Level": 34, "Rank": 2},
+        {"MoveName": "Endeavor", "Level": 41, "Rank": 3}
+    ]
+  },
+  {
+    "Name": "Raticate",
+    "StatSet": {
+        "HP": 55,
+        "Attack": 81,
+        "Defense": 60,
+        "SpecialAttack": 50,
+        "SpecialDefense": 70,
+        "Speed": 97
+    },
+    "EV": 2,
+    "CatchRate": 120,
+    "Types": ["Normal", "Flying"],
+    "Moves": [
+        {"MoveName": "Tackle", "Level": 1, "Rank": 7},
+        {"MoveName": "Tail_Whip", "Level": 1, "Rank": 6},
+        {"MoveName": "Quick_Attack", "Level": 7, "Rank": 5},
+        {"MoveName": "Hyper_Fang", "Level": 13, "Rank": 1},
+        {"MoveName": "Focus_Energy", "Level": 20, "Rank": 6},
+        {"MoveName": "Pursuit", "Level": 30, "Rank": 4},
+        {"MoveName": "Super_Fang", "Level": 40, "Rank": 2},
+        {"MoveName": "Endeavor", "Level": 50, "Rank": 3}
+    ]
+  },
+  {
+    "Name": "Spearow",
+    "StatSet": {
+        "HP": 40,
+        "Attack": 60,
+        "Defense": 30,
+        "SpecialAttack": 31,
+        "SpecialDefense": 31,
+        "Speed": 70
+    },
+    "EV": 1,
+    "CatchRate": 255,
+    "Types": ["Normal", "Flying"],
+    "Moves": [
+        {"MoveName": "Growl", "Level": 1, "Rank": 9},
+        {"MoveName": "Peck", "Level": 1, "Rank": 5},
+        {"MoveName": "Leer", "Level": 7, "Rank": 8},
+        {"MoveName": "Fury_Attack", "Level": 13, "Rank": 7},
+        {"MoveName": "Pursuit", "Level": 19, "Rank": 6},
+        {"MoveName": "Aerial_Ace", "Level": 25, "Rank": 2},
+        {"MoveName": "Mirror_Move", "Level": 31, "Rank": 3},
+        {"MoveName": "Drill_Peck", "Level": 37, "Rank": 1},
+        {"MoveName": "Agility", "Level": 43, "Rank": 4}
+    ]
+  },
+  {
+    "Name": "Fearow",
+    "StatSet": {
+        "HP": 65,
+        "Attack": 90,
+        "Defense": 65,
+        "SpecialAttack": 61,
+        "SpecialDefense": 61,
+        "Speed": 100
+    },
+    "EV": 2,
+    "CatchRate": 90,
+    "Types": ["Normal", "Flying"],
+    "Moves": [
+        {"MoveName": "Growl", "Level": 1, "Rank": 8},
+        {"MoveName": "Peck", "Level": 1, "Rank": 6},
+        {"MoveName": "Leer", "Level": 7, "Rank": 7},
+        {"MoveName": "Fury_Attack", "Level": 13, "Rank": 5},
+        {"MoveName": "Pursuit", "Level": 26, "Rank": 2},
+        {"MoveName": "Mirror_Move", "Level": 32, "Rank": 3},
+        {"MoveName": "Drill_Peck", "Level": 40, "Rank": 1},
+        {"MoveName": "Agility", "Level": 47, "Rank": 4}
+    ]
+  },
+  {
+    "Name": "Ekans",
+    "StatSet": {
+        "HP": 35,
+        "Attack": 60,
+        "Defense": 44,
+        "SpecialAttack": 40,
+        "SpecialDefense": 54,
+        "Speed": 55
+    },
+    "EV": 1,
+    "CatchRate": 255,
+    "Types": ["Poison"],
+    "Moves": [
+        {"MoveName": "Leer", "Level": 1, "Rank": 8},
+        {"MoveName": "Wrap", "Level": 1, "Rank": 6},
+        {"MoveName": "Poison_Sting", "Level": 8, "Rank": 9},
+        {"MoveName": "Bite", "Level": 13, "Rank": 3},
+        {"MoveName": "Glare", "Level": 20, "Rank": 2},
+        {"MoveName": "Screech", "Level": 25, "Rank": 7},
+        {"MoveName": "Acid", "Level": 32, "Rank": 1},
+        {"MoveName": "Spit_Up", "Level": 37, "Rank": 5},
+        {"MoveName": "Stockpile", "Level": 37, "Rank": 6},
+        {"MoveName": "Swallow", "Level": 37, "Rank": 7},
+        {"MoveName": "Haze", "Level": 44, "Rank": 4}
+    ]
+  },
+  {
+    "Name": "Arbok",
+    "StatSet": {
+        "HP": 60,
+        "Attack": 85,
+        "Defense": 69,
+        "SpecialAttack": 65,
+        "SpecialDefense": 79,
+        "Speed": 80
+    },
+    "EV": 2,
+    "CatchRate": 90,
+    "Types": ["Poison"],
+    "Moves": [
+        {"MoveName": "Leer", "Level": 1, "Rank": 8},
+        {"MoveName": "Wrap", "Level": 1, "Rank": 6},
+        {"MoveName": "Poison_Sting", "Level": 8, "Rank": 9},
+        {"MoveName": "Bite", "Level": 1, "Rank": 3},
+        {"MoveName": "Glare", "Level": 20, "Rank": 2},
+        {"MoveName": "Screech", "Level": 28, "Rank": 7},
+        {"MoveName": "Acid", "Level": 38, "Rank": 1},
+        {"MoveName": "Spit_Up", "Level": 46, "Rank": 5},
+        {"MoveName": "Stockpile", "Level": 46, "Rank": 6},
+        {"MoveName": "Swallow", "Level": 46, "Rank": 7},
+        {"MoveName": "Haze", "Level": 56, "Rank": 4}
+    ]
+  },
+  {
+    "Name": "Pikachu",
+    "StatSet": {
+        "HP": 35,
+        "Attack": 55,
+        "Defense": 30,
+        "SpecialAttack": 50,
+        "SpecialDefense": 40,
+        "Speed": 90
+    },
+    "EV": 2,
+    "CatchRate": 190,
+    "Types": ["Electric"],
+    "Moves": [
+        {"MoveName": "Growl", "Level": 1, "Rank": 11},
+        {"MoveName": "Thunder_Shock", "Level": 1, "Rank": 6},
+        {"MoveName": "Tail_Whip", "Level": 6, "Rank": 10},
+        {"MoveName": "Thunder_Wave", "Level": 8, "Rank": 7},
+        {"MoveName": "Quick_Attack", "Level": 11, "Rank": 9},
+        {"MoveName": "Double_Team", "Level": 15, "Rank": 8},
+        {"MoveName": "Slam", "Level": 20, "Rank": 4},
+        {"MoveName": "Thunderbolt", "Level": 26, "Rank": 1},
+        {"MoveName": "Agility", "Level": 33, "Rank": 5},
+        {"MoveName": "Thunder", "Level": 41, "Rank": 2},
+        {"MoveName": "Light_Screen", "Level": 50, "Rank": 3}
+    ]
+  }
+]

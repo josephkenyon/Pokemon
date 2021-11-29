@@ -1,0 +1,95 @@
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using Library.Domain;
+using Library.Content;
+using Library.GameState;
+using Library.Graphics;
+using Microsoft.Xna.Framework.Input;
+using LevelEditor;
+
+namespace GameManager
+{
+    public class Game1 : Game
+    {
+        private GraphicsDeviceManager Graphics { get; set; }
+        private SpriteBatch SpriteBatch { get; set; }
+        public int SaveSlot { get; private set; }
+
+        public Game1()
+        {
+            Graphics = new GraphicsDeviceManager(this) { PreferredDepthStencilFormat = DepthFormat.Depth24Stencil8 };
+            Content.RootDirectory = "Content";
+        }
+
+        protected override void Initialize()
+        {
+            Window.IsBorderless = true;
+            base.Initialize();
+        }
+
+        protected override void LoadContent()
+        {
+            SpriteBatch = new SpriteBatch(GraphicsDevice);
+
+            GraphicsManager.Initialize(Graphics);
+
+            Encyclopedia.Load(Content);
+            MoveManager.Load(Content);
+            TypeManager.Load(Content);
+            TextureManager.Load(Content);
+            LocationManager.Load(Content);
+            DrawingManager.Initialize(Content);
+
+            GameStateManager.Initialize();
+        }
+
+        protected override void Update(GameTime gameTime)
+        {
+            if (Manager.Active())
+            {
+                Manager.Update();6
+                base.Update(gameTime);
+                return;
+            }
+
+            if (Keyboard.GetState().IsKeyDown(Keys.F5))
+            {
+                FileHelper.SaveState(SaveSlot);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.F7))
+            {
+                FileHelper.LoadState(SaveSlot);
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.F12))
+            {
+                IsMouseVisible = true;
+                Manager.Initialize();
+            }
+
+            if (!GameStateManager.Instance.Update())
+            {
+                Exit();
+            }
+
+            base.Update(gameTime);
+        }
+
+        protected override void Draw(GameTime gameTime)
+        {
+            if (Manager.Active())
+            {
+                GraphicsDevice.Clear(Color.LightGray);
+
+                Manager.Draw(SpriteBatch);
+                base.Draw(gameTime);
+                return;
+            }
+
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            GameStateManager.Instance.Draw(SpriteBatch);
+
+            base.Draw(gameTime);
+        }
+    }
+}
