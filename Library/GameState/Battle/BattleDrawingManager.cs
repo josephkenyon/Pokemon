@@ -1,5 +1,4 @@
-﻿using Library.Assets;
-using Library.Domain;
+﻿using Library.Domain;
 using Library.GameState.Battle;
 using Library.GameState.Battle.BattleDrawingObjects;
 using Library.GameState.Battle.GamePadHelpers;

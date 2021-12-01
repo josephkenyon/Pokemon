@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Library.Assets;
 using Library.Base;
-using Library.Domain;
-using Library.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -27,12 +23,5 @@ namespace Library.World
             spriteBatch.Begin();
             spriteBatch.End();
         }
-    }
-
-    public class LocationLayoutJson
-    {
-        public List<Tile> BackgroundTiles { get; set; }
-        public List<Tile> ForegroundTiles { get; set; }
-        public List<Character> InitialCharacters { get; set; }
     }
 }

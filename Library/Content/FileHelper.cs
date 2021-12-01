@@ -20,14 +20,13 @@ namespace Library.Content
         public static string SaveFileName(int SaveSlot) => "save" + SaveSlot + ".json";
 
         public static string FormatEnumNameToJson(string name) => "\\" + char.ToLower(name[0]) + name.Substring(1) + ".json";
-        public static JsonSerializerSettings JsonSerializerSettings => new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto, };
+        public static JsonSerializerSettings JsonSerializerSettings => new JsonSerializerSettings { TypeNameHandling = TypeNameHandling.Auto };
 
         public static void SaveState(int SaveSlot)
         {
             string jsonText = JsonConvert.SerializeObject(GameStateManager.Instance, JsonSerializerSettings);
 
             File.WriteAllText(SaveFileName(SaveSlot), JToken.Parse(jsonText).ToString(Formatting.Indented));
-
         }
 
         public static GameStateManager LoadState(int SaveSlot)

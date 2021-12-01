@@ -1,5 +1,4 @@
-﻿using Library.Assets;
-using Library.Content;
+﻿using Library.Content;
 using Library.Domain;
 using Library.GameState;
 using Library.Graphics;

@@ -1,5 +1,4 @@
-﻿using Library.Assets;
-using Library.Base;
+﻿using Library.Base;
 using Library.Domain;
 using Microsoft.Xna.Framework;
 

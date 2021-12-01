@@ -24,12 +24,10 @@
     <TrimmerRootAssembly Include="Microsoft.Xna.Framework.Content.ContentTypeReader" Visible="false" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="MonoGame.Forms.GL" Version="2.4.0" />
     <PackageReference Include="MonoGame.Framework.DesktopGL" Version="3.8.0.1641" />
     <PackageReference Include="MonoGame.Content.Builder.Task" Version="3.8.0.1641" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\LevelEditor\LevelEditor.csproj" />
     <ProjectReference Include="..\Library\Library.csproj" />
   </ItemGroup>
   <ItemGroup>

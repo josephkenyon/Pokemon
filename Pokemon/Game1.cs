@@ -5,7 +5,6 @@ using Library.Content;
 using Library.GameState;
 using Library.Graphics;
 using Microsoft.Xna.Framework.Input;
-using LevelEditor;
 
 namespace GameManager
 {
@@ -45,13 +44,6 @@ namespace GameManager
 
         protected override void Update(GameTime gameTime)
         {
-            if (Manager.Active())
-            {
-                Manager.Update();6
-                base.Update(gameTime);
-                return;
-            }
-
             if (Keyboard.GetState().IsKeyDown(Keys.F5))
             {
                 FileHelper.SaveState(SaveSlot);
@@ -59,11 +51,6 @@ namespace GameManager
             else if (Keyboard.GetState().IsKeyDown(Keys.F7))
             {
                 FileHelper.LoadState(SaveSlot);
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.F12))
-            {
-                IsMouseVisible = true;
-                Manager.Initialize();
             }
 
             if (!GameStateManager.Instance.Update())
@@ -76,15 +63,6 @@ namespace GameManager
 
         protected override void Draw(GameTime gameTime)
         {
-            if (Manager.Active())
-            {
-                GraphicsDevice.Clear(Color.LightGray);
-
-                Manager.Draw(SpriteBatch);
-                base.Draw(gameTime);
-                return;
-            }
-
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             GameStateManager.Instance.Draw(SpriteBatch);

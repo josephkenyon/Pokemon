@@ -39,17 +39,24 @@ namespace Library.Content
 
                         locationLayoutJson.BackgroundTiles.ForEach(tile =>
                         {
-                            tile.TextureName = TextureName.Background;
-                            locationLayout.BackgroundTiles.Add(tile.Position.ToPoint(), tile);
+                            locationLayout.BackgroundTiles.Add(tile.Position, new Tile {
+                                TextureName = TextureName.Background,
+                                Position = new Vector(tile.Position),
+                                SpritePosition = new Vector(tile.SpritePosition),
+                            });
                         });
 
                         locationLayoutJson.ForegroundTiles.ForEach(tile =>
                         {
-                            tile.TextureName = TextureName.Foreground;
-                            locationLayout.ForegroundTiles.Add(tile.Position.ToPoint(), tile);
+                            locationLayout.ForegroundTiles.Add(tile.Position, new Tile
+                            {
+                                TextureName = TextureName.Foreground,
+                                Position = new Vector(tile.Position),
+                                SpritePosition = new Vector(tile.SpritePosition),
+                            });
                         });
 
-                        locationLayoutJson.InitialCharacters.ForEach(character => locationLayout.InitialCharacters.Add(character));
+                        //locationLayoutJson.InitialCharacters.ForEach(character => locationLayout.InitialCharacters.Add(character));
 
                         if (locationName == LocationName.PalletTown)
                         {
