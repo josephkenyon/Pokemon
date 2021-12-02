@@ -5,14 +5,14 @@ using Microsoft.Xna.Framework;
 
 namespace Library.Assets
 {
-    public abstract class Character : IBaseDrawableObject
+    public abstract class Character : IBaseDrawableObject, IAnimatedAsset, ICollidable
     {
         public string Name { get; set; }
         public TextureName TextureName { get; set; }
         public Vector SpriteSize { get; set; }
         public CharacterState CharacterState { get; set; }
 
-        public void Update()
+        public bool Update()
         {
             if (CharacterState.IsMoving)
             {
@@ -20,6 +20,7 @@ namespace Library.Assets
                 MovementHandler.MoveCharacter(this);
             }
 
+            return true;
         }
 
         public void Move(Vector newPosition)
@@ -33,5 +34,8 @@ namespace Library.Assets
             location: (new Vector(SpriteSize.X * CharacterState.CurrentFrame, SpriteSize.Y * (int)CharacterState.Direction) * Constants.TileSize).ToPoint(),
             size: (SpriteSize * Constants.TileSize).ToPoint()
         );
+
+        public Rectangle GetCollisionRectangle() => new Rectangle(CharacterState.Position.ToPoint(), (Vector.One * Constants.ScaledTileSize).ToPoint());
+        
     }
 }

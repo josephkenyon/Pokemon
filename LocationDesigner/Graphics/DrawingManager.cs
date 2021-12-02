@@ -53,7 +53,32 @@ namespace LocationDesigner.Graphics
                             Constants.TileSize,
                             Constants.TileSize
                         ),
-                        color: Color.LightCoral,
+                        color: Color.White,
+                        rotation: 0f,
+                        origin: Vector2.Zero,
+                        scale: Constants.Scaler,
+                        effects: SpriteEffects.None,
+                        layerDepth: 0f
+                    );
+                });
+                spriteBatch.End();
+            }
+
+            if (TextureManager.GrassTileSetTexture != null)
+            {
+                spriteBatch.Begin();
+                LocationLayoutManager.LocationLayout.LocationDoodads.ForEach(tile =>
+                {
+                    spriteBatch.Draw(
+                        texture: TextureManager.GrassTileSetTexture,
+                        position: new Vector2((offset.X + tile.Position.X) * Constants.ScaledTileSize, (offset.Y + tile.Position.Y) * Constants.ScaledTileSize),
+                        sourceRectangle: new Rectangle(
+                            0,
+                            (int) tile.LocationDoodad * Constants.TileSize,
+                            Constants.TileSize,
+                            Constants.TileSize
+                        ),
+                        color: Color.White,
                         rotation: 0f,
                         origin: Vector2.Zero,
                         scale: Constants.Scaler,

@@ -35,12 +35,15 @@ namespace LocationDesigner
             this.loadFileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tilesetsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.foregroundToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.backgroundPanel = new System.Windows.Forms.Panel();
-            this.DeleteButton = new System.Windows.Forms.Button();
             this.foregroundPanel = new System.Windows.Forms.Panel();
             this.renderPanel1 = new LevelDesigner.Controls.RenderPanel();
+            this.upPanel = new System.Windows.Forms.Panel();
+            this.leftPanel = new System.Windows.Forms.Panel();
+            this.rightPanel = new System.Windows.Forms.Panel();
+            this.downPanel = new System.Windows.Forms.Panel();
+            this.doodadPanel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -69,7 +72,7 @@ namespace LocationDesigner
             this.saveFileToolStripMenuItem.Name = "saveFileToolStripMenuItem";
             this.saveFileToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.saveFileToolStripMenuItem.Text = "Save File";
-            this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.LaveFileToolStripMenuItem_Click);
+            this.saveFileToolStripMenuItem.Click += new System.EventHandler(this.SaveFileToolStripMenuItem_Click);
             // 
             // loadFileToolStripMenuItem
             // 
@@ -81,8 +84,7 @@ namespace LocationDesigner
             // tilesetsToolStripMenuItem
             // 
             this.tilesetsToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.backgroundToolStripMenuItem,
-            this.foregroundToolStripMenuItem});
+            this.backgroundToolStripMenuItem});
             this.tilesetsToolStripMenuItem.Name = "tilesetsToolStripMenuItem";
             this.tilesetsToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.tilesetsToolStripMenuItem.Text = "Tilesets";
@@ -90,40 +92,24 @@ namespace LocationDesigner
             // backgroundToolStripMenuItem
             // 
             this.backgroundToolStripMenuItem.Name = "backgroundToolStripMenuItem";
-            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.backgroundToolStripMenuItem.Text = "Background";
-            this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.BackgroundToolStripMenuItem_Click);
-            // 
-            // foregroundToolStripMenuItem
-            // 
-            this.foregroundToolStripMenuItem.Name = "foregroundToolStripMenuItem";
-            this.foregroundToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.foregroundToolStripMenuItem.Text = "Foreground";
-            this.foregroundToolStripMenuItem.Click += new System.EventHandler(this.ForegroundToolStripMenuItem_Click);
+            this.backgroundToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.backgroundToolStripMenuItem.Text = "Set Tileset Directory";
+            this.backgroundToolStripMenuItem.Click += new System.EventHandler(this.SetTileSetDirectory_Click);
             // 
             // backgroundPanel
             // 
             this.backgroundPanel.AutoScroll = true;
             this.backgroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.backgroundPanel.Location = new System.Drawing.Point(12, 56);
+            this.backgroundPanel.Location = new System.Drawing.Point(12, 157);
             this.backgroundPanel.Name = "backgroundPanel";
             this.backgroundPanel.Size = new System.Drawing.Size(563, 421);
             this.backgroundPanel.TabIndex = 2;
-            // 
-            // DeleteButton
-            // 
-            this.DeleteButton.Location = new System.Drawing.Point(12, 27);
-            this.DeleteButton.Name = "DeleteButton";
-            this.DeleteButton.Size = new System.Drawing.Size(85, 23);
-            this.DeleteButton.TabIndex = 3;
-            this.DeleteButton.Text = "Delete";
-            this.DeleteButton.UseVisualStyleBackColor = true;
             // 
             // foregroundPanel
             // 
             this.foregroundPanel.AutoScroll = true;
             this.foregroundPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.foregroundPanel.Location = new System.Drawing.Point(12, 483);
+            this.foregroundPanel.Location = new System.Drawing.Point(12, 584);
             this.foregroundPanel.Name = "foregroundPanel";
             this.foregroundPanel.Size = new System.Drawing.Size(563, 421);
             this.foregroundPanel.TabIndex = 3;
@@ -138,13 +124,59 @@ namespace LocationDesigner
             this.renderPanel1.TabIndex = 1;
             this.renderPanel1.Text = "renderPanel1";
             // 
+            // upPanel
+            // 
+            this.upPanel.Location = new System.Drawing.Point(596, 27);
+            this.upPanel.Name = "upPanel";
+            this.upPanel.Size = new System.Drawing.Size(1280, 23);
+            this.upPanel.TabIndex = 4;
+            this.upPanel.Tag = "2";
+            // 
+            // leftPanel
+            // 
+            this.leftPanel.Location = new System.Drawing.Point(578, 45);
+            this.leftPanel.Name = "leftPanel";
+            this.leftPanel.Size = new System.Drawing.Size(17, 960);
+            this.leftPanel.TabIndex = 5;
+            this.leftPanel.Tag = "0";
+            this.leftPanel.MouseHover += new System.EventHandler(this.MouseHover);
+            // 
+            // rightPanel
+            // 
+            this.rightPanel.Location = new System.Drawing.Point(1875, 45);
+            this.rightPanel.Name = "rightPanel";
+            this.rightPanel.Size = new System.Drawing.Size(29, 960);
+            this.rightPanel.TabIndex = 6;
+            this.rightPanel.Tag = "1";
+            // 
+            // downPanel
+            // 
+            this.downPanel.Location = new System.Drawing.Point(596, 1006);
+            this.downPanel.Name = "downPanel";
+            this.downPanel.Size = new System.Drawing.Size(1280, 33);
+            this.downPanel.TabIndex = 5;
+            this.downPanel.Tag = "3";
+            // 
+            // doodadPanel
+            // 
+            this.doodadPanel.AutoScroll = true;
+            this.doodadPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.doodadPanel.Location = new System.Drawing.Point(12, 27);
+            this.doodadPanel.Name = "doodadPanel";
+            this.doodadPanel.Size = new System.Drawing.Size(563, 124);
+            this.doodadPanel.TabIndex = 3;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1904, 1041);
+            this.Controls.Add(this.doodadPanel);
+            this.Controls.Add(this.downPanel);
+            this.Controls.Add(this.rightPanel);
+            this.Controls.Add(this.leftPanel);
+            this.Controls.Add(this.upPanel);
             this.Controls.Add(this.foregroundPanel);
-            this.Controls.Add(this.DeleteButton);
             this.Controls.Add(this.backgroundPanel);
             this.Controls.Add(this.renderPanel1);
             this.Controls.Add(this.menuStrip1);
@@ -164,14 +196,17 @@ namespace LocationDesigner
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tilesetsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem backgroundToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem foregroundToolStripMenuItem;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
         private LevelDesigner.Controls.RenderPanel renderPanel1;
         private System.Windows.Forms.Panel backgroundPanel;
-        private System.Windows.Forms.Button DeleteButton;
         private System.Windows.Forms.Panel foregroundPanel;
         private System.Windows.Forms.ToolStripMenuItem saveFileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem loadFileToolStripMenuItem;
+        private System.Windows.Forms.Panel upPanel;
+        private System.Windows.Forms.Panel leftPanel;
+        private System.Windows.Forms.Panel rightPanel;
+        private System.Windows.Forms.Panel downPanel;
+        private System.Windows.Forms.Panel doodadPanel;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Library.Domain;
+using System.Collections.Generic;
 
 namespace Library.World
 {
@@ -6,5 +7,6 @@ namespace Library.World
     {
         public List<TileJson> BackgroundTiles { get; set; }
         public List<TileJson> ForegroundTiles { get; set; }
+        public List<TileJson> LocationDoodads { get; set; }
     }
 }

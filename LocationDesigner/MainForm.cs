@@ -16,34 +16,26 @@ namespace LocationDesigner
 
             CacheManager.ReadCacheFile();
 
-            InitializeBackgroundTileSet(CacheManager.BackgroundBitmapPath);
-            InitializeForegroundTileSet(CacheManager.ForegroundBitmapPath);
+            InitializeTileSets();
         }
 
-        private void BackgroundToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SetTileSetDirectory_Click(object sender, EventArgs e)
         {
-            InitializeBackgroundTileSet(GetFileName());
+            CacheManager.SetTileSetBitmapsPath(GetTileSetDirectory());
+            InitializeTileSets();
         }
 
-        private void ForegroundToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            InitializeForegroundTileSet(GetFileName());
-        }
-        private void InitializeBackgroundTileSet(string fileName)
+        private void InitializeTileSets()
         {
             Bitmap bitmap = null;
             try
             {
-                if (fileName != null)
-                {
-                    bitmap = new Bitmap(fileName);
-                }
+                bitmap = new Bitmap(CacheManager.BackgroundBitmapPath);
             }
             catch (Exception) { }
 
             if (bitmap != null)
             {
-                CacheManager.SetBackgroundBitmapPath(fileName);
                 BitmapManager.SetBackgroundTileSetBitmap(bitmap);
                 int widthSize = bitmap.Width / Constants.TileSize;
                 int heightSize = bitmap.Height / Constants.TileSize;
@@ -57,23 +49,16 @@ namespace LocationDesigner
                     }
                 }
             }
-        }
 
-        private void InitializeForegroundTileSet(string fileName)
-        {
-            Bitmap bitmap = null;
+            bitmap = null;
             try
             {
-                if (fileName != null)
-                {
-                    bitmap = new Bitmap(fileName);
-                }
+                bitmap = new Bitmap(CacheManager.ForegroundBitmapPath);
             }
             catch (Exception) { }
 
             if (bitmap != null)
             {
-                CacheManager.SetForegroundBitmapPath(fileName);
                 BitmapManager.SetForegroundTileSetBitmap(bitmap);
                 int widthSize = bitmap.Width / Constants.TileSize;
                 int heightSize = bitmap.Height / Constants.TileSize;
@@ -87,21 +72,36 @@ namespace LocationDesigner
                     }
                 }
             }
+
+            bitmap = null;
+            try
+            {
+                bitmap = new Bitmap(CacheManager.GrassBitmapPath);
+            }
+            catch (Exception) { }
+
+            if (bitmap != null)
+            {
+                BitmapManager.SetGrassTileSetBitmap(bitmap);
+
+                DoodadTileBox grassTile = new DoodadTileBox();
+                doodadPanel.Controls.Add(grassTile);
+                grassTile.Setup(LocationDoodad.Grass);
+
+                DoodadTileBox flowerTile = new DoodadTileBox();
+                doodadPanel.Controls.Add(flowerTile);
+                flowerTile.Setup(LocationDoodad.Red_Flower);
+            }
         }
 
-        private string GetFileName() {
-            OpenFileDialog theDialog = new OpenFileDialog
-            {
-                Title = "Open ",
-                Filter = "Image files|*.png;*.jpg;*.bmp;",
-                InitialDirectory = @"C:\"
-            };
+        private string GetTileSetDirectory() {
+            FolderBrowserDialog theDialog = new FolderBrowserDialog();
 
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 try
                 {
-                    return theDialog.FileName;
+                    return theDialog.SelectedPath;
                 }
                 catch (Exception) {
                     MessageBox.Show("File could not be opened.");
@@ -111,7 +111,7 @@ namespace LocationDesigner
             return null;
         }
 
-        private void LaveFileToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SaveFileToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog theDialog = new SaveFileDialog
             {
@@ -139,6 +139,11 @@ namespace LocationDesigner
             {
                 LocationLayoutManager.LoadFile(theDialog.FileName);
             }
+        }
+
+        private void MouseHover(object sender, EventArgs e)
+        {
+            RenderPanel.TopLeftPoint = new Microsoft.Xna.Framework.Point(RenderPanel.TopLeftPoint.X - 1, RenderPanel.TopLeftPoint.Y);
         }
     }
 }

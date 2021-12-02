@@ -413,6 +413,18 @@
 /processorParam:TextureFormat=Color
 /build:sprites/pokemon/weedle.png
 
+#begin sprites/tilesets/animationTileSet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/tilesets/animationTileSet.png
+
 #begin sprites/tilesets/backgroundTileSet.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -448,6 +460,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:sprites/tilesets/foregroundTileSet.png
+
+#begin sprites/tilesets/grassTileSet.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/tilesets/grassTileSet.png
 
 #begin sprites/wallpapers/battleArea.png
 /importer:TextureImporter

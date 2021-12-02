@@ -10,10 +10,11 @@ namespace LocationDesigner.FileHandling
     {
         public static Texture2D BackgroundTileSetTexture { get; set; } 
         public static Texture2D ForegroundTileSetTexture { get; set; }
+        public static Texture2D GrassTileSetTexture { get; set; }
 
         public static Texture2D GetTexture2DFromBitmap(Bitmap bitmap)
         {
-            if (GraphicsManager.GraphicsDevice != null)
+            if (GraphicsManager.GraphicsDevice != null && bitmap != null)
             {
                 using (MemoryStream s = new MemoryStream())
                 {

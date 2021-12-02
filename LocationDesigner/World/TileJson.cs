@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using LocationDesigner.Domain;
+using Microsoft.Xna.Framework;
 using System;
 
 namespace LocationDesigner.World
@@ -6,6 +7,7 @@ namespace LocationDesigner.World
     public class TileJson : IComparable
     {
         public Point Position { get; set; }
+        public LocationDoodad LocationDoodad { get; set; }
         public Point SpritePosition { get; set; }
 
         public int CompareTo(object obj)

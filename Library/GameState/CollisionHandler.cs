@@ -17,5 +17,7 @@ namespace Library.GameState
                 return true;
             }
         }
+
+        public static bool AreColliding(ICollidable first, ICollidable second) => first.GetCollisionRectangle().Intersects(second.GetCollisionRectangle());
     }
 }

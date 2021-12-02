@@ -34,7 +34,9 @@ namespace Library.Content
                         {
                             BackgroundTiles = new Dictionary<Point, Tile>(),
                             ForegroundTiles = new Dictionary<Point, Tile>(),
-                            InitialCharacters = new List<Assets.Character>()
+                            BackgroundGrassTiles = new Dictionary<Point, Tile>(),
+                            ForegroundGrassTiles = new Dictionary<Point, Tile>(),
+                            InitialCharacters = new List<Character>()
                         };
 
                         locationLayoutJson.BackgroundTiles.ForEach(tile =>
@@ -54,6 +56,35 @@ namespace Library.Content
                                 Position = new Vector(tile.Position),
                                 SpritePosition = new Vector(tile.SpritePosition),
                             });
+                        });
+
+                        locationLayoutJson.LocationDoodads.ForEach(tile =>
+                        {
+                            if (tile.LocationDoodad == LocationDoodad.Grass) {
+                                locationLayout.ForegroundGrassTiles.Add(tile.Position, new Tile
+                                {
+                                    TextureName = TextureName.Grass,
+                                    Position = new Vector(tile.Position),
+                                    SpritePosition = new Vector(1, 0),
+                                });
+
+                                locationLayout.BackgroundGrassTiles.Add(tile.Position, new Tile
+                                {
+                                    TextureName = TextureName.Grass,
+                                    Position = new Vector(tile.Position),
+                                    SpritePosition = new Vector(2, 0),
+                                });
+                            }
+                            else if (tile.LocationDoodad == LocationDoodad.Red_Flower)
+                            {
+                                locationLayout.BackgroundGrassTiles.Add(tile.Position, new Tile
+                                {
+                                    TextureName = TextureName.Grass,
+                                    Position = new Vector(tile.Position),
+                                    SpritePosition = new Vector(0, 1),
+                                    NumFrames = 5
+                                });
+                            }
                         });
 
                         //locationLayoutJson.InitialCharacters.ForEach(character => locationLayout.InitialCharacters.Add(character));

@@ -3,10 +3,9 @@ using Microsoft.Xna.Framework;
 
 namespace Library.World
 {
-    public class TileJson
+    public class DoodadJson
     {
         public Point Position { get; set; }
-        public LocationDoodad LocationDoodad { get; set; }
-        public Point SpritePosition { get; set; }
+        public LocationDoodad DoodadType { get; set; }
     }
 }

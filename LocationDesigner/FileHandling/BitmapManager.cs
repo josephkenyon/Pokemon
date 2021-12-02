@@ -6,6 +6,7 @@ namespace LocationDesigner.FileHandling
     {
         public static Bitmap BackgroundTileSetBitmap { get; private set; } 
         public static Bitmap ForegroundTileSetBitmap { get; private set; }
+        public static Bitmap GrassTileSetBitmap { get; private set; }
 
         public static void SetBackgroundTileSetBitmap(Bitmap bitmap) {
             BackgroundTileSetBitmap = bitmap;
@@ -16,6 +17,12 @@ namespace LocationDesigner.FileHandling
         {
             ForegroundTileSetBitmap = bitmap;
             TextureManager.ForegroundTileSetTexture = TextureManager.GetTexture2DFromBitmap(bitmap);
+        }
+
+        public static void SetGrassTileSetBitmap(Bitmap bitmap)
+        {
+            GrassTileSetBitmap = bitmap;
+            TextureManager.GrassTileSetTexture = TextureManager.GetTexture2DFromBitmap(bitmap);
         }
     }
 }

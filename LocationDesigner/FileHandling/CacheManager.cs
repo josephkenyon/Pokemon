@@ -10,18 +10,16 @@ namespace LocationDesigner.FileHandling
     public class CacheManager
     {
         private static string CacheFileName => Environment.CurrentDirectory + "\\cache.txt";
-        public static string BackgroundBitmapPath { get; private set; }
-        public static string ForegroundBitmapPath { get; private set; }
+        public static string TileSetBitmapsPath { get; private set; }
 
-        public static void SetBackgroundBitmapPath(string path)
-        {
-            BackgroundBitmapPath = path;
-            WriteCacheFile();
-        }
+        public static string BackgroundBitmapPath => TileSetBitmapsPath + "\\backgroundTileSet.png";
+        public static string ForegroundBitmapPath => TileSetBitmapsPath + "\\foregroundTileSet.png";
+        public static string GrassBitmapPath => TileSetBitmapsPath + "\\grassTileSet.png";
+        public static string AnimationBitmapPath => TileSetBitmapsPath + "\\animationTileSet.png";
 
-        public static void SetForegroundBitmapPath(string path)
+        public static void SetTileSetBitmapsPath(string path)
         {
-            ForegroundBitmapPath = path;
+            TileSetBitmapsPath = path;
             WriteCacheFile();
         }
 
@@ -31,19 +29,10 @@ namespace LocationDesigner.FileHandling
 
                 if (lines.Length > 0)
                 {
-                    BackgroundBitmapPath = lines[0];
-
-                    if (lines.Length > 1)
-                    {
-                        ForegroundBitmapPath = lines[1];
-                    }
-                    else {
-                        ForegroundBitmapPath = "";
-                    }
+                    TileSetBitmapsPath = lines[0];
                 }
                 else {
-                    BackgroundBitmapPath = "";
-                    ForegroundBitmapPath = "";
+                    TileSetBitmapsPath = "";
                 }
             }
         }
@@ -55,7 +44,7 @@ namespace LocationDesigner.FileHandling
                 File.Create(CacheFileName);
             }
 
-            File.WriteAllLines(CacheFileName, new string[] { BackgroundBitmapPath, ForegroundBitmapPath });
+            File.WriteAllLines(CacheFileName, new string[] { TileSetBitmapsPath });
         }
     }
 }

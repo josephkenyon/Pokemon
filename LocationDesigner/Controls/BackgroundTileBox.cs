@@ -8,7 +8,7 @@ namespace LevelDesigner.Controls
     {
         public static TileBox LastClicked { get; private set; }
 
-        public override void Setup(Point spriteLocation)
+        public void Setup(Point spriteLocation)
         {
             Image = CropImage(BitmapManager.BackgroundTileSetBitmap, spriteLocation);
             SetupParameters(spriteLocation);
@@ -28,6 +28,7 @@ namespace LevelDesigner.Controls
             LastClicked = tileBox;
 
             ForegroundTileBox.ClearLastClicked();
+            DoodadTileBox.ClearLastClicked();
         }
 
         public static void ClearLastClicked()

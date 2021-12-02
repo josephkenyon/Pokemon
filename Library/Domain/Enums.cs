@@ -13,6 +13,13 @@ namespace Library.Domain
         Confused,
     }
 
+    public enum LocationDoodad
+    {
+        Grass,
+        Red_Flower,
+        Water,
+    }
+
     public enum LocationName
     {
         PalletTown,
@@ -77,6 +84,8 @@ namespace Library.Domain
     {
         Background,
         Foreground,
+        Grass,
+        Animation,
         Ash,
         battleAsh,
         Policeman,

@@ -1,5 +1,6 @@
 ﻿using Library.Assets;
 using Library.Domain;
+using Library.GameState.Base;
 
 namespace Library.GameState
 {
@@ -48,6 +49,7 @@ namespace Library.GameState
             }
             else
             {
+                SpriteEffectsManager.CharacterMovementCompleted(character);
                 character.CharacterState.IsMoving = false;
             }
         }

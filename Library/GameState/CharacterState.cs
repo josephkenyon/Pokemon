@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace Library.GameState
 {
-    public class CharacterState
+    public class CharacterState : FrameState
     {
         public Bag Bag { get; set; }
         public List<Pokemon> Pokemon { get; set; }
@@ -14,22 +14,7 @@ namespace Library.GameState
         public bool IsMoving { get; set; }
         public Vector MovementPath { get; set; }
         public Vector TileSetPosition => Position / Constants.ScaledTileSize;
-        public int CurrentFrame { get; set; }
-        public int FrameSkip { get; set; }
         public List<Badge> Badges { get; set; }
-
-        public void IncrementFrame()
-        {
-            if (FrameSkip == 5)
-            {
-                CurrentFrame = CurrentFrame == 2 ? 0 : CurrentFrame + 1;
-                FrameSkip = 0;
-            }
-            else
-            {
-                FrameSkip += 1;
-            }
-        }
 
         public void StartMoving(Direction direction)
         {

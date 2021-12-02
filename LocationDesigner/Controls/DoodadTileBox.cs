@@ -1,17 +1,18 @@
-﻿using LocationDesigner.FileHandling;
+﻿using LocationDesigner.Domain;
+using LocationDesigner.FileHandling;
 using System.Drawing;
 using System.Windows.Forms;
 
 namespace LevelDesigner.Controls
 {
-    public class ForegroundTileBox : TileBox
+    public class DoodadTileBox : TileBox
     {
         public static TileBox LastClicked { get; private set; }
 
-        public void Setup(Point spriteLocation)
+        public void Setup(LocationDoodad location)
         {
-            Image = CropImage(BitmapManager.ForegroundTileSetBitmap, spriteLocation);
-            SetupParameters(spriteLocation);
+            Image = CropImage(BitmapManager.GrassTileSetBitmap, new Point(0, (int) location));
+            SetupParameters(new Point(0, (int)location));
         }
 
         public override void ResetLastClicked()
@@ -28,7 +29,7 @@ namespace LevelDesigner.Controls
             LastClicked = tileBox;
 
             BackgroundTileBox.ClearLastClicked();
-            DoodadTileBox.ClearLastClicked();
+            ForegroundTileBox.ClearLastClicked();
         }
 
         public static void ClearLastClicked()

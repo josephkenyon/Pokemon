@@ -9,7 +9,6 @@ namespace LevelDesigner.Controls
     {
         public Point SpriteLocation { get; private set; }
 
-        public abstract void Setup(Point spriteLocation);
         public abstract void SetLastClicked(TileBox tileBox);
         public abstract void ResetLastClicked();
 

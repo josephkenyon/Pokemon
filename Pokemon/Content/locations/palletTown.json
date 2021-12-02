@@ -5,6 +5,7 @@
         "X": -1,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -15,6 +16,7 @@
         "X": 0,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -25,6 +27,7 @@
         "X": -1,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -35,6 +38,7 @@
         "X": 0,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 0
@@ -45,6 +49,7 @@
         "X": -1,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -55,6 +60,7 @@
         "X": 0,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -65,6 +71,7 @@
         "X": 1,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -75,6 +82,7 @@
         "X": 2,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -85,6 +93,7 @@
         "X": 3,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -95,6 +104,7 @@
         "X": 4,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -105,6 +115,7 @@
         "X": 5,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -115,6 +126,7 @@
         "X": 6,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -125,6 +137,7 @@
         "X": 2,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 2,
         "Y": 0
@@ -135,6 +148,7 @@
         "X": 3,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -145,6 +159,7 @@
         "X": 1,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -155,6 +170,7 @@
         "X": 2,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -165,6 +181,7 @@
         "X": 4,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -175,6 +192,7 @@
         "X": 5,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -185,6 +203,7 @@
         "X": 6,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 0
@@ -195,6 +214,7 @@
         "X": 7,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -205,6 +225,7 @@
         "X": 1,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -215,6 +236,7 @@
         "X": 7,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -225,6 +247,7 @@
         "X": 3,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -235,6 +258,7 @@
         "X": 4,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -245,6 +269,7 @@
         "X": -1,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -255,6 +280,7 @@
         "X": 0,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -265,6 +291,7 @@
         "X": -1,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -275,6 +302,7 @@
         "X": 1,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -285,6 +313,7 @@
         "X": 5,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -295,6 +324,7 @@
         "X": 0,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -305,9 +335,10 @@
         "X": 2,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -315,6 +346,7 @@
         "X": 3,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -325,6 +357,7 @@
         "X": 4,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -335,9 +368,10 @@
         "X": 5,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -345,6 +379,7 @@
         "X": 6,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -355,6 +390,7 @@
         "X": 6,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -365,6 +401,7 @@
         "X": -1,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -375,6 +412,7 @@
         "X": 7,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -385,8 +423,9 @@
         "X": 1,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 5,
+        "X": 1,
         "Y": 1
       }
     },
@@ -395,6 +434,7 @@
         "X": 1,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -405,6 +445,7 @@
         "X": 2,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -415,9 +456,10 @@
         "X": 3,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -425,6 +467,7 @@
         "X": 3,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -435,9 +478,10 @@
         "X": 4,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -445,6 +489,7 @@
         "X": 2,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -455,6 +500,7 @@
         "X": 4,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -465,9 +511,10 @@
         "X": 5,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 5,
+        "Y": 0
       }
     },
     {
@@ -475,6 +522,7 @@
         "X": 6,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -485,6 +533,7 @@
         "X": 0,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 3
@@ -495,6 +544,7 @@
         "X": 5,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -505,6 +555,7 @@
         "X": 7,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -515,6 +566,7 @@
         "X": 6,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 3
@@ -525,6 +577,7 @@
         "X": 7,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -535,6 +588,7 @@
         "X": 7,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -545,6 +599,7 @@
         "X": -1,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -555,6 +610,7 @@
         "X": 0,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -565,6 +621,7 @@
         "X": 1,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -575,6 +632,7 @@
         "X": 2,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -585,6 +643,7 @@
         "X": 3,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -595,6 +654,7 @@
         "X": 4,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -605,6 +665,7 @@
         "X": 5,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -615,6 +676,7 @@
         "X": 6,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -625,6 +687,7 @@
         "X": 7,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -635,6 +698,7 @@
         "X": 8,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 3
@@ -645,6 +709,7 @@
         "X": 8,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -655,6 +720,7 @@
         "X": 8,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -665,6 +731,7 @@
         "X": 8,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -675,6 +742,7 @@
         "X": 8,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 0
@@ -685,6 +753,7 @@
         "X": 9,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -695,6 +764,7 @@
         "X": 10,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -705,6 +775,7 @@
         "X": 9,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -715,6 +786,7 @@
         "X": 10,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -725,6 +797,7 @@
         "X": 11,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 2,
         "Y": 3
@@ -735,6 +808,7 @@
         "X": 12,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 4,
         "Y": 3
@@ -745,6 +819,7 @@
         "X": 13,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 3
@@ -755,6 +830,7 @@
         "X": 14,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 3
@@ -765,6 +841,7 @@
         "X": 15,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 3
@@ -775,6 +852,7 @@
         "X": 16,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 3
@@ -785,6 +863,7 @@
         "X": 16,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -795,6 +874,7 @@
         "X": 16,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -805,6 +885,7 @@
         "X": 16,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -815,6 +896,7 @@
         "X": 16,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 0
@@ -825,6 +907,7 @@
         "X": 8,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 0
@@ -835,6 +918,7 @@
         "X": 9,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -845,6 +929,7 @@
         "X": 10,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -855,6 +940,7 @@
         "X": 11,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -865,6 +951,7 @@
         "X": 12,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -875,6 +962,7 @@
         "X": 13,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -885,6 +973,7 @@
         "X": 14,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -895,6 +984,7 @@
         "X": 15,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 0
@@ -905,6 +995,7 @@
         "X": 15,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 2
@@ -915,6 +1006,7 @@
         "X": 15,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 3
@@ -925,6 +1017,7 @@
         "X": 8,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -935,6 +1028,7 @@
         "X": 8,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 3
@@ -945,6 +1039,7 @@
         "X": 9,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -955,6 +1050,7 @@
         "X": 10,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -965,6 +1061,7 @@
         "X": 11,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -975,6 +1072,7 @@
         "X": 12,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -985,6 +1083,7 @@
         "X": 13,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -995,6 +1094,7 @@
         "X": 14,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -1005,6 +1105,7 @@
         "X": 9,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1015,6 +1116,7 @@
         "X": 10,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1025,6 +1127,7 @@
         "X": 11,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1035,6 +1138,7 @@
         "X": 12,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 2
@@ -1045,6 +1149,7 @@
         "X": 13,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1055,6 +1160,7 @@
         "X": 14,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1065,9 +1171,10 @@
         "X": 16,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1075,9 +1182,10 @@
         "X": 16,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1085,9 +1193,10 @@
         "X": 16,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1095,9 +1204,10 @@
         "X": 7,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1105,9 +1215,10 @@
         "X": 7,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1115,6 +1226,249 @@
         "X": 8,
         "Y": 7
       },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 9,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 3,
+        "Y": 3
+      }
+    },
+    {
+      "Position": {
+        "X": 7,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 9,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 10,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 11,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 12,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 13,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 14,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 15,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 16,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 7,
+        "Y": 9
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 1
+      }
+    },
+    {
+      "Position": {
+        "X": 7,
+        "Y": 10
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 1
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 10
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 1
+      }
+    },
+    {
+      "Position": {
+        "X": 8,
+        "Y": 9
+      },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 2
@@ -1123,231 +1477,12 @@
     {
       "Position": {
         "X": 9,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 10,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 11,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 12,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 14,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 15,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 13,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 16,
-        "Y": 7
-      },
-      "SpritePosition": {
-        "X": 3,
-        "Y": 2
-      }
-    },
-    {
-      "Position": {
-        "X": 7,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 8,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 9,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 10,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 11,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 12,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 13,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 14,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 15,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 16,
-        "Y": 8
-      },
-      "SpritePosition": {
-        "X": 5,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 7,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
-      }
-    },
-    {
-      "Position": {
-        "X": 7,
-        "Y": 10
-      },
-      "SpritePosition": {
-        "X": 1,
-        "Y": 1
-      }
-    },
-    {
-      "Position": {
-        "X": 8,
-        "Y": 10
-      },
-      "SpritePosition": {
-        "X": 1,
-        "Y": 1
-      }
-    },
-    {
-      "Position": {
-        "X": 8,
-        "Y": 9
-      },
-      "SpritePosition": {
-        "X": 1,
-        "Y": 1
-      }
-    },
-    {
-      "Position": {
-        "X": 9,
-        "Y": 9
-      },
-      "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -1355,9 +1490,10 @@
         "X": 9,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1365,6 +1501,7 @@
         "X": 10,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1375,6 +1512,7 @@
         "X": 10,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1385,6 +1523,7 @@
         "X": 11,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1395,9 +1534,10 @@
         "X": 11,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -1405,9 +1545,10 @@
         "X": 12,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1415,6 +1556,7 @@
         "X": 12,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1425,6 +1567,7 @@
         "X": 13,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1435,9 +1578,10 @@
         "X": 13,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -1445,6 +1589,7 @@
         "X": 14,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1455,6 +1600,7 @@
         "X": 14,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1465,9 +1611,10 @@
         "X": 15,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1475,6 +1622,7 @@
         "X": 15,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1485,6 +1633,7 @@
         "X": 16,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1495,6 +1644,7 @@
         "X": 16,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1505,8 +1655,9 @@
         "X": 2,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 5,
+        "X": 1,
         "Y": 0
       }
     },
@@ -1515,8 +1666,9 @@
         "X": 1,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 5,
+        "X": 1,
         "Y": 0
       }
     },
@@ -1525,8 +1677,9 @@
         "X": 0,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 5,
+        "X": 1,
         "Y": 0
       }
     },
@@ -1535,8 +1688,9 @@
         "X": -1,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 5,
+        "X": 1,
         "Y": 0
       }
     },
@@ -1545,8 +1699,9 @@
         "X": 3,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 5,
+        "X": 1,
         "Y": 0
       }
     },
@@ -1555,6 +1710,7 @@
         "X": 6,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 2
@@ -1565,6 +1721,7 @@
         "X": 2,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1575,9 +1732,10 @@
         "X": 2,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -1585,6 +1743,7 @@
         "X": 1,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1595,9 +1754,10 @@
         "X": 1,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1605,9 +1765,10 @@
         "X": 0,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -1615,9 +1776,10 @@
         "X": -1,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1625,9 +1787,10 @@
         "X": -2,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1635,6 +1798,7 @@
         "X": 0,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1645,6 +1809,18 @@
         "X": -1,
         "Y": 8
       },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 1,
+        "Y": 2
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 9
+      },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1653,18 +1829,9 @@
     {
       "Position": {
         "X": 2,
-        "Y": 9
-      },
-      "SpritePosition": {
-        "X": 1,
-        "Y": 1
-      }
-    },
-    {
-      "Position": {
-        "X": 2,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1675,6 +1842,7 @@
         "X": 1,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1685,9 +1853,10 @@
         "X": 1,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1695,6 +1864,7 @@
         "X": 0,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1705,9 +1875,10 @@
         "X": 0,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1715,9 +1886,10 @@
         "X": -1,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 1
+        "Y": 2
       }
     },
     {
@@ -1725,6 +1897,7 @@
         "X": -1,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1735,6 +1908,7 @@
         "X": -2,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1745,6 +1919,7 @@
         "X": -2,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1755,6 +1930,7 @@
         "X": -2,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1765,8 +1941,9 @@
         "X": -2,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 5,
+        "X": 1,
         "Y": 0
       }
     },
@@ -1775,9 +1952,10 @@
         "X": -2,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1785,9 +1963,10 @@
         "X": -2,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1795,9 +1974,10 @@
         "X": -2,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1805,9 +1985,10 @@
         "X": -2,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1815,9 +1996,10 @@
         "X": -2,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1825,9 +2007,10 @@
         "X": -2,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1835,9 +2018,10 @@
         "X": -2,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1845,9 +2029,10 @@
         "X": -2,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -1855,6 +2040,7 @@
         "X": 17,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1865,6 +2051,7 @@
         "X": 17,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1875,6 +2062,7 @@
         "X": 17,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1885,6 +2073,7 @@
         "X": 17,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1895,6 +2084,7 @@
         "X": 17,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1905,6 +2095,7 @@
         "X": 17,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1915,6 +2106,7 @@
         "X": 17,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1925,6 +2117,7 @@
         "X": 17,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1935,6 +2128,7 @@
         "X": 17,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -1945,6 +2139,7 @@
         "X": 17,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 2
@@ -1955,6 +2150,7 @@
         "X": 17,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1965,9 +2161,10 @@
         "X": 17,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1975,9 +2172,10 @@
         "X": 18,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -1985,6 +2183,7 @@
         "X": 18,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -1995,6 +2194,7 @@
         "X": 18,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2005,6 +2205,7 @@
         "X": 18,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2015,9 +2216,10 @@
         "X": 18,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -2025,9 +2227,10 @@
         "X": 18,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -2035,6 +2238,7 @@
         "X": 18,
         "Y": 4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2045,9 +2249,10 @@
         "X": 18,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -2055,6 +2260,7 @@
         "X": 18,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2065,6 +2271,7 @@
         "X": 18,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2075,9 +2282,10 @@
         "X": 18,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
-        "X": 1,
-        "Y": 1
+        "X": 3,
+        "Y": 2
       }
     },
     {
@@ -2085,6 +2293,7 @@
         "X": 18,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2095,9 +2304,10 @@
         "X": 0,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2105,9 +2315,10 @@
         "X": -3,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2115,9 +2326,10 @@
         "X": -1,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2125,9 +2337,10 @@
         "X": 1,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2135,9 +2348,10 @@
         "X": -3,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2145,9 +2359,10 @@
         "X": -3,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2155,9 +2370,10 @@
         "X": -3,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2165,9 +2381,10 @@
         "X": -3,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2175,9 +2392,10 @@
         "X": -3,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2185,9 +2403,10 @@
         "X": 2,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2195,9 +2414,10 @@
         "X": 3,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2205,9 +2425,10 @@
         "X": 4,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2215,9 +2436,10 @@
         "X": 5,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2225,9 +2447,10 @@
         "X": 6,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2235,9 +2458,10 @@
         "X": 7,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2245,9 +2469,10 @@
         "X": 8,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2255,9 +2480,10 @@
         "X": 9,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2265,9 +2491,10 @@
         "X": 11,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2275,9 +2502,10 @@
         "X": 10,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2285,9 +2513,10 @@
         "X": 12,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2295,9 +2524,10 @@
         "X": 13,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2305,9 +2535,10 @@
         "X": 14,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2315,9 +2546,10 @@
         "X": 15,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2325,9 +2557,10 @@
         "X": 16,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2335,9 +2568,10 @@
         "X": 16,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2345,6 +2579,7 @@
         "X": 15,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 3
@@ -2355,6 +2590,7 @@
         "X": 14,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 3
@@ -2365,6 +2601,7 @@
         "X": 13,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 3
@@ -2375,6 +2612,7 @@
         "X": 12,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 4,
         "Y": 3
@@ -2385,6 +2623,7 @@
         "X": 11,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 2,
         "Y": 3
@@ -2395,6 +2634,7 @@
         "X": 10,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -2405,6 +2645,7 @@
         "X": 8,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 3
@@ -2415,9 +2656,10 @@
         "X": 7,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
-        "Y": 2
+        "Y": 3
       }
     },
     {
@@ -2425,6 +2667,7 @@
         "X": 9,
         "Y": -3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 3
@@ -2435,6 +2678,7 @@
         "X": 8,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -2445,6 +2689,7 @@
         "X": 8,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -2455,6 +2700,7 @@
         "X": 8,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -2465,6 +2711,7 @@
         "X": 8,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 0
@@ -2475,6 +2722,7 @@
         "X": 9,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -2485,6 +2733,7 @@
         "X": 10,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -2495,6 +2744,7 @@
         "X": 14,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 0
@@ -2505,6 +2755,7 @@
         "X": 15,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 0
@@ -2515,6 +2766,7 @@
         "X": 15,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -2525,6 +2777,7 @@
         "X": 15,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -2535,6 +2788,7 @@
         "X": 15,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -2545,6 +2799,7 @@
         "X": 9,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2555,6 +2810,7 @@
         "X": 9,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2565,6 +2821,7 @@
         "X": 9,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2575,6 +2832,7 @@
         "X": 16,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2585,6 +2843,7 @@
         "X": 16,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2595,6 +2854,7 @@
         "X": 16,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2605,6 +2865,7 @@
         "X": 16,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2615,6 +2876,7 @@
         "X": 16,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2625,6 +2887,7 @@
         "X": 15,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2635,6 +2898,7 @@
         "X": 14,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2645,6 +2909,7 @@
         "X": 13,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2655,6 +2920,7 @@
         "X": 12,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2665,6 +2931,7 @@
         "X": 11,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2675,6 +2942,7 @@
         "X": 10,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2685,6 +2953,7 @@
         "X": 9,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2695,6 +2964,7 @@
         "X": 8,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2705,6 +2975,7 @@
         "X": 7,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2715,6 +2986,7 @@
         "X": 7,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2725,6 +2997,7 @@
         "X": 7,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2735,6 +3008,7 @@
         "X": 7,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2745,6 +3019,7 @@
         "X": 7,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -2755,6 +3030,7 @@
         "X": 10,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2765,6 +3041,7 @@
         "X": 10,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2777,6 +3054,7 @@
         "X": 1,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -2787,6 +3065,7 @@
         "X": 2,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -2797,6 +3076,7 @@
         "X": 3,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -2807,6 +3087,7 @@
         "X": 4,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -2817,58 +3098,9 @@
         "X": 5,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 1,
-        "Y": 1
-      },
-      "SpritePosition": {
-        "X": 0,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 2,
-        "Y": 1
-      },
-      "SpritePosition": {
-        "X": 0,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 3,
-        "Y": 1
-      },
-      "SpritePosition": {
-        "X": 0,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 4,
-        "Y": 1
-      },
-      "SpritePosition": {
-        "X": 0,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 1,
-        "Y": 2
-      },
-      "SpritePosition": {
-        "X": 0,
         "Y": 0
       }
     },
@@ -2877,6 +3109,7 @@
         "X": 1,
         "Y": 3
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 1
@@ -2884,39 +3117,10 @@
     },
     {
       "Position": {
-        "X": 2,
-        "Y": 2
-      },
-      "SpritePosition": {
-        "X": 0,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 3,
-        "Y": 2
-      },
-      "SpritePosition": {
-        "X": 0,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
-        "X": 4,
-        "Y": 2
-      },
-      "SpritePosition": {
-        "X": 0,
-        "Y": 0
-      }
-    },
-    {
-      "Position": {
         "X": 9,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 8,
         "Y": 4
@@ -2927,6 +3131,7 @@
         "X": 9,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 8,
         "Y": 3
@@ -2937,6 +3142,7 @@
         "X": 9,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 8,
         "Y": 2
@@ -2947,6 +3153,7 @@
         "X": 9,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 8,
         "Y": 1
@@ -2957,6 +3164,7 @@
         "X": 9,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 8,
         "Y": 0
@@ -2967,6 +3175,7 @@
         "X": 10,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 9,
         "Y": 0
@@ -2977,6 +3186,7 @@
         "X": 11,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 10,
         "Y": 0
@@ -2987,6 +3197,7 @@
         "X": 12,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 10,
         "Y": 0
@@ -2997,6 +3208,7 @@
         "X": 13,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 10,
         "Y": 0
@@ -3007,6 +3219,7 @@
         "X": 10,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 9,
         "Y": 2
@@ -3017,6 +3230,7 @@
         "X": 11,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 10,
         "Y": 2
@@ -3027,6 +3241,7 @@
         "X": 12,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 11,
         "Y": 2
@@ -3037,6 +3252,7 @@
         "X": 13,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 12,
         "Y": 2
@@ -3047,6 +3263,7 @@
         "X": 14,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 13,
         "Y": 2
@@ -3057,6 +3274,7 @@
         "X": 15,
         "Y": 0
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 14,
         "Y": 2
@@ -3067,6 +3285,7 @@
         "X": 15,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 14,
         "Y": 1
@@ -3077,6 +3296,7 @@
         "X": 15,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 14,
         "Y": 0
@@ -3087,6 +3307,7 @@
         "X": 14,
         "Y": -2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 13,
         "Y": 0
@@ -3097,6 +3318,7 @@
         "X": 14,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 13,
         "Y": 1
@@ -3107,6 +3329,7 @@
         "X": 13,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 12,
         "Y": 1
@@ -3117,6 +3340,7 @@
         "X": 12,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 11,
         "Y": 1
@@ -3127,6 +3351,7 @@
         "X": 11,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 10,
         "Y": 1
@@ -3137,6 +3362,7 @@
         "X": 10,
         "Y": -1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 9,
         "Y": 1
@@ -3147,6 +3373,7 @@
         "X": 10,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 9,
         "Y": 3
@@ -3157,6 +3384,7 @@
         "X": 11,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 10,
         "Y": 3
@@ -3167,6 +3395,7 @@
         "X": 12,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 11,
         "Y": 3
@@ -3177,6 +3406,7 @@
         "X": 13,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 12,
         "Y": 3
@@ -3187,6 +3417,7 @@
         "X": 14,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 13,
         "Y": 3
@@ -3197,6 +3428,7 @@
         "X": 15,
         "Y": 1
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 14,
         "Y": 3
@@ -3207,6 +3439,7 @@
         "X": 15,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 14,
         "Y": 4
@@ -3217,6 +3450,7 @@
         "X": 14,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 13,
         "Y": 4
@@ -3227,6 +3461,7 @@
         "X": 13,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 12,
         "Y": 4
@@ -3237,6 +3472,7 @@
         "X": 12,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 11,
         "Y": 4
@@ -3247,6 +3483,7 @@
         "X": 11,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 10,
         "Y": 4
@@ -3257,6 +3494,7 @@
         "X": 10,
         "Y": 2
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 9,
         "Y": 4
@@ -3267,6 +3505,7 @@
         "X": 10,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -3277,6 +3516,7 @@
         "X": 11,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -3287,6 +3527,7 @@
         "X": 12,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 1,
         "Y": 0
@@ -3297,6 +3538,7 @@
         "X": 13,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -3307,6 +3549,7 @@
         "X": 14,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
@@ -3317,6 +3560,7 @@
         "X": 6,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 17,
         "Y": 0
@@ -3327,6 +3571,7 @@
         "X": 5,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 0
@@ -3337,6 +3582,7 @@
         "X": 4,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 0
@@ -3347,6 +3593,7 @@
         "X": 3,
         "Y": 6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 15,
         "Y": 0
@@ -3357,6 +3604,7 @@
         "X": 3,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 15,
         "Y": 1
@@ -3367,6 +3615,7 @@
         "X": 3,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 15,
         "Y": 1
@@ -3377,6 +3626,7 @@
         "X": 3,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 15,
         "Y": 1
@@ -3387,6 +3637,7 @@
         "X": 3,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 15,
         "Y": 2
@@ -3397,6 +3648,7 @@
         "X": 4,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 2
@@ -3407,6 +3659,7 @@
         "X": 5,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 2
@@ -3417,6 +3670,7 @@
         "X": 6,
         "Y": 10
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 17,
         "Y": 2
@@ -3427,6 +3681,7 @@
         "X": 6,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 17,
         "Y": 1
@@ -3437,6 +3692,7 @@
         "X": 6,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 17,
         "Y": 1
@@ -3447,6 +3703,7 @@
         "X": 6,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 17,
         "Y": 1
@@ -3457,6 +3714,7 @@
         "X": 4,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 1
@@ -3467,6 +3725,7 @@
         "X": 4,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 1
@@ -3477,6 +3736,7 @@
         "X": 5,
         "Y": 7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 1
@@ -3487,6 +3747,7 @@
         "X": 5,
         "Y": 8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 1
@@ -3497,6 +3758,7 @@
         "X": 5,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 1
@@ -3507,6 +3769,7 @@
         "X": 4,
         "Y": 9
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 16,
         "Y": 1
@@ -3514,19 +3777,10 @@
     },
     {
       "Position": {
-        "X": 15,
-        "Y": -4
-      },
-      "SpritePosition": {
-        "X": 7,
-        "Y": 5
-      }
-    },
-    {
-      "Position": {
         "X": 14,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 7,
         "Y": 4
@@ -3537,6 +3791,7 @@
         "X": 13,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 4
@@ -3547,6 +3802,7 @@
         "X": 12,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 4
@@ -3557,6 +3813,7 @@
         "X": 11,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 4,
         "Y": 4
@@ -3567,6 +3824,7 @@
         "X": 10,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 4
@@ -3577,6 +3835,7 @@
         "X": 10,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 3
@@ -3587,6 +3846,7 @@
         "X": 10,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 2
@@ -3597,6 +3857,7 @@
         "X": 10,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 1
@@ -3607,6 +3868,7 @@
         "X": 10,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 3,
         "Y": 0
@@ -3617,6 +3879,7 @@
         "X": 11,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 4,
         "Y": 0
@@ -3627,6 +3890,7 @@
         "X": 12,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 0
@@ -3637,6 +3901,7 @@
         "X": 13,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 0
@@ -3647,6 +3912,7 @@
         "X": 14,
         "Y": -8
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 7,
         "Y": 0
@@ -3657,6 +3923,7 @@
         "X": 14,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 7,
         "Y": 1
@@ -3667,6 +3934,7 @@
         "X": 14,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 7,
         "Y": 2
@@ -3677,6 +3945,7 @@
         "X": 14,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 7,
         "Y": 3
@@ -3687,6 +3956,7 @@
         "X": 13,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 3
@@ -3697,6 +3967,7 @@
         "X": 12,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 3
@@ -3707,6 +3978,7 @@
         "X": 11,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 4,
         "Y": 3
@@ -3717,6 +3989,7 @@
         "X": 11,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 4,
         "Y": 2
@@ -3727,6 +4000,7 @@
         "X": 12,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 2
@@ -3737,6 +4011,7 @@
         "X": 13,
         "Y": -6
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 2
@@ -3747,6 +4022,7 @@
         "X": 13,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 6,
         "Y": 1
@@ -3757,6 +4033,7 @@
         "X": 12,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 5,
         "Y": 1
@@ -3767,6 +4044,7 @@
         "X": 11,
         "Y": -7
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 4,
         "Y": 1
@@ -3777,6 +4055,7 @@
         "X": 9,
         "Y": -4
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 2,
         "Y": 1
@@ -3787,6 +4066,7 @@
         "X": 9,
         "Y": -5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 2,
         "Y": 0
@@ -3797,9 +4077,199 @@
         "X": 9,
         "Y": 5
       },
+      "LocationDoodad": 0,
       "SpritePosition": {
         "X": 0,
         "Y": 1
+      }
+    }
+  ],
+  "LocationDoodads": [
+    {
+      "Position": {
+        "X": 1,
+        "Y": 1
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 1,
+        "Y": 2
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 2
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 2,
+        "Y": 1
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 3,
+        "Y": 1
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 3,
+        "Y": 2
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 4,
+        "Y": 2
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 4,
+        "Y": 1
+      },
+      "LocationDoodad": 1,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": -1,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 0,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 1,
+        "Y": 7
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 1,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 0,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": -1,
+        "Y": 8
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": -1,
+        "Y": 9
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 0,
+        "Y": 9
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
+      }
+    },
+    {
+      "Position": {
+        "X": 1,
+        "Y": 9
+      },
+      "LocationDoodad": 0,
+      "SpritePosition": {
+        "X": 0,
+        "Y": 0
       }
     }
   ]

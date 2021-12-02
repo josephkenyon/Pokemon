@@ -27,6 +27,8 @@ namespace Library.Content
                 { TextureName.Ash, contentManager.Load<Texture2D>("sprites\\characters\\ashWalking") },
                 { TextureName.Background, contentManager.Load<Texture2D>("sprites\\tilesets\\backgroundTileset") },
                 { TextureName.Foreground, contentManager.Load<Texture2D>("sprites\\tilesets\\foregroundTileset") },
+                { TextureName.Grass, contentManager.Load<Texture2D>("sprites\\tilesets\\grassTileset") },
+                { TextureName.Animation, contentManager.Load<Texture2D>("sprites\\tilesets\\animationTileset") },
                 { TextureName.Effects, contentManager.Load<Texture2D>("sprites\\tilesets\\effectsTileset") },
                 { TextureName.BattleWallpaper, contentManager.Load<Texture2D>("sprites\\wallpapers\\battleArea") },
                 { TextureName.HealthExpBar, contentManager.Load<Texture2D>("sprites\\effects\\healthExpBar") },

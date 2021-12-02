@@ -25,6 +25,7 @@ namespace LevelDesigner.Controls
 
             TextureManager.BackgroundTileSetTexture = TextureManager.GetTexture2DFromBitmap(BitmapManager.BackgroundTileSetBitmap);
             TextureManager.ForegroundTileSetTexture = TextureManager.GetTexture2DFromBitmap(BitmapManager.ForegroundTileSetBitmap);
+            TextureManager.GrassTileSetTexture = TextureManager.GetTexture2DFromBitmap(BitmapManager.GrassTileSetBitmap);
 
             MouseUp += RenderPanel_MouseUp;
         }
@@ -81,10 +82,31 @@ namespace LevelDesigner.Controls
                     });
                 }
             }
+            else if (DoodadTileBox.LastClicked != null)
+            {
+                tile = LocationLayoutManager.LocationLayout.LocationDoodads.FirstOrDefault(t => t.Position.X == xPosition && t.Position.Y == yPosition);
+                if (tile != null)
+                {
+                    tile.SpritePosition = new Point(ForegroundTileBox.LastClicked.SpriteLocation.X, ForegroundTileBox.LastClicked.SpriteLocation.Y);
+                }
+                else
+                {
+                    LocationLayoutManager.LocationLayout.LocationDoodads.Add(new TileJson()
+                    {
+                        Position = new Point(xPosition, yPosition),
+                        LocationDoodad = (LocationDoodad) DoodadTileBox.LastClicked.SpriteLocation.Y
+                    });
+                }
+            }
             else {
                 tile = LocationLayoutManager.LocationLayout.ForegroundTiles.FirstOrDefault(t => t.Position.X == xPosition && t.Position.Y == yPosition);
                 if (tile != null) {
                     LocationLayoutManager.LocationLayout.ForegroundTiles.Remove(tile);
+                }
+
+                tile = LocationLayoutManager.LocationLayout.LocationDoodads.FirstOrDefault(t => t.Position.X == xPosition && t.Position.Y == yPosition);
+                if (tile != null) {
+                    LocationLayoutManager.LocationLayout.LocationDoodads.Remove(tile);
                 }
             }
         }

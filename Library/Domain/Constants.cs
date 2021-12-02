@@ -11,6 +11,8 @@
         public static readonly int ResolutionWidth = 1920;
         public static readonly int ResolutionHeight = 1080;
 
+        public static readonly int DoodadFrameSkip = 15;
+        public static readonly int DefaultFrameSkip = 5;
         public static readonly int CharacterSpeed = 10;
 
         public static readonly int ItemDebounce = 10;
