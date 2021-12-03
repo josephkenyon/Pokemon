@@ -1,6 +1,9 @@
 ﻿using Library.Assets;
+using Library.Content;
 using Library.Domain;
 using Library.GameState.Base;
+using Library.GameState.Base.TransitionState;
+using Library.World;
 
 namespace Library.GameState
 {
@@ -49,7 +52,18 @@ namespace Library.GameState
             }
             else
             {
-                SpriteEffectsManager.CharacterMovementCompleted(character);
+                LocationLayout location = LocationManager.LocationLayouts[character.CharacterState.CurrentLocation];
+                
+                if (location.Portals.ContainsKey((movementPath / Constants.ScaledTileSize).ToPoint()))
+                {
+                    PortalJson portal = location.Portals[(movementPath / Constants.ScaledTileSize).ToPoint()];
+                    TransitionStateManager.StartTransition(portal.ToLocationName, portal.Coordinate);
+                }
+                else
+                {
+                    SpriteEffectsManager.CharacterMovementCompleted(character);
+                }
+
                 character.CharacterState.IsMoving = false;
             }
         }

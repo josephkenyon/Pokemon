@@ -9,10 +9,12 @@ namespace LevelDesigner.Controls
     {
         public Point SpriteLocation { get; private set; }
 
-        public abstract void SetLastClicked(TileBox tileBox);
-        public abstract void ResetLastClicked();
+        public bool IsSelected() => BorderStyle == BorderStyle.Fixed3D;
 
-        protected void SetupParameters(Point spriteLocation) {
+        protected abstract void DeSelectOthers();
+
+        protected void SetupParameters(Point spriteLocation)
+        {
             SpriteLocation = spriteLocation;
 
             Width = Constants.ScaledTileSize;
@@ -40,16 +42,29 @@ namespace LevelDesigner.Controls
 
         void MyButtonHandler(object sender, EventArgs e)
         {
-            BorderStyle borderStyle = BorderStyle;
+            OnSelect();
+        }
 
-            ResetLastClicked();
+        public void OnSelect()
+        {
+            bool selected = IsSelected();
+            DeSelectOthers();
 
-            if (borderStyle != BorderStyle.Fixed3D)
+            if (!selected)
             {
-                SetLastClicked(this);
                 BorderStyle = BorderStyle.Fixed3D;
                 BackColor = Color.LightBlue;
             }
+            else
+            {
+                OnDeSelect();
+            }
+        }
+
+        public void OnDeSelect()
+        {
+            BorderStyle = BorderStyle.None;
+            BackColor = Color.White;
         }
     }
 }

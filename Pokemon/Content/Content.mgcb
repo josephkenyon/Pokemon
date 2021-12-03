@@ -38,6 +38,12 @@
 #begin fonts/pokemon_fire_red.ttf
 /copy:fonts/pokemon_fire_red.ttf
 
+#begin locations/ashHomeDownStairs.json
+/copy:locations/ashHomeDownStairs.json
+
+#begin locations/ashHomeUpStairs.json
+/copy:locations/ashHomeUpStairs.json
+
 #begin locations/palletTown.json
 /copy:locations/palletTown.json
 

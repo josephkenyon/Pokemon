@@ -36,6 +36,8 @@ namespace Library.Content
                             ForegroundTiles = new Dictionary<Point, Tile>(),
                             BackgroundGrassTiles = new Dictionary<Point, Tile>(),
                             ForegroundGrassTiles = new Dictionary<Point, Tile>(),
+                            Signs = new Dictionary<Point, SignJson>(),
+                            Portals = new Dictionary<Point, PortalJson>(),
                             InitialCharacters = new List<Character>()
                         };
 
@@ -85,6 +87,16 @@ namespace Library.Content
                                     NumFrames = 5
                                 });
                             }
+                        });
+
+                        locationLayoutJson.Signs.ForEach(sign =>
+                        {
+                            locationLayout.Signs.Add(sign.Position, sign);
+                        });
+
+                        locationLayoutJson.Portals.ForEach(portal =>
+                        {
+                            locationLayout.Portals.Add(portal.Position, portal);
                         });
 
                         //locationLayoutJson.InitialCharacters.ForEach(character => locationLayout.InitialCharacters.Add(character));

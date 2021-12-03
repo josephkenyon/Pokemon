@@ -1,22 +1,37 @@
 ﻿using LevelDesigner.Controls;
+using LocationDesigner.Controls;
 using LocationDesigner.Domain;
 using LocationDesigner.FileHandling;
 using LocationDesigner.World;
 using System;
 using System.Drawing;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace LocationDesigner
 {
     public partial class MainForm : Form
     {
+        public int SelectedTag { get; set; }
+
         public MainForm()
         {
             InitializeComponent();
 
             CacheManager.ReadCacheFile();
+            FormHelper.Initialize();
 
             InitializeTileSets();
+
+            FormHelper.SignCheckBox = SignCheckbox;
+            FormHelper.SuperForegroundCheckbox = SuperForegroundCheckbox;
+            FormHelper.PortalCheckbox = PortalCheckBox;
+            FormHelper.CoordinatesLabel = CoordinatesLabel;
+
+            System.Timers.Timer timer = new System.Timers.Timer();
+            timer.Elapsed += new ElapsedEventHandler(OnTimeTick);
+            timer.Interval = 200;
+            timer.Enabled = true;
         }
 
         private void SetTileSetDirectory_Click(object sender, EventArgs e)
@@ -45,6 +60,7 @@ namespace LocationDesigner
                     {
                         BackgroundTileBox newTile = new BackgroundTileBox();
                         backgroundPanel.Controls.Add(newTile);
+                        FormHelper.BackgroundTiles.Add(newTile);
                         newTile.Setup(new Point(i, l));
                     }
                 }
@@ -67,6 +83,7 @@ namespace LocationDesigner
                     for (int l = 0; l < heightSize; l++)
                     {
                         ForegroundTileBox newTile = new ForegroundTileBox();
+                        FormHelper.ForegroundTiles.Add(newTile);
                         foregroundPanel.Controls.Add(newTile);
                         newTile.Setup(new Point(i, l));
                     }
@@ -85,16 +102,19 @@ namespace LocationDesigner
                 BitmapManager.SetGrassTileSetBitmap(bitmap);
 
                 DoodadTileBox grassTile = new DoodadTileBox();
+                FormHelper.DoodadTiles.Add(grassTile);
                 doodadPanel.Controls.Add(grassTile);
                 grassTile.Setup(LocationDoodad.Grass);
 
                 DoodadTileBox flowerTile = new DoodadTileBox();
+                FormHelper.DoodadTiles.Add(flowerTile);
                 doodadPanel.Controls.Add(flowerTile);
                 flowerTile.Setup(LocationDoodad.Red_Flower);
             }
         }
 
-        private string GetTileSetDirectory() {
+        private string GetTileSetDirectory()
+        {
             FolderBrowserDialog theDialog = new FolderBrowserDialog();
 
             if (theDialog.ShowDialog() == DialogResult.OK)
@@ -103,7 +123,8 @@ namespace LocationDesigner
                 {
                     return theDialog.SelectedPath;
                 }
-                catch (Exception) {
+                catch (Exception)
+                {
                     MessageBox.Show("File could not be opened.");
                 }
             }
@@ -138,12 +159,42 @@ namespace LocationDesigner
             if (theDialog.ShowDialog() == DialogResult.OK)
             {
                 LocationLayoutManager.LoadFile(theDialog.FileName);
+                RenderPanel.TopLeftPoint = RenderPanel.DefaultSpot;
             }
         }
 
-        private void MouseHover(object sender, EventArgs e)
+        public void MainForm_MouseHover(object sender, EventArgs e)
         {
-            RenderPanel.TopLeftPoint = new Microsoft.Xna.Framework.Point(RenderPanel.TopLeftPoint.X - 1, RenderPanel.TopLeftPoint.Y);
+            Panel panel = sender as Panel;
+            if (int.TryParse((string)panel.Tag, out int j))
+            {
+                SelectedTag = j;
+            }
+        }
+
+        public void MainForm_MouseLeave(object sender, EventArgs e)
+        {
+            SelectedTag = -1;
+        }
+
+        private void OnTimeTick(object source, ElapsedEventArgs e)
+        {
+            if (SelectedTag == 0)
+            {
+                RenderPanel.TopLeftPoint = new Microsoft.Xna.Framework.Point(RenderPanel.TopLeftPoint.X + 1, RenderPanel.TopLeftPoint.Y);
+            }
+            else if (SelectedTag == 1)
+            {
+                RenderPanel.TopLeftPoint = new Microsoft.Xna.Framework.Point(RenderPanel.TopLeftPoint.X - 1, RenderPanel.TopLeftPoint.Y);
+            }
+            else if (SelectedTag == 2)
+            {
+                RenderPanel.TopLeftPoint = new Microsoft.Xna.Framework.Point(RenderPanel.TopLeftPoint.X, RenderPanel.TopLeftPoint.Y + 1);
+            }
+            else if (SelectedTag == 3)
+            {
+                RenderPanel.TopLeftPoint = new Microsoft.Xna.Framework.Point(RenderPanel.TopLeftPoint.X, RenderPanel.TopLeftPoint.Y - 1);
+            }
         }
     }
 }

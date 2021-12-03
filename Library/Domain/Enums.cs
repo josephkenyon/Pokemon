@@ -23,6 +23,8 @@ namespace Library.Domain
     public enum LocationName
     {
         PalletTown,
+        AshHomeUpStairs,
+        AshHomeDownStairs,
         //ViridianCity,
     }
 
@@ -55,6 +57,12 @@ namespace Library.Domain
         Bag,
     }
 
+    public enum BaseState
+    {
+        Base,
+        Message,
+        Transition
+    }
     public enum MenuItem
     {
         Pokemon,

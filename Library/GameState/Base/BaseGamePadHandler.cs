@@ -1,7 +1,10 @@
 ﻿using Library.Assets;
+using Library.Content;
 using Library.Domain;
+using Library.GameState.Base.MessageState;
 using Library.GameState.Battle;
 using Library.GameState.Input;
+using Library.World;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
@@ -41,6 +44,20 @@ namespace Library.GameState.Base
                 GameStateManager.Instance.UIState = UIState.Battle;
             }
 
+            if (gamePadState.Buttons.A == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            {
+                Player player = GameStateManager.Instance.GetPlayer();
+                Point nextPosition = (MovementHandler.GetNewPath(player.CharacterState.Direction, player.CharacterState.Position) / Constants.ScaledTileSize).ToPoint();
+                LocationLayout locationLayout = LocationManager.LocationLayouts[BaseStateManager.Instance.GetPlayerLocation()];
+                SignJson sign = locationLayout.Signs.ContainsKey(nextPosition) ? locationLayout.Signs[nextPosition] : null;
+                if (sign != null) {
+                    BaseStateManager.Instance.BaseState = BaseState.Message;
+                    MessageStateManager.Messages = new List<string>(sign.Messages);
+                }
+                GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
+                return;
+            }
+
             if (gamePadState.Buttons.Start == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 GameStateManager.Instance.UIState = UIState.Menu;
@@ -53,7 +70,8 @@ namespace Library.GameState.Base
             if (nullableDir != null)
             {
                 Direction direction = (Direction)nullableDir;
-                if (CollisionHandler.IsValidMove(GameStateManager.Instance.GetPlayer(), MovementHandler.GetNewPath(direction, GameStateManager.Instance.GetPlayer().CharacterState.Position)))
+                Vector newLocation = MovementHandler.GetNewPath(direction, GameStateManager.Instance.GetPlayer().CharacterState.Position);
+                if (CollisionHandler.IsValidMove(GameStateManager.Instance.GetPlayer(), newLocation))
                 {
                     GameStateManager.Instance.GetPlayer().CharacterState.StartMoving(direction);
                 }
