@@ -17,9 +17,9 @@ namespace LocationDesigner.World
         }
 
         public static void SaveFile(string fileName) {
-            string jsonText = JsonConvert.SerializeObject(LocationLayout, JsonSerializerSettings);
+            string jsonText = JsonConvert.SerializeObject(new LocationLayoutJsonCompact(LocationLayout), JsonSerializerSettings);
 
-            File.WriteAllText(fileName, JToken.Parse(jsonText).ToString(Formatting.Indented));
+            File.WriteAllText(fileName, JToken.Parse(jsonText).ToString(Formatting.None));
         }
 
         public static void LoadFile(string filePath)
@@ -30,7 +30,7 @@ namespace LocationDesigner.World
                 {
                     try
                     {
-                        LocationLayoutJson locationLayoutJson = JsonConvert.DeserializeObject<LocationLayoutJson>(r.ReadToEnd(), JsonSerializerSettings);
+                        LocationLayoutJson locationLayoutJson = new LocationLayoutJson(JsonConvert.DeserializeObject<LocationLayoutJsonCompact>(r.ReadToEnd(), JsonSerializerSettings));
                         LocationLayout = locationLayoutJson;
                     }
                     catch (Exception e) {

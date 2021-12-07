@@ -217,7 +217,13 @@ namespace LevelDesigner.Controls
             }
             else
             {
-                TileJson tile = LocationLayoutManager.LocationLayout.ForegroundTiles.FirstOrDefault(t => t.Position.X == xPosition && t.Position.Y == yPosition);
+                TileJson tile = LocationLayoutManager.LocationLayout.BackgroundTiles.FirstOrDefault(t => t.Position.X == xPosition && t.Position.Y == yPosition);
+                if (tile != null)
+                {
+                    LocationLayoutManager.LocationLayout.BackgroundTiles.Remove(tile);
+                }
+
+                tile = LocationLayoutManager.LocationLayout.ForegroundTiles.FirstOrDefault(t => t.Position.X == xPosition && t.Position.Y == yPosition);
                 if (tile != null)
                 {
                     LocationLayoutManager.LocationLayout.ForegroundTiles.Remove(tile);

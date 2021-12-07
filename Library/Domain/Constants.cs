@@ -19,6 +19,8 @@
         public static readonly int ItemDebounce = 10;
         public static readonly int MenuActivationDebounce = 15;
         public static readonly int MenuActivationDebounceLong = 30;
+
+        public static readonly int NPCRandomConstant = 1600;
         public static float Scaler => ScaledTileSize / TileSize;
 
         public static string PlayerName = "Ash";

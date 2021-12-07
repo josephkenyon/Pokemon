@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using Library.Content;
 using Library.Domain;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace Library.GameState.Base.MessageState
 {
     public class MessageStateManager
     {
-        public static List<string> Messages { get; set; }
+        public static List<Message> Messages { get; set; }
         private static int RevealedLetters { get; set; }
 
         public static void Update()
         {
-            if (Messages.Count > 0 && RevealedLetters < Messages.First().Length) {
+            if (Messages.Count > 0 && RevealedLetters < Messages.First().Content.Length) {
                 RevealedLetters++;
             }
         }
@@ -34,7 +31,7 @@ namespace Library.GameState.Base.MessageState
 
         public static string GetMessage() {
             if (Messages.Count > 0) {
-                return Messages.First().Substring(0, RevealedLetters);
+                return Messages.First().Content.Substring(0, RevealedLetters);
             }
 
             return "";

@@ -8,11 +8,17 @@ using System.Collections.Generic;
 
 namespace Library.Base
 {
-    public static class BaseDrawingManager
+    public class BaseDrawingManager : IBaseDrawingManager
     {
+        public static BaseDrawingManager Instance { get; private set; }
         public static Vector CameraTranslation(Vector Vector) => Vector - GameStateManager.Instance.CameraLocation + (new Vector(Constants.ResolutionWidth, Constants.ResolutionHeight) / 2);
+        
+        public static void Initialize()
+        {
+            Instance = new BaseDrawingManager();
+        }
 
-        public static void DrawBatch(SpriteBatch spriteBatch, IEnumerable<IBaseDrawableObject> drawingObjects)
+        public void DrawBatch(SpriteBatch spriteBatch, IEnumerable<IBaseDrawableObject> drawingObjects)
         {
             List<BaseDrawingObject> baseDrawingObjects = new List<BaseDrawingObject>();
 
@@ -24,7 +30,7 @@ namespace Library.Base
             DrawingManager.DrawBatch(spriteBatch, baseDrawingObjects);
         }
 
-        public static void DrawSingle(SpriteBatch spriteBatch, IBaseDrawableObject drawingObject)
+        public void DrawSingle(SpriteBatch spriteBatch, IBaseDrawableObject drawingObject)
         {
             DrawingManager.DrawSingle(spriteBatch, ConvertBaseDrawableObject(drawingObject));
         }
@@ -34,7 +40,8 @@ namespace Library.Base
             {
                 Position = drawingObject.GetPosition(),
                 SourceRectangle = drawingObject.GetSourceRectangle(),
-                TextureName = drawingObject.GetTextureName()
+                TextureName = drawingObject.GetTextureName(),
+                SpriteEffects = drawingObject.GetSpriteEffects()
             };
         }
     }
@@ -44,9 +51,11 @@ namespace Library.Base
         public TextureName TextureName { get; set; }
         public Rectangle SourceRectangle { get; set; }
         public Vector Position { get; set; }
+        public SpriteEffects SpriteEffects { get; set; }
         public Vector2 GetPosition() => BaseDrawingManager.CameraTranslation(Position).ToVector2();
         public Rectangle GetSourceRectangle() => SourceRectangle;
         public Texture2D GetTexture() => TextureManager.BasicTextures[TextureName];
+        public SpriteEffects GetSpriteEffects() => SpriteEffects;
     }
 
     public interface IBaseDrawableObject
@@ -54,5 +63,6 @@ namespace Library.Base
         TextureName GetTextureName();
         Rectangle GetSourceRectangle();
         Vector GetPosition();
+        SpriteEffects GetSpriteEffects() => SpriteEffects.None;
     }
 }

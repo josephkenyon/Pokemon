@@ -7,7 +7,9 @@ using Library.GameState.Input;
 using Library.World;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Library.GameState.Base
 {
@@ -47,12 +49,23 @@ namespace Library.GameState.Base
             if (gamePadState.Buttons.A == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 Player player = GameStateManager.Instance.GetPlayer();
-                Point nextPosition = (MovementHandler.GetNewPath(player.CharacterState.Direction, player.CharacterState.Position) / Constants.ScaledTileSize).ToPoint();
+                Vector newLocation = MovementHandler.GetNewPath(player.CharacterState.Direction, player.CharacterState.Position);
                 LocationLayout locationLayout = LocationManager.LocationLayouts[BaseStateManager.Instance.GetPlayerLocation()];
+                Point nextPosition = (newLocation / Constants.ScaledTileSize).ToPoint();
                 SignJson sign = locationLayout.Signs.ContainsKey(nextPosition) ? locationLayout.Signs[nextPosition] : null;
-                if (sign != null) {
+                if (sign != null)
+                {
                     BaseStateManager.Instance.BaseState = BaseState.Message;
-                    MessageStateManager.Messages = new List<string>(sign.Messages);
+                    MessageStateManager.Messages = new List<Message>();
+                    sign.Messages.ForEach(message => MessageStateManager.Messages.Add(new Message(message)));
+                }
+                else {
+                    LocationState locationState = BaseStateManager.Instance.LocationStates[BaseStateManager.Instance.GetPlayerLocation()];
+                    Character character = locationState.Characters.FirstOrDefault(character => character.CharacterState.Position == newLocation);
+                    if (character != null && character.CharacterState is NPCState npcState) {
+                        BaseStateManager.Instance.BaseState = BaseState.Message;
+                        MessageStateManager.Messages = new List<Message>(npcState.Messages);
+                    }
                 }
                 GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
                 return;
@@ -71,7 +84,7 @@ namespace Library.GameState.Base
             {
                 Direction direction = (Direction)nullableDir;
                 Vector newLocation = MovementHandler.GetNewPath(direction, GameStateManager.Instance.GetPlayer().CharacterState.Position);
-                if (CollisionHandler.IsValidMove(GameStateManager.Instance.GetPlayer(), newLocation))
+                if (CollisionHandler.IsValidMove(GameStateManager.Instance.GetPlayer().CharacterState, newLocation))
                 {
                     GameStateManager.Instance.GetPlayer().CharacterState.StartMoving(direction);
                 }

@@ -25,6 +25,8 @@ namespace Library.Domain
         PalletTown,
         AshHomeUpStairs,
         AshHomeDownStairs,
+        OakPokemonResearchLab,
+        Route1,
         //ViridianCity,
     }
 
@@ -88,6 +90,12 @@ namespace Library.Domain
         Right
     }
 
+    public enum Orientation
+    {
+        Vertical,
+        Horizontal,
+    }
+
     public enum TextureName
     {
         Background,
@@ -95,12 +103,13 @@ namespace Library.Domain
         Grass,
         Animation,
         Ash,
-        battleAsh,
+        BattleAsh,
         Policeman,
         Effects,
         BattleWallpaper,
         HealthExpBar,
         EmptyWhiteTexture,
+        NPCTileset,
     }
 
     public enum Badge {

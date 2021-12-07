@@ -1,19 +1,39 @@
 ﻿using Library.Content;
 using Library.Domain;
-using Library.GameState;
 using Library.GameState.Battle;
 using Library.Graphics;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using System.Collections.Generic;
 
 namespace Library.GameState.Base.MessageState
 {
     public static class MessageStateDrawingManager
     {
-        public static void Draw(SpriteBatch spriteBatch) {
+        public static void Draw(SpriteBatch spriteBatch)
+        {
             DrawingManager.DrawSingle(spriteBatch, new MessageObject());
-            DrawingManager.DrawString(spriteBatch, new MessageStringObject { Position = new Vector(24, 24) * Constants.Scaler, String = MessageStateManager.GetMessage() });
+
+            string message = MessageStateManager.GetMessage();
+            Vector2 messageSize = DrawingManager.DefaultFont.MeasureString(message);
+            int maxWidth = (int)(BattleGraphicsHelper.BattleMessageTextureSize.X * Constants.ScaledTileSize - (4 * Constants.ScaledTileSize));
+            int index = message.Length;
+            if (messageSize.X > maxWidth)
+            {
+                while (DrawingManager.DefaultFont.MeasureString(message.Substring(0, index)).X > maxWidth || !message.Substring(0, index).EndsWith(" "))
+                {
+                    index--;
+                }
+            }
+
+            if (index != message.Length)
+            {
+                DrawingManager.DrawString(spriteBatch, new MessageStringObject { Position = new Vector(22, 21) * Constants.Scaler, String = message.Substring(0, index) });
+                DrawingManager.DrawString(spriteBatch, new MessageStringObject { Position = new Vector(22, 32) * Constants.Scaler, String = message.Substring(index, message.Length - index) });
+            }
+            else
+            {
+                DrawingManager.DrawString(spriteBatch, new MessageStringObject { Position = new Vector(22, 21) * Constants.Scaler, String = MessageStateManager.GetMessage() });
+            }
         }
 
         public class MessageObject : IDrawingObject

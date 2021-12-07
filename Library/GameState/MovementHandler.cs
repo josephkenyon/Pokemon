@@ -52,16 +52,24 @@ namespace Library.GameState
             }
             else
             {
-                LocationLayout location = LocationManager.LocationLayouts[character.CharacterState.CurrentLocation];
-                
-                if (location.Portals.ContainsKey((movementPath / Constants.ScaledTileSize).ToPoint()))
+                if (CollisionHandler.NewStitchLocationName != null)
                 {
-                    PortalJson portal = location.Portals[(movementPath / Constants.ScaledTileSize).ToPoint()];
-                    TransitionStateManager.StartTransition(portal.ToLocationName, portal.Coordinate);
+                    TransitionStateManager.TransitionInstantly((LocationName) CollisionHandler.NewStitchLocationName, new Vector(CollisionHandler.NewStitchLocation).ToPoint());
+                    CollisionHandler.NewStitchLocationName = null;
                 }
                 else
                 {
-                    SpriteEffectsManager.CharacterMovementCompleted(character);
+                    LocationLayout location = LocationManager.LocationLayouts[character.CharacterState.CurrentLocation];
+
+                    if (location.Portals.ContainsKey((movementPath / Constants.ScaledTileSize).ToPoint()))
+                    {
+                        PortalJson portal = location.Portals[(movementPath / Constants.ScaledTileSize).ToPoint()];
+                        TransitionStateManager.StartTransition(portal.ToLocationName, portal.Coordinate);
+                    }
+                    else
+                    {
+                        SpriteEffectsManager.CharacterMovementCompleted(character);
+                    }
                 }
 
                 character.CharacterState.IsMoving = false;

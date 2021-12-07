@@ -12,7 +12,9 @@ namespace Library.Content
         public static string LocationsDirectory = "\\locations";
         public static string TileSetDirectory = "\\tilesets";
         public static string WallpaperDirectory = "\\wallpapers";
+        public static string ConfigurationDirectory = "\\configuration";
 
+        public static string LocationStichesFileName = "\\locationStiches";
         public static string MoveFileName = "\\moves";
 
         public static string JsonExtension = ".json";

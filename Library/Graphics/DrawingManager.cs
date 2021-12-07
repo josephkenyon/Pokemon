@@ -8,7 +8,7 @@ namespace Library.Graphics
 {
     public static class DrawingManager
     {
-        private static SpriteFont DefaultFont { get; set; }
+        public static SpriteFont DefaultFont { get; private set; }
         private static void BeginSpriteBatch(SpriteBatch spriteBatch) => spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp);
         private static void EndSpriteBatch(SpriteBatch spriteBatch) => spriteBatch.End();
 

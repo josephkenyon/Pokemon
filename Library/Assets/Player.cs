@@ -17,5 +17,7 @@ namespace Library.Assets
             location: (CharacterState.Position * Constants.ScaledTileSize).ToPoint(),
             size: (SpriteSize * Constants.ScaledTileSize).ToPoint()
         );
+
+        public override TextureName GetTextureName() => TextureName.Ash;
     }
 }

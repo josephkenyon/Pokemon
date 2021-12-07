@@ -47,16 +47,16 @@ namespace Library.GameState.Menu
                 {
                     if (MenuStateManager.Instance.Saving)
                     {
-                        MenuStateManager.Instance.CloseMenu();
                         FileHelper.SaveState(MenuStateManager.Instance.SaveLoadSelectedIndex);
+                        MenuStateManager.Instance.CloseMenu();
                     }
                     else if (MenuStateManager.Instance.Loading)
                     {
                         GameStateManager gameStateManager = FileHelper.LoadState(MenuStateManager.Instance.SaveLoadSelectedIndex);
                         if (gameStateManager != null)
                         {
-                            MenuStateManager.Instance.CloseMenu();
                             GameStateManager.Instance = gameStateManager;
+                            MenuStateManager.Instance.CloseMenu();
                         }
                     }
                     else

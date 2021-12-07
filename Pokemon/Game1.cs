@@ -5,6 +5,7 @@ using Library.Content;
 using Library.GameState;
 using Library.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Library.Base;
 
 namespace GameManager
 {
@@ -40,6 +41,8 @@ namespace GameManager
             DrawingManager.Initialize(Content);
 
             GameStateManager.Initialize();
+            BaseDrawingManager.Initialize();
+            StitchDrawingManager.Initialize();
         }
 
         protected override void Update(GameTime gameTime)

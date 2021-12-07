@@ -2,11 +2,10 @@
 
 namespace LocationDesigner.World
 {
-    public class PortalJson
+    public class RugDrawingObject
     {
         public string ToLocationName { get; set; }
         public Point Position { get; set; }
         public Point Coordinate { get; set; }
-        public bool HasRug { get; set; }
     }
 }

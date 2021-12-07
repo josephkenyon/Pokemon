@@ -26,7 +26,7 @@ namespace Library.GameState.Battle
         public static Rectangle MenuSourceRectangle => new Rectangle((MenuTexturePosition * Constants.TileSize).ToPoint(), (MenuTextureSize * Constants.TileSize).ToPoint());
 
         private static Vector BattleMessageTexturePosition => new Vector(0, 12);
-        private static Vector BattleMessageTextureSize => new Vector(12, 3);
+        public static Vector BattleMessageTextureSize => new Vector(12, 3);
         public static Rectangle BattleMessageSourceRectangle => new Rectangle((BattleMessageTexturePosition * Constants.TileSize).ToPoint(), (BattleMessageTextureSize * Constants.TileSize).ToPoint());
 
 
@@ -128,8 +128,8 @@ namespace Library.GameState.Battle
     public class BattleAsh : IDrawingObject
     {
         public Rectangle GetSourceRectangle() => new Rectangle(0, 0, GetTexture().Width, GetTexture().Height);
-        public Texture2D GetTexture() => TextureManager.BasicTextures[TextureName.battleAsh];
-        public Texture2D GetWhiteTexture() => TextureManager.WhiteNamedTextures[TextureName.battleAsh];
+        public Texture2D GetTexture() => TextureManager.BasicTextures[TextureName.BattleAsh];
+        public Texture2D GetWhiteTexture() => TextureManager.WhiteNamedTextures[TextureName.BattleAsh];
         public Vector2 GetPosition() => new Vector2(2.5f, 2.5f) * Constants.ScaledTileSize;
         public Color GetColor() => Color.White * (BattleStateManager.Battle.State == BattleState.AshSelect ? BattleStateManager.Battle.Timer : 1f);
         public bool WhiteFlash() => BattleStateManager.Battle.State == BattleState.AshSelect;

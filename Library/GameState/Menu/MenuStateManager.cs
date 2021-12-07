@@ -37,8 +37,7 @@ namespace Library.GameState.Menu
             {
                 if (Saving || Loading)
                 {
-                    SaveLoadSelectedIndex++;
-                    SaveLoadSelectedIndex = SaveLoadSelectedIndex == Enum.GetValues(typeof(MenuItem)).Length ? 0 : SaveLoadSelectedIndex;
+                    SaveLoadSelectedIndex = SaveLoadSelectedIndex == Enum.GetValues(typeof(MenuItem)).Length ? 0 : SaveLoadSelectedIndex + 1;
                 }
                 else
                 {

@@ -5,6 +5,7 @@ using Library.Content;
 using Library.Domain;
 using Library.GameState.Base.MessageState;
 using Library.GameState.Base.TransitionState;
+using Library.World;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Library.GameState.Base
@@ -46,10 +47,12 @@ namespace Library.GameState.Base
                 TransitionStateManager.Update();
             }
 
-            LocationStates[GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation].Update();
-            if (BaseState == BaseState.Message) {
+            if (BaseState == BaseState.Message)
+            {
                 MessageStateManager.Update();
             }
+
+            LocationStates[GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation].Update();
 
             GameStateManager.Instance.CameraLocation = GameStateManager.Instance.GetPlayer().CharacterState.Position + (new Vector(GameStateManager.Instance.GetPlayer().GetTargetRectangle().Size) / 2);
 
@@ -58,11 +61,15 @@ namespace Library.GameState.Base
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            LocationManager.LocationLayouts[GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation].DrawBackground(spriteBatch);
+            LocationName currentLocation = GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation;
+            LocationManager.LocationLayouts[currentLocation].DrawBackground(spriteBatch);
 
-            LocationStates[GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation].Draw(spriteBatch);
+            List<LocationStitch> stitches = WorldManager.LocationStitches.Where(stitch => stitch.LocationA == currentLocation || stitch.LocationB == currentLocation).ToList();
+            stitches.ForEach(stitch => WorldManager.DrawStitch(spriteBatch, stitch));
 
-            LocationManager.LocationLayouts[GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation].DrawForeground(spriteBatch);
+            LocationStates[currentLocation].Draw(spriteBatch);
+
+            LocationManager.LocationLayouts[currentLocation].DrawForeground(spriteBatch);
 
             if (BaseState == BaseState.Message)
             {

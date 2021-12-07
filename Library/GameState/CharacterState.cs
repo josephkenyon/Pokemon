@@ -15,6 +15,11 @@ namespace Library.GameState
         public Vector MovementPath { get; set; }
         public Vector TileSetPosition => Position / Constants.ScaledTileSize;
         public List<Badge> Badges { get; set; }
+        public override int NumberOfFrames => 3;
+
+        public CharacterState() {
+            Position = Vector.Zero;
+        }
 
         public void StartMoving(Direction direction)
         {

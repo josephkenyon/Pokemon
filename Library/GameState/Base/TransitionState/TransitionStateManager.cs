@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
+﻿using System.Linq;
 using Library.Assets;
 using Library.Content;
 using Library.Domain;
@@ -16,11 +13,12 @@ namespace Library.GameState.Base.TransitionState
         public static LocationName TransitionLocationName { get; private set; }
         public static Point TransitionLocationPoint { get; private set; }
         public static int Counter { get; set; }
+        public static bool TransitionInstantlyNextTime { get; private set; }
+        private static Texture2D BlankTexture { get; set; }
 
         private static Rectangle DestinationRectangle = new Rectangle(0, 0, Constants.ResolutionWidth, Constants.ResolutionHeight);
+
         private static Rectangle SourceRectangle = new Rectangle(0, 0, 1, 1);
-        private static Texture2D BlankTexture { get; set; }
-        
 
         public static void StartTransition(LocationName locationName, Point locationCoordinates) {
             TransitionLocationName = locationName;
@@ -34,18 +32,37 @@ namespace Library.GameState.Base.TransitionState
             }
         }
 
+        public static void TransitionInstantly(LocationName locationName, Point locationCoordinates)
+        {
+            TransitionInstantlyNextTime = true;
+            StartTransition(locationName, locationCoordinates);
+        }
+
+        private static void Transition(LocationName locationName, Point locationCoordinates)
+        {
+            Player player = GameStateManager.Instance.GetPlayer();
+            CharacterState playerState = player.CharacterState;
+            BaseStateManager.Instance.LocationStates[playerState.CurrentLocation].Characters.Remove(player);
+
+            playerState.CurrentLocation = locationName;
+            playerState.Position = new Vector(locationCoordinates) * Constants.ScaledTileSize;
+            playerState.IsMoving = false;
+
+            BaseStateManager.Instance.LocationStates[locationName].Characters.Add(player);
+
+            TransitionInstantlyNextTime = false;
+        }
+
         public static void Update()
         {
-            if (Counter == Constants.TransitionTime / 2)
+            if (Counter == Constants.TransitionTime / 2 || TransitionInstantlyNextTime)
             {
-                Player player = GameStateManager.Instance.GetPlayer();
-                CharacterState playerState = player.CharacterState;
-                BaseStateManager.Instance.LocationStates[playerState.CurrentLocation].Characters.Remove(player);
+                if (TransitionInstantlyNextTime)
+                {
+                    BaseStateManager.Instance.BaseState = BaseState.Base;
+                }
 
-                playerState.CurrentLocation = TransitionLocationName;
-                playerState.Position = new Vector(TransitionLocationPoint) * Constants.ScaledTileSize;
-
-                BaseStateManager.Instance.LocationStates[TransitionLocationName].Characters.Add(player);
+                Transition(TransitionLocationName, TransitionLocationPoint);
             }
             else if (Counter >= Constants.TransitionTime)
             {
@@ -57,43 +74,38 @@ namespace Library.GameState.Base.TransitionState
 
         public static void Draw(SpriteBatch spriteBatch)
         {
-            float scaler;
-            if (Counter < Constants.TransitionTime / 2)
+            float scaler = 0f;
+            if (!TransitionInstantlyNextTime)
             {
-                Debug.WriteLine("1" + 1f / Constants.TransitionTime);
-                Debug.WriteLine("2" + (1f / Constants.TransitionTime) * 2);
-                Debug.WriteLine("3" + ((1f / Constants.TransitionTime) * 2) * Counter);
-
-                scaler = ((1f / Constants.TransitionTime) / 2) * Counter;
+                if (Counter < Constants.TransitionTime / 2)
+                {
+                    scaler = ((1f / Constants.TransitionTime) / 2) * Counter * 2.5f;
+                }
+                else if (Counter == Constants.TransitionTime / 2)
+                {
+                    scaler = 1f;
+                }
+                else
+                {
+                    scaler = ((1f / Constants.TransitionTime) * 2) * (Constants.TransitionTime - Counter);
+                }
             }
-            else if (Counter == Constants.TransitionTime / 2)
-            {
-                scaler = 1f;
-            }
-            else {
-                scaler = ((1f / Constants.TransitionTime) * 2) * (Constants.TransitionTime - Counter);
-            }
-
 
             spriteBatch.Begin();
-            spriteBatch.Draw(BlankTexture, DestinationRectangle, SourceRectangle, Color.Black * scaler);
+            spriteBatch.Draw(TextureManager.BasicTextures[TextureName.EmptyWhiteTexture], DestinationRectangle, SourceRectangle, Color.Black * scaler);
             spriteBatch.End();
         }
 
         private static Texture2D CreateTexture(GraphicsDevice device)
         {
-            //initialize a texture
             Texture2D texture = new Texture2D(device, 1, 1);
 
-            //the array holds the color for each pixel in the texture
             Color[] data = new Color[1];
             for (int pixel = 0; pixel < data.Count(); pixel++)
             {
-                //the function applies the color according to the specified pixel
                 data[pixel] = Color.White;
             }
 
-            //set the color
             texture.SetData(data);
 
             return texture;

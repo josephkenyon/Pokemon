@@ -13,6 +13,9 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin configuration/locationStiches.json
+/copy:configuration/locationStiches.json
+
 #begin encyclopedia/moves.json
 /copy:encyclopedia/moves.json
 
@@ -44,8 +47,14 @@
 #begin locations/ashHomeUpStairs.json
 /copy:locations/ashHomeUpStairs.json
 
+#begin locations/oakPokemonResearchLab.json
+/copy:locations/oakPokemonResearchLab.json
+
 #begin locations/palletTown.json
 /copy:locations/palletTown.json
+
+#begin locations/route1.json
+/copy:locations/route1.json
 
 #begin sprites/characters/ashWalking.png
 /importer:TextureImporter
@@ -82,6 +91,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:sprites/characters/npcTileset.png
+
+#begin sprites/characters/oakWalking.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/characters/oakWalking.png
 
 #begin sprites/effects/battleMenus.png
 /importer:TextureImporter

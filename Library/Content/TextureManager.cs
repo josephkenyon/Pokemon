@@ -33,7 +33,8 @@ namespace Library.Content
                 { TextureName.BattleWallpaper, contentManager.Load<Texture2D>("sprites\\wallpapers\\battleArea") },
                 { TextureName.HealthExpBar, contentManager.Load<Texture2D>("sprites\\effects\\healthExpBar") },
                 { TextureName.EmptyWhiteTexture, contentManager.Load<Texture2D>("sprites\\effects\\blankWhiteTexture") },
-                { TextureName.battleAsh, contentManager.Load<Texture2D>("sprites\\characters\\battleAsh") }
+                { TextureName.BattleAsh, contentManager.Load<Texture2D>("sprites\\characters\\battleAsh") },
+                { TextureName.NPCTileset, contentManager.Load<Texture2D>("sprites\\characters\\npcTileset") }
             };
 
             foreach (Species species in Enum.GetValues(typeof(Species)))
