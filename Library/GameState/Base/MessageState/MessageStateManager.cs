@@ -6,8 +6,16 @@ namespace Library.GameState.Base.MessageState
 {
     public class MessageStateManager
     {
-        public static List<Message> Messages { get; set; }
+        public static List<Message> Messages { get; private set; }
         private static int RevealedLetters { get; set; }
+
+        public static void EnterMessageState(List<Message> messages)
+        {
+            GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
+
+            Messages = messages;
+            BaseStateManager.Instance.StateStack.Push(BaseState.Message);
+        }
 
         public static void Update()
         {
@@ -25,7 +33,7 @@ namespace Library.GameState.Base.MessageState
 
             if (Messages.Count == 0) {
                 RevealedLetters = 0;
-                BaseStateManager.Instance.BaseState = BaseState.Base;
+                BaseStateManager.Instance.StateStack.Pop();
             }
         }
 

@@ -7,9 +7,10 @@ namespace Library.Assets
 {
     public abstract class Character : IBaseDrawableObject, IAnimatedAsset, ICollidable
     {
-        public string Name { get; set; }
+        public CharacterName? Name { get; set; }
         public Vector SpriteSize { get; set; }
         public CharacterState CharacterState { get; set; }
+        public virtual int NumberOfFrames => 3;
 
         public Character() {
             SpriteSize = new Vector(1, 2);

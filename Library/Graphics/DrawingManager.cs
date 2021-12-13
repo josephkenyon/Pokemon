@@ -14,12 +14,21 @@ namespace Library.Graphics
 
         public static void DrawBatch(SpriteBatch spriteBatch, IEnumerable<IDrawingObject> drawingObjects)
         {
-            BeginSpriteBatch(spriteBatch);
+            bool began = false;
             foreach (IDrawingObject drawingObject in drawingObjects)
             {
+                if (!began)
+                {
+                    BeginSpriteBatch(spriteBatch);
+                    began = true;
+                }
                 Draw(spriteBatch, drawingObject);
             }
-            EndSpriteBatch(spriteBatch);
+
+            if (began)
+            {
+                EndSpriteBatch(spriteBatch);
+            }
         }
 
         public static void DrawSingle(SpriteBatch spriteBatch, IDrawingObject drawingObject)

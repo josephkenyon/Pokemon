@@ -1,7 +1,6 @@
-﻿using Library.Assets;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
-namespace Library.World
+namespace Library.World.Json
 {
     public class LocationLayoutJson
     {
@@ -19,10 +18,16 @@ namespace Library.World
         public List<SignJson> Signs { get; set; }
         public List<PortalJson> Portals { get; set; }
         public List<NPCJson> InitialNPCS { get; set; }
+        public List<CapturedPokemonJson> InitialCapturedPokemon { get; set; }
+        public List<ItemJson> InitialItems { get; set; }
+        public List<LocationPokemonJson> LocationPokemonJson { get; set; }
 
         public LocationLayoutJson()
         {
             InitialNPCS = new List<NPCJson>();
+            InitialCapturedPokemon = new List<CapturedPokemonJson>();
+            InitialItems = new List<ItemJson>();
+            LocationPokemonJson = new List<LocationPokemonJson>();
         }
     }
 }

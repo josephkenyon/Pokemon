@@ -10,13 +10,14 @@
         "Speed": 45
     },
     "EV": 1,
+    "BaseExperienceReward": 64,
     "CatchRate": 65,
     "Types": ["Grass"],
     "Moves": [
         {"MoveName": "Tackle", "Level": 1, "Rank": 15},
         {"MoveName": "Growl", "Level": 1, "Rank": 14},
-        {"MoveName": "Vine_Whip", "Level": 3, "Rank": 8},
-        {"MoveName": "Growth", "Level": 6, "Rank": 13},
+        {"MoveName": "Vine_Whip", "Level": 6, "Rank": 8},
+        {"MoveName": "Growth", "Level": 7, "Rank": 13},
         {"MoveName": "Leech_Seed", "Level": 9, "Rank": 12},
         {"MoveName": "Razor_Leaf", "Level": 12, "Rank": 5},
         {"MoveName": "Poison_Powder", "Level": 15, "Rank": 8},
@@ -41,6 +42,7 @@
         "Speed": 60
     },
     "EV": 2,
+    "BaseExperienceReward": 142,
     "CatchRate": 55,
     "Types": ["Grass", "Poison"],
     "Moves": [
@@ -72,6 +74,7 @@
         "Speed": 80
     },
     "EV": 3,
+    "BaseExperienceReward": 263,
     "CatchRate": 45,
     "Types": ["Grass", "Poison"],
     "Moves": [
@@ -105,6 +108,7 @@
         "Speed": 65
     },
     "EV": 1,
+    "BaseExperienceReward": 62,
     "CatchRate": 45,
     "Types": ["Fire"],
     "Moves": [
@@ -131,6 +135,7 @@
         "Speed": 80
     },
     "EV": 2,
+    "BaseExperienceReward": 142,
     "CatchRate": 55,
     "Types": ["Fire"],
     "Moves": [
@@ -157,6 +162,7 @@
         "Speed": 100
     },
     "EV": 3,
+    "BaseExperienceReward": 267,
     "CatchRate": 65,
     "Types": ["Fire", "Flying"],
     "Moves": [
@@ -184,6 +190,7 @@
         "Speed": 43
     },
     "EV": 1,
+    "BaseExperienceReward": 63,
     "CatchRate": 45,
     "Types": ["Water"],
     "Moves": [
@@ -211,6 +218,7 @@
         "Speed": 58
     },
     "EV": 2,
+    "BaseExperienceReward": 142,
     "CatchRate": 55,
     "Types": ["Water"],
     "Moves": [
@@ -238,6 +246,7 @@
         "Speed": 78
     },
     "EV": 3,
+    "BaseExperienceReward": 265,
     "CatchRate": 65,
     "Types": ["Water"],
     "Moves": [
@@ -265,6 +274,7 @@
         "Speed": 45
     },
     "EV": 1,
+    "BaseExperienceReward": 39,
     "CatchRate": 255,
     "Types": ["Bug"],
     "Moves": [
@@ -284,6 +294,7 @@
         "Speed": 30
     },
     "EV": 2,
+    "BaseExperienceReward": 72,
     "CatchRate": 120,
     "Types": ["Bug"],
     "Moves": [
@@ -301,6 +312,7 @@
         "Speed": 70
     },
     "EV": 3,
+    "BaseExperienceReward": 198,
     "CatchRate": 45,
     "Types": ["Bug", "Flying"],
     "Moves": [
@@ -326,6 +338,7 @@
         "Speed": 50
     },
     "EV": 1,
+    "BaseExperienceReward": 39,
     "CatchRate": 255,
     "Types": ["Bug", "Poison"],
     "Moves": [
@@ -344,6 +357,7 @@
         "Speed": 35
     },
     "EV": 2,
+    "BaseExperienceReward": 72,
     "CatchRate": 120,
     "Types": ["Bug", "Poison"],
     "Moves": [
@@ -361,6 +375,7 @@
         "Speed": 75
     },
     "EV": 3,
+    "BaseExperienceReward": 198,
     "CatchRate": 45,
     "Types": ["Bug", "Poison"],
     "Moves": [
@@ -385,6 +400,7 @@
         "Speed": 56
     },
     "EV": 1,
+    "BaseExperienceReward": 50,
     "CatchRate": 255,
     "Types": ["Normal", "Flying"],
     "Moves": [
@@ -410,6 +426,7 @@
         "Speed": 71
     },
     "EV": 2,
+    "BaseExperienceReward": 122,
     "CatchRate": 120,
     "Types": ["Normal", "Flying"],
     "Moves": [
@@ -435,6 +452,7 @@
         "Speed": 91
     },
     "EV": 3,
+    "BaseExperienceReward": 240,
     "CatchRate": 45,
     "Types": ["Normal", "Flying"],
     "Moves": [
@@ -460,6 +478,7 @@
         "Speed": 72
     },
     "EV": 1,
+    "BaseExperienceReward": 51,
     "CatchRate": 255,
     "Types": ["Normal"],
     "Moves": [
@@ -484,6 +503,7 @@
         "Speed": 97
     },
     "EV": 2,
+    "BaseExperienceReward": 145,
     "CatchRate": 120,
     "Types": ["Normal", "Flying"],
     "Moves": [
@@ -508,6 +528,7 @@
         "Speed": 70
     },
     "EV": 1,
+    "BaseExperienceReward": 52,
     "CatchRate": 255,
     "Types": ["Normal", "Flying"],
     "Moves": [
@@ -533,6 +554,7 @@
         "Speed": 100
     },
     "EV": 2,
+    "BaseExperienceReward": 155,
     "CatchRate": 90,
     "Types": ["Normal", "Flying"],
     "Moves": [
@@ -557,6 +579,7 @@
         "Speed": 55
     },
     "EV": 1,
+    "BaseExperienceReward": 58,
     "CatchRate": 255,
     "Types": ["Poison"],
     "Moves": [
@@ -584,6 +607,7 @@
         "Speed": 80
     },
     "EV": 2,
+    "BaseExperienceReward": 157,
     "CatchRate": 90,
     "Types": ["Poison"],
     "Moves": [
@@ -611,6 +635,7 @@
         "Speed": 90
     },
     "EV": 2,
+    "BaseExperienceReward": 112,
     "CatchRate": 190,
     "Types": ["Electric"],
     "Moves": [

@@ -25,6 +25,8 @@ namespace Library.Content
             BasicTextures = new Dictionary<TextureName, Texture2D>
             {
                 { TextureName.Ash, contentManager.Load<Texture2D>("sprites\\characters\\ashWalking") },
+                { TextureName.Oak, contentManager.Load<Texture2D>("sprites\\characters\\oakWalking") },
+                { TextureName.Green, contentManager.Load<Texture2D>("sprites\\characters\\greenWalking") },
                 { TextureName.Background, contentManager.Load<Texture2D>("sprites\\tilesets\\backgroundTileset") },
                 { TextureName.Foreground, contentManager.Load<Texture2D>("sprites\\tilesets\\foregroundTileset") },
                 { TextureName.Grass, contentManager.Load<Texture2D>("sprites\\tilesets\\grassTileset") },

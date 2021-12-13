@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System;
+using System.Linq;
 using Library.Base;
 using Library.Content;
 using Library.Domain;
@@ -16,11 +17,11 @@ namespace Library.GameState
         public static bool IsValidMove(CharacterState characterState, Vector movement)
         {
             Point newTilePosition = (movement / Constants.ScaledTileSize).ToPoint();
-            if (IsValidMove(characterState.CurrentLocation, characterState, newTilePosition))
+            if (IsValidMove(characterState.CurrentLocation, newTilePosition))
             {
                 return true;
             }
-            else if (IsValidMove(StitchDrawingManager.StitchHelperObject.Location, characterState, WorldManager.GetStitchLocation(newTilePosition)))
+            else if (IsValidMove(StitchDrawingManager.StitchHelperObject.Location, WorldManager.GetStitchLocation(newTilePosition)))
             {
                 NewStitchLocationName = StitchDrawingManager.StitchHelperObject.Location;
                 NewStitchLocation = WorldManager.GetStitchLocation(newTilePosition);
@@ -30,13 +31,21 @@ namespace Library.GameState
             return false;
         }
 
-        private static bool IsValidMove(LocationName locationName, CharacterState characterState, Point newTilePosition)
+        private static bool IsValidMove(LocationName locationName, Point newTilePosition)
         {
             Vector movement = new Vector(newTilePosition) * Constants.ScaledTileSize;
 
             LocationLayout location = LocationManager.LocationLayouts[locationName];
             LocationState locationState = BaseStateManager.Instance.LocationStates[locationName];
             if (locationState.Characters.Exists(character => character.CharacterState.Position == movement))
+            {
+                return false;
+            }
+            else if (locationState.CapturedPokemon.Exists(capturedPokemon => capturedPokemon.Position.ToPoint() == newTilePosition))
+            {
+                return false;
+            }
+            else if (locationState.Items.Exists(item => item.Position.ToPoint() == newTilePosition))
             {
                 return false;
             }

@@ -6,6 +6,8 @@ using Library.GameState;
 using Library.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Library.Base;
+using Library.World;
+using Library.Cutscenes;
 
 namespace GameManager
 {
@@ -37,12 +39,16 @@ namespace GameManager
             MoveManager.Load(Content);
             TypeManager.Load(Content);
             TextureManager.Load(Content);
+            WorldManager.Load(Content);
             LocationManager.Load(Content);
             DrawingManager.Initialize(Content);
 
             GameStateManager.Initialize();
             BaseDrawingManager.Initialize();
             StitchDrawingManager.Initialize();
+            SpecialActionManager.Initialize();
+
+            CutsceneManager.Load(Content);
         }
 
         protected override void Update(GameTime gameTime)

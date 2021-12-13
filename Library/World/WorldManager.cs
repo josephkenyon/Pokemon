@@ -2,15 +2,28 @@
 using Library.Content;
 using Library.Domain;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
+using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 
 namespace Library.World
 {
     public class WorldManager
     {
-        public static List<LocationStitch> LocationStitches { get; set; }
+        public static List<LocationStitch> LocationStitches { get; private set; }
+
+        public static void Load(ContentManager contentManager)
+        {
+            string stichesFilePath = contentManager.RootDirectory + FileHelper.ConfigurationDirectory + FileHelper.LocationStichesFileName + FileHelper.JsonExtension;
+            if (File.Exists(stichesFilePath))
+            {
+                using StreamReader r = new StreamReader(stichesFilePath);
+                LocationStitches = JsonConvert.DeserializeObject<List<LocationStitch>>(r.ReadToEnd(), FileHelper.JsonSerializerSettings);
+            }
+        }
 
         public static void InitializeStiches()
         {
@@ -21,16 +34,20 @@ namespace Library.World
                     List<Point> backgroundTilesA = LocationManager.LocationLayouts[stitch.LocationA].BackgroundTiles.Keys.OrderBy(tile => tile.Y).ToList();
                     List<Point> backgroundTilesB = LocationManager.LocationLayouts[stitch.LocationB].BackgroundTiles.Keys.OrderBy(tile => tile.Y).ToList();
 
-                    stitch.LocationADistance = backgroundTilesA.Last().Y - backgroundTilesA.First().Y;
-                    stitch.LocationBDistance = backgroundTilesB.Last().Y - backgroundTilesB.First().Y;
+                    stitch.LocationAGreatest = backgroundTilesA.Last().Y;
+                    stitch.LocationALeast = backgroundTilesA.First().Y;
+                    stitch.LocationBGreatest = backgroundTilesB.Last().Y;
+                    stitch.LocationBLeast = backgroundTilesB.First().Y;
                 }
                 else
                 {
                     List<Point> backgroundTilesA = LocationManager.LocationLayouts[stitch.LocationA].BackgroundTiles.Keys.OrderBy(tile => tile.X).ToList();
                     List<Point> backgroundTilesB = LocationManager.LocationLayouts[stitch.LocationB].BackgroundTiles.Keys.OrderBy(tile => tile.X).ToList();
 
-                    stitch.LocationADistance = backgroundTilesA.Last().X - backgroundTilesA.First().X;
-                    stitch.LocationBDistance = backgroundTilesB.Last().X - backgroundTilesB.First().X;
+                    stitch.LocationAGreatest = backgroundTilesA.Last().X;
+                    stitch.LocationALeast = backgroundTilesA.First().X;
+                    stitch.LocationBGreatest = backgroundTilesB.Last().X;
+                    stitch.LocationBLeast = backgroundTilesB.First().X;
                 }
             });
         }

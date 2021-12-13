@@ -3,5 +3,6 @@
     public interface IAnimatedAsset
     {
         bool Update();
+        virtual int NumberOfFrames => 3;
     }
 }

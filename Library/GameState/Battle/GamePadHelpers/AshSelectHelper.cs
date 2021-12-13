@@ -56,7 +56,7 @@ namespace Library.GameState.Battle.GamePadHelpers
                         BattleStateManager.Battle.SwitchToState(BattleState.ItemSelect);
                         break;
                     case BattleMenuItem.Run:
-                        GameStateManager.Instance.UIState = UIState.Base;
+                        GameStateManager.Instance.UIStateStack.Pop();;
                         break;
                 };
 

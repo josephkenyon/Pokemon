@@ -12,14 +12,18 @@ namespace Library.GameState.Battle.GamePadHelpers
         {
             GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
 
+            BattleCharacterState leftCharacterState = BattleStateManager.Battle.BattleCharacterStates[Direction.Left];
+            BattleCharacterState rightCharacterState = BattleStateManager.Battle.BattleCharacterStates[Direction.Right];
+
             int unselectedIndex = 0;
-            if (BattleStateManager.Battle.BattleCharacterStates[Direction.Right].SelectedPokemon.IsFainted)
+
+            if (rightCharacterState.SelectedPokemon.IsFainted)
             {
-                foreach (BattlePokemon pokemon in BattleStateManager.Battle.BattleCharacterStates[Direction.Right].Pokemon)
+                foreach (BattlePokemon pokemon in rightCharacterState.Pokemon)
                 {
                     if (!pokemon.IsFainted)
                     {
-                        BattleStateManager.Battle.BattleCharacterStates[Direction.Right].SelectedPokemonIndex = unselectedIndex;
+                        rightCharacterState.SelectedPokemonIndex = unselectedIndex;
                         return;
                     }
                     unselectedIndex++;
@@ -30,7 +34,7 @@ namespace Library.GameState.Battle.GamePadHelpers
 
             if (direction != null)
             {
-                int? index = FightSelectHelper.GetIndexOf((Direction)direction, BattleStateManager.Battle.BattleCharacterStates[Direction.Right].Pokemon, BattleStateManager.Battle.BattleCharacterStates[Direction.Right].SelectedPokemonIndex, false);
+                int? index = FightSelectHelper.GetIndexOf((Direction)direction, rightCharacterState.Pokemon, rightCharacterState.SelectedPokemonIndex, false);
 
                 if (index != null)
                 {
@@ -42,23 +46,55 @@ namespace Library.GameState.Battle.GamePadHelpers
 
             if (gamePadState.Buttons.A == ButtonState.Pressed)
             {
-                // move
-                MoveResult moveResult = MoveManager.GetMoveResult(MoveSelectHelper.SelectedMove, BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemon, BattleStateManager.Battle.BattleCharacterStates[Direction.Right].SelectedPokemon, BattleStateManager.Battle);
-                
-                BattlePokemon battlePokemon = BattleStateManager.Battle.BattleCharacterStates[Direction.Right].Pokemon[BattleStateManager.Battle.BattleCharacterStates[Direction.Right].SelectedPokemonIndex];
 
-                float moveDamage = battlePokemon.CurrentHealth > moveResult.Damage ? moveResult.Damage / 30f : battlePokemon.CurrentHealth / 30f;
+                BattlePokemon PokemonThatsAttacking = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemon;
+                BattlePokemon attackedPokemon = rightCharacterState.Pokemon[rightCharacterState.SelectedPokemonIndex];
+
+                MoveResult moveResult = MoveManager.GetMoveResult(MoveSelectHelper.SelectedMove, PokemonThatsAttacking, attackedPokemon, BattleStateManager.Battle);
+
+                float moveDamage = PokemonThatsAttacking.CurrentHealth > moveResult.Damage ? moveResult.Damage / 30f : PokemonThatsAttacking.CurrentHealth / 30f;
 
                 BattleStateManager.Battle.QueueNewTransaction(
-                    () => {
-                        battlePokemon.Damage(moveDamage);
+                    () =>
+                    {
+                        attackedPokemon.Damage(moveDamage);
                     },
-                    () => {
-                        BattleStateManager.Battle.BattleCharacterStates[Direction.Left].Pokemon[BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemonIndex].UsedMove = true;
+                    () =>
+                    {
+                        if (attackedPokemon.IsFainted)
+                        {
+                            int experienceReward = attackedPokemon.GetExperienceReward();
+
+                            foreach (BattlePokemon rewardedPokemon in leftCharacterState.Pokemon)
+                            {
+                                if (!rewardedPokemon.IsFainted)
+                                {
+                                    rewardedPokemon.GainExperience(experienceReward);
+                                }
+                            }
+
+                            bool allFainted = true;
+                            foreach (BattlePokemon faintedPokemon in rightCharacterState.Pokemon)
+                            {
+                                if (!faintedPokemon.IsFainted)
+                                {
+                                    allFainted = false;
+                                    break;
+                                }
+                            }
+
+                            if (allFainted)
+                            {
+                                BattleStateManager.EndBattle();
+                                return;
+                            }
+                        }
+
+                        leftCharacterState.Pokemon[leftCharacterState.SelectedPokemonIndex].UsedMove = true;
 
                         bool allUsedMove = true;
 
-                        BattleStateManager.Battle.BattleCharacterStates[Direction.Left].Pokemon.ForEach(pokemon => allUsedMove = (pokemon.UsedMove || pokemon.IsFainted) && allUsedMove);
+                        leftCharacterState.Pokemon.ForEach(pokemon => allUsedMove = (pokemon.UsedMove || pokemon.IsFainted) && allUsedMove);
 
                         BattleStateManager.Battle.ConsoleText = moveResult.MoveResultType.ToString();
 
@@ -68,7 +104,7 @@ namespace Library.GameState.Battle.GamePadHelpers
                         {
                             BattleStateManager.Battle.ClearStateStack();
 
-                            BattleStateManager.Battle.BattleCharacterStates[Direction.Left].Pokemon.ForEach(poke => poke.UsedMove = false);
+                            leftCharacterState.Pokemon.ForEach(poke => poke.UsedMove = false);
 
                             BattleStateManager.Battle.SwitchToState(BattleState.EnemyAttack);
                         }
@@ -84,7 +120,4 @@ namespace Library.GameState.Battle.GamePadHelpers
             }
         }
     }
-
-
-
 }

@@ -5,7 +5,6 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
-using Library.GameState.Battle;
 using System;
 
 namespace Library.Domain
@@ -109,12 +108,10 @@ namespace Library.Domain
 
             if (File.Exists(filePath))
             {
-                using (StreamReader r = new StreamReader(filePath))
+                using StreamReader r = new StreamReader(filePath);
+                foreach (Move move in JsonConvert.DeserializeObject<List<Move>>(r.ReadToEnd(), FileHelper.JsonSerializerSettings))
                 {
-                    foreach (Move move in JsonConvert.DeserializeObject<List<Move>>(r.ReadToEnd(), FileHelper.JsonSerializerSettings))
-                    {
-                        Moves.Add(move.MoveName, move);
-                    }
+                    Moves.Add(move.MoveName, move);
                 }
             }
             else

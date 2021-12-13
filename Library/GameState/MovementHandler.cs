@@ -1,9 +1,15 @@
 ﻿using Library.Assets;
 using Library.Content;
+using Library.Cutscenes;
 using Library.Domain;
 using Library.GameState.Base;
+using Library.GameState.Base.CutsceneState;
 using Library.GameState.Base.TransitionState;
 using Library.World;
+using Library.World.Json;
+using Microsoft.Xna.Framework;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Library.GameState
 {
@@ -11,19 +17,14 @@ namespace Library.GameState
     {
         public static Vector GetNewPath(Direction direction, Vector position)
         {
-            switch (direction)
+            return direction switch
             {
-                case Direction.Up:
-                    return new Vector(position.X, position.Y - Constants.ScaledTileSize);
-                case Direction.Down:
-                    return new Vector(position.X, position.Y + Constants.ScaledTileSize);
-                case Direction.Left:
-                    return new Vector(position.X - Constants.ScaledTileSize, position.Y);
-                case Direction.Right:
-                    return new Vector(position.X + Constants.ScaledTileSize, position.Y);
-                default:
-                    return Vector.Zero;
-            }
+                Direction.Up => new Vector(position.X, position.Y - Constants.ScaledTileSize),
+                Direction.Down => new Vector(position.X, position.Y + Constants.ScaledTileSize),
+                Direction.Left => new Vector(position.X - Constants.ScaledTileSize, position.Y),
+                Direction.Right => new Vector(position.X + Constants.ScaledTileSize, position.Y),
+                _ => Vector.Zero,
+            };
         }
 
         public static void MoveCharacter(Character character)
@@ -52,19 +53,62 @@ namespace Library.GameState
             }
             else
             {
-                if (CollisionHandler.NewStitchLocationName != null)
+                MovementCutsceneTransaction movementCutsceneTransaction = CutsceneStateManager.GetActiveMovementCutsceneTransaction();
+                if (movementCutsceneTransaction != null && character.Name != null)
                 {
-                    TransitionStateManager.TransitionInstantly((LocationName) CollisionHandler.NewStitchLocationName, new Vector(CollisionHandler.NewStitchLocation).ToPoint());
+                    List<CharacterName> characterNames = movementCutsceneTransaction.MovementTransaction.CharacterNames;
+                    if (characterNames.Contains((CharacterName)character.Name))
+                    {
+                        int index = characterNames.IndexOf((CharacterName)character.Name);
+                        movementCutsceneTransaction.MovementTransaction.Distances[index]--;
+
+                        if (movementCutsceneTransaction.MovementTransaction.Distances[index] > 0)
+                        {
+                            character.CharacterState.StartMoving(movementCutsceneTransaction.MovementTransaction.Directions[index]);
+                            return;
+                        }
+                    }
+                }
+
+                Point newLocationPoint = (movementPath / Constants.ScaledTileSize).ToPoint();
+                LocationName currentLocation = character.CharacterState.CurrentLocation;
+                LocationState currentLocationState = BaseStateManager.Instance.LocationStates[currentLocation];
+                CutsceneJson cutscene = currentLocationState.Cutscenes.Where(cutscene => cutscene.TriggerType == CutsceneTriggerType.Movement && cutscene.TriggerPoints.Contains(newLocationPoint) && cutscene.IsValid()).FirstOrDefault();
+
+                if (character.Name == CharacterName.Ash && cutscene != null)
+                {
+                    CutsceneManager.BeginCutscene(cutscene);
+                }
+                else if (CollisionHandler.NewStitchLocationName != null && character.Name != null)
+                {
+                    TeleportTransaction teleportTransaction = new TeleportTransaction
+                    {
+                        ToLocationName = (LocationName)CollisionHandler.NewStitchLocationName,
+                        ToLocationPoint = CollisionHandler.NewStitchLocation,
+                        Instant = true,
+                        CharacterName = (CharacterName)character.Name
+                    };
+
+                    TransitionStateManager.StartTransition(teleportTransaction);
                     CollisionHandler.NewStitchLocationName = null;
                 }
                 else
                 {
-                    LocationLayout location = LocationManager.LocationLayouts[character.CharacterState.CurrentLocation];
+                    LocationLayout location = LocationManager.LocationLayouts[currentLocation];
 
-                    if (location.Portals.ContainsKey((movementPath / Constants.ScaledTileSize).ToPoint()))
+                    if (character.Name != null && location.Portals.ContainsKey(newLocationPoint))
                     {
-                        PortalJson portal = location.Portals[(movementPath / Constants.ScaledTileSize).ToPoint()];
-                        TransitionStateManager.StartTransition(portal.ToLocationName, portal.Coordinate);
+                        PortalJson portal = location.Portals[newLocationPoint];
+
+                        TeleportTransaction teleportTransaction = new TeleportTransaction
+                        {
+                            ToLocationName = portal.ToLocationName,
+                            ToLocationPoint = portal.Coordinate,
+                            Instant = character.Name != CharacterName.Ash,
+                            CharacterName = (CharacterName)character.Name
+                        };
+
+                        TransitionStateManager.StartTransition(teleportTransaction);
                     }
                     else
                     {

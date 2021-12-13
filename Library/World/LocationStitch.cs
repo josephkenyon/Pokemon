@@ -9,7 +9,9 @@ namespace Library.World
 
         public Orientation Orientation { get; set; }
         public int Offset { get; set; }
-        public int LocationADistance { get; set; }
-        public int LocationBDistance { get; set; }
+        public int LocationAGreatest { get; set; }
+        public int LocationALeast { get; set; }
+        public int LocationBGreatest { get; set; }
+        public int LocationBLeast { get; set; }
     }
 }

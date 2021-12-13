@@ -1,0 +1,129 @@
+[
+    {
+        "LocationName": "PalletTown", "TriggerPoints": [{"X": 8, "Y": -10}, {"X": 9, "Y": -10}], "Flags": [], "FlagValues": [], "TriggerType": "Movement",
+        "CutsceneTransactions": [
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Oak: Hey wait!  Don't go out!"]
+            },
+            {
+                "CutsceneTransactionType": "Teleport", "TeleportTransactions": [{"CharacterName": "Ash", "ToLocationName": "PalletTown", "Instant": "false", "ToLocationPoint": {"X": 8, "Y": -10}, "FinalDirection": "Down"}]
+            },
+            {
+                "CutsceneTransactionType": "Teleport", "TeleportTransactions": [{"CharacterName": "Oak", "ToLocationName": "PalletTown", "Instant": "true", "ToLocationPoint": {"X": 7, "Y": -2}, "FinalDirection": "Up"}]
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak"], "Directions": ["Up"], "Distances": [6]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak"], "Directions": ["Right"], "Distances": [1]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak"], "Directions": ["Up"], "Distances": [1]}
+            },
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Oak: It's unsafe! Wild POKEMON live in tall grass!", "You need your own POKEMON for your protection.", "I know!  Here, come with me!"]
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak", "Ash"], "Directions": ["Left", "Down"], "Distances": [1, 1]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak", "Ash"], "Directions": ["Down", "Left"], "Distances": [1, 1]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak", "Ash"], "Directions": ["Down", "Down"], "Distances": [11, 11]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak", "Ash"], "Directions": ["Right", "Down"], "Distances": [1, 1]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak", "Ash"], "Directions": ["Right", "Right"], "Distances": [4, 4]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak", "Ash"], "Directions": ["Up", "Right"], "Distances": [1, 1]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Ash"], "Directions": ["Up"], "Distances": [1]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak"], "Directions": ["Up"], "Distances": [1]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Oak", "Ash"], "Directions": ["Up", "Up"], "Distances": [9, 9]}
+            },
+            {
+                "CutsceneTransactionType": "Teleport", "TeleportTransactions": [{"CharacterName": "Oak", "Instant": "true", "FinalDirection": "Down"}, {"CharacterName": "Green", "Instant": "true", "FinalDirection": "Up"}]
+            },
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Green: Gramps! I'm fed up with waiting!", "OAK: Green? Let me think...", "Oh that's right I told you to come!  Just wait!", "Here Ash, there are three POKEMON here.", "The POKEMON are held inside those POKE BALLS.", "When I was young, I was a serious POKEMON TRAINER.", "But now, in my old age, I have only these three left.", "You can have one.  Go on, choose!", "Green: Hey! Gramps! No fair! What about me?", "OAK: Be patient, Green, You can have one, too!"]
+            },
+            {
+                "CutsceneTransactionType": "Flag", "Flag": "Select_Pokemon"
+            }
+        ]
+    },
+    {
+        "LocationName": "OakPokemonResearchLab", "TriggerPoints": [{"X": -3, "Y": 5}, {"X": -2, "Y": 5}, {"X": -1, "Y": 5}], "Flags": ["Select_Pokemon", "Selected_Pokemon"], "FlagValues": [true, false], "Repeating": true, "TriggerType": "Movement",
+        "CutsceneTransactions": [
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Oak: Don't leave yet!"]
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Ash"], "Directions": ["Up"], "Distances": [1]}
+            }
+        ]
+    },
+    {
+        "LocationName": "OakPokemonResearchLab", "TriggerPoints": [{"X": 0, "Y": 0}, {"X": 1, "Y": 0}, {"X": 2, "Y": 0}], "Flags": ["Select_Pokemon", "Selected_Pokemon"], "FlagValues": [false, false], "Repeating": true, "TriggerType": "Selection",
+        "CutsceneTransactions": [
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Those are POKE BALLS.  They contain POKEMON!"]
+            }
+        ]
+    },
+    {
+        "LocationName": "OakPokemonResearchLab", "Flags": ["Select_Pokemon", "Selected_Pokemon"], "FlagValues": [false, true], "Repeating": true, "TriggerType": "Flag",
+        "CutsceneTransactions": [
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Green"], "Directions": ["Down"], "Distances": [2]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Green"], "Directions": ["Right"], "DistancesFromFlags": ["Pokemon_Choice"]}
+            },
+            {
+                "CutsceneTransactionType": "Movement", "MovementTransaction": {"CharacterNames": ["Green"], "Directions": ["Up"], "Distances": [1]}
+            },
+            {
+                "CutsceneTransactionType": "Special_Action", "SpecialActionKey": "Give_Rival_Pokemon"
+            },
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Green: I'll take this one, then!"]
+            }
+        ]
+    },
+    {
+        "LocationName": "OakPokemonResearchLab", "TriggerPoints": [{"X": -3, "Y": 5}, {"X": -2, "Y": 5}, {"X": -1, "Y": 5}], "Flags": ["Select_Pokemon", "Selected_Pokemon"], "FlagValues": [false, true], "Repeating": false, "TriggerType": "Movement",
+        "CutsceneTransactions": [
+            {
+                "CutsceneTransactionType": "Teleport", "TeleportTransactions": [
+                    {"CharacterName": "Ash", "ToLocationName": "OakPokemonResearchLab", "Instant": "false", "ToLocationPoint": {"X": -2, "Y": 5}, "FinalDirection": "Up"},
+                    {"CharacterName": "Green", "ToLocationName": "OakPokemonResearchLab", "Instant": "true", "ToLocationPoint": {"X": -2, "Y": 4}, "FinalDirection": "Down"}
+                ]
+            },
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Green: Wait, Ash! Let's check out our POKEMON!", "Come on, I'll take you on!"]
+            },
+            {
+                "CutsceneTransactionType": "Special_Action",  "SpecialActionKey": "Battle_Rival"
+            },
+            {
+                "CutsceneTransactionType": "Message", "Messages": ["Green: I'm gonna make my POKEMON battle to toughen it up!", "Ash, Gramps!  Smell ya later!"]
+            },
+            {
+                "CutsceneTransactionType": "Teleport", "TeleportTransactions": [{"CharacterName": "Green", "ToLocationName": "AshHomeUpStairs", "Instant": "false", "ToLocationPoint": {"X": 0, "Y": 0}, "FinalDirection": "Down"}]
+            },
+            {
+                "CutsceneTransactionType": "Special_Action",  "SpecialActionKey": "Put_Missing_Pokemon_Back"
+            }
+        ]
+    }
+]

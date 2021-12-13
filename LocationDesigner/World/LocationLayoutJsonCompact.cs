@@ -18,6 +18,9 @@ namespace LocationDesigner.World
         public List<SignJson> Signs { get; set; }
         public List<PortalJson> Portals { get; set; }
         public List<NPCJson> InitialNPCS { get; set; }
+        public List<CapturedPokemonJson> InitialCapturedPokemon { get; set; }
+        public List<ItemJson> InitialItems { get; set; }
+        public List<LocationPokemonJson> LocationPokemonJson { get; set; }
 
         public LocationLayoutJsonCompact(LocationLayoutJson layoutJson)
         {
@@ -53,6 +56,9 @@ namespace LocationDesigner.World
                 Signs = layoutJson.Signs;
                 Portals = layoutJson.Portals;
                 InitialNPCS = layoutJson.InitialNPCS;
+                InitialCapturedPokemon = layoutJson.InitialCapturedPokemon;
+                InitialItems = layoutJson.InitialItems;
+                LocationPokemonJson = layoutJson.LocationPokemonJson;
             }
         }
     }

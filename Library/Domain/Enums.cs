@@ -13,11 +13,41 @@ namespace Library.Domain
         Confused,
     }
 
+    public enum CharacterName
+    {
+        Ash,
+        Oak,
+        Green
+    }
+
     public enum LocationDoodad
     {
         Grass,
         Red_Flower,
         Water,
+    }
+
+    public enum SpecialActionKey
+    {
+        Give_Rival_Pokemon,
+        Battle_Rival,
+        Put_Missing_Pokemon_Back,
+    }
+
+    public enum CutsceneTriggerType
+    {
+        Movement,
+        Selection,
+        Flag
+    }
+
+    public enum CutsceneTransactionType
+    {
+        Message,
+        Movement,
+        Teleport,
+        Flag,
+        Special_Action,
     }
 
     public enum LocationName
@@ -63,7 +93,8 @@ namespace Library.Domain
     {
         Base,
         Message,
-        Transition
+        Transition,
+        Cutscene
     }
     public enum MenuItem
     {
@@ -77,7 +108,7 @@ namespace Library.Domain
         ExitGame
     }
 
-    public enum Item { 
+    public enum ItemType { 
         Pokeball,
         Potion,
     }
@@ -110,6 +141,8 @@ namespace Library.Domain
         HealthExpBar,
         EmptyWhiteTexture,
         NPCTileset,
+        Oak,
+        Green,
     }
 
     public enum Badge {
@@ -177,6 +210,13 @@ namespace Library.Domain
         Not_Very_Effective,
         No_Effect,
         Missed
+    }
+
+    public enum Flag
+    {
+        Select_Pokemon,
+        Selected_Pokemon,
+        Pokemon_Choice,
     }
 
     public enum MoveType

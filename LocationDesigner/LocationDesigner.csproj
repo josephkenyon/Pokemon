@@ -89,10 +89,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="World\CapturedPokemonJson.cs" />
     <Compile Include="World\DoodadJson.cs" />
+    <Compile Include="World\ItemJson.cs" />
     <Compile Include="World\LocationLayoutJsonCompact.cs" />
     <Compile Include="World\LocationLayoutJson.cs" />
     <Compile Include="World\LocationLayoutManager.cs" />
+    <Compile Include="World\LocationPokemonJson.cs" />
     <Compile Include="World\NPCJson.cs" />
     <Compile Include="World\PortalJson.cs" />
     <Compile Include="World\SignJson.cs" />

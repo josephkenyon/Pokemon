@@ -9,6 +9,7 @@ using Library.World;
 using Microsoft.Xna.Framework;
 using Library.Assets;
 using Library.GameState;
+using Library.World.Json;
 
 namespace Library.Content
 {
@@ -20,13 +21,6 @@ namespace Library.Content
         {
             LocationLayouts = new Dictionary<LocationName, LocationLayout>();
 
-            string stichesFilePath = contentManager.RootDirectory + FileHelper.ConfigurationDirectory + FileHelper.LocationStichesFileName + FileHelper.JsonExtension;
-            if (File.Exists(stichesFilePath))
-            {
-                using StreamReader r = new StreamReader(stichesFilePath);
-                WorldManager.LocationStitches = JsonConvert.DeserializeObject<List<LocationStitch>>(r.ReadToEnd(), FileHelper.JsonSerializerSettings);
-            }
-
             foreach (LocationName locationName in Enum.GetValues(typeof(LocationName)))
             {
                 string filePath = contentManager.RootDirectory + FileHelper.LocationsDirectory + FileHelper.FormatEnumNameToJson(locationName.ToString());
@@ -37,16 +31,7 @@ namespace Library.Content
 
                     LocationLayoutJson locationLayoutJson = JsonConvert.DeserializeObject<LocationLayoutJson>(r.ReadToEnd(), FileHelper.JsonSerializerSettings);
 
-                    LocationLayout locationLayout = new LocationLayout
-                    {
-                        BackgroundTiles = new Dictionary<Point, Tile>(),
-                        ForegroundTiles = new Dictionary<Point, Tile>(),
-                        BackgroundGrassTiles = new Dictionary<Point, Tile>(),
-                        ForegroundGrassTiles = new Dictionary<Point, Tile>(),
-                        Signs = new Dictionary<Point, SignJson>(),
-                        Portals = new Dictionary<Point, PortalJson>(),
-                        InitialCharacters = new List<Character>()
-                    };
+                    LocationLayout locationLayout = new LocationLayout();
 
                     for (int i = 0; i < locationLayoutJson.BackgroundTilesPositionX.Count; i++)
                     {
@@ -100,14 +85,29 @@ namespace Library.Content
                         }
                     });
 
-                    locationLayoutJson.Signs.ForEach(sign =>
+                    locationLayoutJson.LocationPokemonJson.ForEach(locationPokemonJson =>
                     {
-                        locationLayout.Signs.Add(sign.Position, sign);
+                        locationLayout.LocationPokemonJson.Add(locationPokemonJson);
                     });
 
-                    locationLayoutJson.Portals.ForEach(portal =>
+                    locationLayoutJson.Signs.ForEach(signJson =>
                     {
-                        locationLayout.Portals.Add(portal.Position, portal);
+                        locationLayout.Signs.Add(signJson.Position, signJson);
+                    });
+
+                    locationLayoutJson.Portals.ForEach(portalJson =>
+                    {  
+                        locationLayout.Portals.Add(portalJson.Position, portalJson);
+                    });
+
+                    locationLayoutJson.InitialCapturedPokemon.ForEach(capturedPokemonJson =>
+                    {
+                        locationLayout.InitialCapturedPokemon.Add(new CapturedPokemon(capturedPokemonJson));
+                    });
+
+                    locationLayoutJson.InitialItems.ForEach(itemJson =>
+                    {
+                        locationLayout.InitialItems.Add(new Item(itemJson.ItemType, itemJson.Position));
                     });
 
                     locationLayoutJson.InitialNPCS.ForEach(npcJson =>
@@ -117,12 +117,16 @@ namespace Library.Content
 
                         NPC npc = new NPC
                         {
+                            Name = npcJson.CharacterName,
                             SpriteLocation = npcJson.SpriteLocation,
-                            CharacterState = new NPCState
-                            {
-                                Position = new Vector(npcJson.Position),
-                                Messages = messages
-                            }
+                        };
+
+                        npc.CharacterState = new NPCState(npc)
+                        {
+                            Position = new Vector(npcJson.Position),
+                            Messages = messages,
+                            Wanders = npcJson.CharacterName == null,
+                            CurrentLocation = locationName
                         };
 
                         locationLayout.InitialCharacters.Add(npc);
@@ -132,22 +136,25 @@ namespace Library.Content
                     LocationName startingLocation = LocationName.PalletTown;
                     if (locationName == startingLocation)
                     {
-                        if (!locationLayout.InitialCharacters.Exists(character => character.Name == Constants.PlayerName))
+                        if (!locationLayout.InitialCharacters.Exists(character => character.Name == CharacterName.Ash))
                         {
-                            locationLayout.InitialCharacters.Add(new Player
+                            Player player = new Player
                             {
-                                Name = Constants.PlayerName,
-                                CharacterState = new CharacterState
-                                {
-                                    //Position = new Vector(-5, -1) * Constants.ScaledTileSize,
-                                    Position = new Vector(2, -3) * Constants.ScaledTileSize,
-                                    CurrentFrame = 1,
-                                    Direction = Direction.Up,
-                                    FrameSkip = 0,
-                                    IsMoving = false,
-                                    CurrentLocation = locationName
-                                }
-                            });
+                                Name = CharacterName.Ash
+                            };
+
+                            player.CharacterState = new CharacterState(player)
+                            {
+                                //Position = new Vector(-5, -1) * Constants.ScaledTileSize,
+                                Position = new Vector(2, -3) * Constants.ScaledTileSize,
+                                CurrentFrame = 1,
+                                Direction = Direction.Up,
+                                FrameSkip = 0,
+                                IsMoving = false,
+                                CurrentLocation = locationName
+                            };
+
+                            locationLayout.InitialCharacters.Add(player);
                         }
                     }
 

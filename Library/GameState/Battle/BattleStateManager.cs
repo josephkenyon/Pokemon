@@ -1,4 +1,5 @@
-﻿using Library.Battle;
+﻿using Library.Assets;
+using Library.Battle;
 using Library.Domain;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,9 +9,23 @@ namespace Library.GameState.Battle
     {
         public static Battle Battle { get; set; }
 
-        public void CreateNewBattle(CharacterState character1, CharacterState character2)
+        public static void CreateNewBattle(CharacterState character1, CharacterState character2)
         {
             Battle = new Battle(character1, character2);
+            GameStateManager.Instance.UIStateStack.Push(UIState.Battle);
+        }
+
+        public static void EndBattle()
+        {
+            BattleCharacterState battleCharacterState = Battle.BattleCharacterStates[Direction.Left];
+            foreach(Pokemon pokemon in Battle.LeftCharacterState.Pokemon)
+            {
+                int index = Battle.LeftCharacterState.Pokemon.FindIndex(poke => poke == pokemon);
+                pokemon.UpdateAfterBattle(battleCharacterState.Pokemon[index]);
+            }
+
+            Battle = null;
+            GameStateManager.Instance.UIStateStack.Pop();
         }
 
         public bool Update()

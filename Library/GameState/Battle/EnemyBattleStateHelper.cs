@@ -22,6 +22,22 @@ namespace Library.GameState.Battle
                     },
                     () =>
                     {
+                        bool allFainted = true;
+                        foreach (BattlePokemon faintedPokemon in BattleStateManager.Battle.BattleCharacterStates[Direction.Left].Pokemon)
+                        {
+                            if (!faintedPokemon.IsFainted)
+                            {
+                                allFainted = false;
+                                break;
+                            }
+                        }
+
+                        if (allFainted)
+                        {
+                            BattleStateManager.EndBattle();
+                            return;
+                        }
+
                         battlePokemon.UsedMove = true;
 
                         bool allUsedMove = true;

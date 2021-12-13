@@ -70,7 +70,7 @@ namespace Library.Base
         {
             LocationName currentLocation = BaseStateManager.Instance.GetPlayerLocation();
             Location = locationStitch.LocationA == currentLocation ? locationStitch.LocationB : locationStitch.LocationA;
-            int offset = locationStitch.LocationADistance + 3;
+            int offset = locationStitch.LocationAGreatest - locationStitch.LocationBLeast + 1;
             int secondOffset = locationStitch.LocationA == currentLocation ? -locationStitch.Offset : locationStitch.Offset;
             OffsetPoint = Point.Zero;
 

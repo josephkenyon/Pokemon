@@ -4,6 +4,7 @@ using Library.Base;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Linq;
+using Library.World.Json;
 
 namespace Library.World
 {
@@ -16,6 +17,23 @@ namespace Library.World
         public Dictionary<Point, SignJson> Signs { get; set; }
         public Dictionary<Point, PortalJson> Portals { get; set; }
         public List<Character> InitialCharacters { get; set; }
+        public List<CapturedPokemon> InitialCapturedPokemon { get; set; }
+        public List<Item> InitialItems { get; set; }
+        public List<LocationPokemonJson> LocationPokemonJson { get; set; }
+
+        public LocationLayout()
+        {
+            BackgroundTiles = new Dictionary<Point, Tile>();
+            ForegroundTiles = new Dictionary<Point, Tile>();
+            BackgroundGrassTiles = new Dictionary<Point, Tile>();
+            ForegroundGrassTiles = new Dictionary<Point, Tile>();
+            Signs = new Dictionary<Point, SignJson>();
+            Portals = new Dictionary<Point, PortalJson>();
+            InitialCharacters = new List<Character>();
+            InitialCapturedPokemon = new List<CapturedPokemon>();
+            InitialItems = new List<Item>();
+            LocationPokemonJson = new List<LocationPokemonJson>();
+        }
 
         public void DrawBackground(SpriteBatch spriteBatch, StitchHelperObject stitchHelperObject = null)
         {

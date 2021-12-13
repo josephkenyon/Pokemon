@@ -80,7 +80,7 @@ namespace Library.GameState.Menu
             Instance.Loading = false;
             Instance.SelectedIndex = 0;
             Instance.SaveLoadSelectedIndex = 0;
-            GameStateManager.Instance.UIState = UIState.Base;
+            GameStateManager.Instance.UIStateStack.Pop();
             GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
         }
     }

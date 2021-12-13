@@ -1,11 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using System.Collections.Generic;
 
-namespace Library.World
+namespace Library.World.Json
 {
-    public class NPCJson
+    public class SignJson
     {
-        public Point SpriteLocation { get; set; }
         public Point Position { get; set; }
         public List<string> Messages { get; set; }
     }

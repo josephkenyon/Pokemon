@@ -15,10 +15,14 @@ namespace Library.GameState
         public Vector MovementPath { get; set; }
         public Vector TileSetPosition => Position / Constants.ScaledTileSize;
         public List<Badge> Badges { get; set; }
-        public override int NumberOfFrames => 3;
 
-        public CharacterState() {
+        public CharacterState(IAnimatedAsset parentAsset) : base(parentAsset) {
             Position = Vector.Zero;
+            MovementPath = Vector.Zero;
+            Pokemon = new List<Pokemon>();
+            Bag = new Bag();
+
+            Direction = Direction.Down;
         }
 
         public void StartMoving(Direction direction)

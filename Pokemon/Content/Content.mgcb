@@ -13,6 +13,9 @@
 
 #---------------------------------- Content ---------------------------------#
 
+#begin configuration/cutScenes.json
+/copy:configuration/cutScenes.json
+
 #begin configuration/locationStiches.json
 /copy:configuration/locationStiches.json
 
@@ -79,6 +82,18 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:sprites/characters/battleAsh.png
+
+#begin sprites/characters/greenWalking.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/characters/greenWalking.png
 
 #begin sprites/characters/npcTileset.png
 /importer:TextureImporter

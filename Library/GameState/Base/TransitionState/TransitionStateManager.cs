@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Library.Assets;
 using Library.Content;
 using Library.Domain;
@@ -10,63 +11,93 @@ namespace Library.GameState.Base.TransitionState
 {
     public class TransitionStateManager
     {
-        public static LocationName TransitionLocationName { get; private set; }
-        public static Point TransitionLocationPoint { get; private set; }
+        public static List<TeleportTransaction> TeleportTransactions { get; private set; }
         public static int Counter { get; set; }
-        public static bool TransitionInstantlyNextTime { get; private set; }
+
         private static Texture2D BlankTexture { get; set; }
-
         private static Rectangle DestinationRectangle = new Rectangle(0, 0, Constants.ResolutionWidth, Constants.ResolutionHeight);
-
         private static Rectangle SourceRectangle = new Rectangle(0, 0, 1, 1);
 
-        public static void StartTransition(LocationName locationName, Point locationCoordinates) {
-            TransitionLocationName = locationName;
-            TransitionLocationPoint = locationCoordinates;
+        public static void StartTransition(TeleportTransaction teleportTransaction) {
+            TeleportTransactions = new List<TeleportTransaction>
+            {
+                teleportTransaction
+            };
+
+            StartTransition(TeleportTransactions);
+        }
+
+        public static void StartTransition(List<TeleportTransaction> teleportTransactions)
+        {
+            TeleportTransactions = teleportTransactions;
             Counter = 0;
 
-            BaseStateManager.Instance.BaseState = BaseState.Transition;
+            BaseStateManager.Instance.StateStack.Push(BaseState.Transition);
 
-            if (BlankTexture == null) {
+            if (BlankTexture == null)
+            {
                 BlankTexture = CreateTexture(GraphicsManager.GraphicsDevice);
             }
         }
 
-        public static void TransitionInstantly(LocationName locationName, Point locationCoordinates)
+        private static void Transition()
         {
-            TransitionInstantlyNextTime = true;
-            StartTransition(locationName, locationCoordinates);
-        }
+            TeleportTransactions.ForEach(teleportTransaction =>
+            {
+                Character character = GameStateManager.Instance.GetCharacter(teleportTransaction.CharacterName);
+                if (character == null)
+                {
+                    character = new NPC
+                    {
+                        Name = teleportTransaction.CharacterName
+                    };
 
-        private static void Transition(LocationName locationName, Point locationCoordinates)
-        {
-            Player player = GameStateManager.Instance.GetPlayer();
-            CharacterState playerState = player.CharacterState;
-            BaseStateManager.Instance.LocationStates[playerState.CurrentLocation].Characters.Remove(player);
+                    character.CharacterState = new NPCState(character);
+                }
+                else if (teleportTransaction.ToLocationName != null)
+                {
+                    BaseStateManager.Instance.LocationStates[character.CharacterState.CurrentLocation].Characters.Remove(character);
+                }
 
-            playerState.CurrentLocation = locationName;
-            playerState.Position = new Vector(locationCoordinates) * Constants.ScaledTileSize;
-            playerState.IsMoving = false;
+                CharacterState characterState = character.CharacterState;
+                if (teleportTransaction.ToLocationName != null)
+                {
+                    characterState.CurrentLocation = (LocationName)teleportTransaction.ToLocationName;
+                    characterState.MovementPath = characterState.Position - characterState.MovementPath;
+                    characterState.Position = new Vector(teleportTransaction.ToLocationPoint) * Constants.ScaledTileSize;
+                    characterState.MovementPath = characterState.Position + characterState.MovementPath;
+                    BaseStateManager.Instance.LocationStates[(LocationName)teleportTransaction.ToLocationName].Characters.Add(character);
+                }
 
-            BaseStateManager.Instance.LocationStates[locationName].Characters.Add(player);
+                if (teleportTransaction.FinalDirection != null)
+                {
+                    characterState.Direction = (Direction)teleportTransaction.FinalDirection;
+                    characterState.CurrentFrame = character.NumberOfFrames - Constants.NPCDefaultFrameCount;
+                    characterState.FrameSkip = 0;
+                }
+            });
 
-            TransitionInstantlyNextTime = false;
+            if (!TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
+            {
+                TeleportTransactions = null;
+            }
         }
 
         public static void Update()
         {
-            if (Counter == Constants.TransitionTime / 2 || TransitionInstantlyNextTime)
+            if (Counter == Constants.TransitionTime / 2 || !TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
             {
-                if (TransitionInstantlyNextTime)
+                if (!TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
                 {
-                    BaseStateManager.Instance.BaseState = BaseState.Base;
+                    BaseStateManager.Instance.StateStack.Pop();
                 }
 
-                Transition(TransitionLocationName, TransitionLocationPoint);
+                Transition();
             }
             else if (Counter >= Constants.TransitionTime)
             {
-                BaseStateManager.Instance.BaseState = BaseState.Base;
+                BaseStateManager.Instance.StateStack.Pop();
+                TeleportTransactions = null;
             }
 
             Counter++;
@@ -75,7 +106,7 @@ namespace Library.GameState.Base.TransitionState
         public static void Draw(SpriteBatch spriteBatch)
         {
             float scaler = 0f;
-            if (!TransitionInstantlyNextTime)
+            if (TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
             {
                 if (Counter < Constants.TransitionTime / 2)
                 {

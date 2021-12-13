@@ -12,6 +12,9 @@ namespace Library.GameState
         public Vector Size { get; set; }
         public int NumFrames { get; set; }
         public bool Repeating { get; set; }
+        public SpriteEffect() : base(null)
+        {
+        }
 
         public bool Update()
         {

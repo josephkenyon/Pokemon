@@ -65,7 +65,7 @@ namespace Library.GameState.Menu
                         {
                             case MenuItem.Return:
                                 MenuStateManager.Instance.SelectedIndex = 0;
-                                GameStateManager.Instance.UIState = UIState.Base;
+                                GameStateManager.Instance.UIStateStack.Pop();
                                 break;
                             case MenuItem.Save:
                                 MenuStateManager.Instance.Saving = true;

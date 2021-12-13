@@ -28,7 +28,7 @@ namespace Library.GameState.Base.MessageState
             if (index != message.Length)
             {
                 DrawingManager.DrawString(spriteBatch, new MessageStringObject { Position = new Vector(22, 21) * Constants.Scaler, String = message.Substring(0, index) });
-                DrawingManager.DrawString(spriteBatch, new MessageStringObject { Position = new Vector(22, 32) * Constants.Scaler, String = message.Substring(index, message.Length - index) });
+                DrawingManager.DrawString(spriteBatch, new MessageStringObject { Position = new Vector(22, 32) * Constants.Scaler, String = message[index..] });
             }
             else
             {

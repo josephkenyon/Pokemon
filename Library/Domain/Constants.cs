@@ -13,12 +13,15 @@
 
         public static readonly int DoodadFrameSkip = 15;
         public static readonly int DefaultFrameSkip = 5;
+        public static readonly int NPCDefaultFrameCount = 2;
         public static readonly int CharacterSpeed = 10;
 
         public static readonly int TransitionTime = 60;
         public static readonly int ItemDebounce = 10;
         public static readonly int MenuActivationDebounce = 15;
         public static readonly int MenuActivationDebounceLong = 30;
+
+        public static readonly float DefaultWildBattleChance = 0.05f;
 
         public static readonly int NPCRandomConstant = 1600;
         public static float Scaler => ScaledTileSize / TileSize;

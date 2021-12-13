@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Library.Content;
 using Library.Domain;
+using Library.GameState.Base.CutsceneState;
+using Library.GameState.Base.GamePadHandling;
 using Library.GameState.Base.MessageState;
 using Library.GameState.Base.TransitionState;
 using Library.World;
@@ -13,41 +15,52 @@ namespace Library.GameState.Base
     public class BaseStateManager : IStateManager
     {
         public static BaseStateManager Instance { get; private set; }
-        public BaseState BaseState { get; set; }
+        public Stack<BaseState> StateStack { get; set; }
         public Dictionary<LocationName, LocationState> LocationStates { get; private set; }
+        public FlagManager FlagManager { get; set; }
+
 
         public BaseStateManager()
         {
             Instance = this;
             LocationStates = new Dictionary<LocationName, LocationState>();
-            BaseState = BaseState.Base;
+            StateStack = new Stack<BaseState>();
+            StateStack.Push(BaseState.Base);
 
             foreach (LocationName locationName in Enum.GetValues(typeof(LocationName)))
             {
                 LocationStates.Add(locationName, new LocationState
                 {
+                    CapturedPokemon = LocationManager.LocationLayouts[locationName].InitialCapturedPokemon,
+                    Items = LocationManager.LocationLayouts[locationName].InitialItems,
                     Characters = LocationManager.LocationLayouts[locationName].InitialCharacters,
                     Name = locationName
                 });
             }
+
+            FlagManager = new FlagManager();
         }
 
         public bool Update()
         {
-            if (BaseState == BaseState.Base)
+            if (StateStack.Peek() == BaseState.Base)
             {
                 BaseGamePadHandler.Update();
             }
-            else if (BaseState == BaseState.Message)
+            else if (StateStack.Peek() == BaseState.Message)
             {
                 MessageStateGamePadHandler.Update();
             }
-            else if (BaseState == BaseState.Transition)
+            else if (StateStack.Peek() == BaseState.Transition)
             {
                 TransitionStateManager.Update();
             }
+            else if (StateStack.Peek() == BaseState.Cutscene)
+            {
+                CutsceneStateManager.Update();
+            }
 
-            if (BaseState == BaseState.Message)
+            if (StateStack.Peek() == BaseState.Message)
             {
                 MessageStateManager.Update();
             }
@@ -71,18 +84,18 @@ namespace Library.GameState.Base
 
             LocationManager.LocationLayouts[currentLocation].DrawForeground(spriteBatch);
 
-            if (BaseState == BaseState.Message)
+            if (StateStack.Peek() == BaseState.Message)
             {
                 MessageStateDrawingManager.Draw(spriteBatch);
             }
-            else if (BaseState == BaseState.Transition)
+            else if (StateStack.Peek() == BaseState.Transition)
             {
                 TransitionStateManager.Draw(spriteBatch);
             }
         }
 
         public LocationName GetPlayerLocation() { 
-             return LocationStates.Values.Single(state => state.Characters.Exists(character => character.Name == Constants.PlayerName)).Name;
+             return LocationStates.Values.Single(state => state.Characters.Exists(character => character.Name == CharacterName.Ash)).Name;
         }
     }
 }

@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
+using Library.Content;
 using Library.Domain;
 using Library.GameState;
 using Microsoft.Xna.Framework;
@@ -9,9 +11,10 @@ namespace Library.Assets
     {
         public List<Pokemon> PokemonStorage { get; set; }
         public Point SpriteLocation { get; set; }
+        public override int NumberOfFrames => Name != null ? base.NumberOfFrames : Constants.NPCDefaultFrameCount;
 
         public NPC() {
-            CharacterState = new NPCState();
+            CharacterState = new NPCState(this);
         }
 
         public Rectangle GetTargetRectangle() => new Rectangle(
@@ -21,6 +24,11 @@ namespace Library.Assets
 
         public override Rectangle GetSourceRectangle()
         {
+            if (Name != null)
+            {
+                return base.GetSourceRectangle();
+            }
+
             int x, y;
             x = SpriteLocation.X;
             y = SpriteLocation.Y;
@@ -52,6 +60,6 @@ namespace Library.Assets
             return new Rectangle(x * Constants.TileSize, y * Constants.TileSize, 1 * Constants.TileSize, 2 * Constants.TileSize);
         }
 
-        public override TextureName GetTextureName() => TextureName.NPCTileset;
+        public override TextureName GetTextureName() => Name != null ? (TextureName) Enum.Parse(typeof(TextureName), Name.ToString()) : TextureName.NPCTileset;
     }
 }

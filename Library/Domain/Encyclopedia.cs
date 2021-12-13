@@ -32,6 +32,7 @@ namespace Library.Domain
         public string Name { get; set; }
         public StatSet StatSet { get; set; }
         public int EV { get; set; }
+        public int BaseExperienceReward { get; set; }
         public int CatchRate { get; set; }
         public List<Type> Types { get; set; }
         public List<MoveLearn> Moves { get; set; }

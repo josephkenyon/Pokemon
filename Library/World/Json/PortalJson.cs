@@ -1,7 +1,7 @@
 ﻿using Library.Domain;
 using Microsoft.Xna.Framework;
 
-namespace Library.World
+namespace Library.World.Json
 {
     public class PortalJson
     {

@@ -7,6 +7,7 @@ namespace LocationDesigner.World
     {
         public Point SpriteLocation { get; set; }
         public Point Position { get; set; }
+        public string CharacterName { get; set; }
         public List<string> Messages { get; set; }
     }
 }

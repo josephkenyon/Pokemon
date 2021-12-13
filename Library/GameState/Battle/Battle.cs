@@ -10,6 +10,8 @@ namespace Library.GameState.Battle
     {
         public Dictionary<Direction, BattleCharacterState> BattleCharacterStates { get; set; }
         public List<BattleStatusEffect> BattleStatusEffects { get; set; }
+        public CharacterState LeftCharacterState { get; set; }
+        public CharacterState RightCharacterState { get; set; }
         public bool TimerDescending { get; set; }
         public float Timer { get; set; }
         private Stack<BattleState> StateStack { get; set; }
@@ -32,6 +34,9 @@ namespace Library.GameState.Battle
         }
         public Battle(CharacterState leftCharacterState, CharacterState rightCharacterState)
         {
+            LeftCharacterState = leftCharacterState;
+            RightCharacterState = rightCharacterState;
+
             StateStack = new Stack<BattleState>();
             BattleStatusEffects = new List<BattleStatusEffect>();
             Transactions = new Queue<Transaction>();
