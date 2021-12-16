@@ -47,13 +47,11 @@ namespace Library.GameState.Battle.GamePadHelpers
                 switch (ItemList[SelectedIndex])
                 {
                     case BattleMenuItem.Fight:
-                        BattleStateManager.Battle.SwitchToState(BattleState.FightSelect);
-                        break;
-                    case BattleMenuItem.Pokemon:
                         BattleStateManager.Battle.SwitchToState(BattleState.PokemonSelect);
                         break;
                     case BattleMenuItem.Bag:
                         BattleStateManager.Battle.SwitchToState(BattleState.ItemSelect);
+                        GameStateManager.Instance.UIStateStack.Push(UIState.Bag);
                         break;
                     case BattleMenuItem.Run:
                         GameStateManager.Instance.UIStateStack.Pop();;

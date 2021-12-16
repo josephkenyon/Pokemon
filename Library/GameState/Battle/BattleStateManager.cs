@@ -1,6 +1,7 @@
 ﻿using Library.Assets;
 using Library.Battle;
 using Library.Domain;
+using Library.Graphics;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Library.GameState.Battle
@@ -8,6 +9,8 @@ namespace Library.GameState.Battle
     public class BattleStateManager : IStateManager
     {
         public static Battle Battle { get; set; }
+
+        public static bool IsWildPokemonBattle => Battle != null && Battle.RightCharacterState.ParentAsset == null;
 
         public static void CreateNewBattle(CharacterState character1, CharacterState character2)
         {
@@ -53,7 +56,7 @@ namespace Library.GameState.Battle
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            BattleDrawingManager.DrawWallpaper(spriteBatch);
+            GraphicsHelper.DrawWallpaper(spriteBatch, TextureName.BattleWallpaper);
             BattleDrawingManager.DrawAsh(spriteBatch);
             BattleDrawingManager.DrawMenu(spriteBatch);
 

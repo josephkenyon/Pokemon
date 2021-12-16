@@ -394,7 +394,7 @@
     "StatSet": {
         "HP": 40,
         "Attack": 45,
-        "Defense": 40,
+        "Defense": 38,
         "SpecialAttack": 35,
         "SpecialDefense": 35,
         "Speed": 56
@@ -471,7 +471,7 @@
     "Name": "Rattata",
     "StatSet": {
         "HP": 30,
-        "Attack": 56,
+        "Attack": 59,
         "Defense": 35,
         "SpecialAttack": 25,
         "SpecialDefense": 35,

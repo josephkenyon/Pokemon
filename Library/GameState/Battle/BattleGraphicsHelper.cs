@@ -13,10 +13,6 @@ namespace Library.GameState.Battle
     {
         public readonly static float Scale = 0.7f;
 
-        private static Vector BattleWallpaperTextureSize => new Vector(384, 216);
-        public static Rectangle BattleWallpaperSourceRectangle => new Rectangle(Vector.Zero.ToPoint(), BattleWallpaperTextureSize.ToPoint());
-        public static Rectangle BattleWallpaperTargetRectangle => new Rectangle(Vector.Zero.ToPoint(), new Vector(Constants.ResolutionWidth / Constants.Scaler, Constants.ResolutionHeight / Constants.Scaler).ToPoint());
-
         public static Vector2 HealthBarLocation => new Vector2(16f, 2f);
         public static Vector2 ExperienceBarLocation => new Vector2(16f, 6.25f);
 
@@ -32,7 +28,7 @@ namespace Library.GameState.Battle
 
         private static Vector MenuPointerStartingPosition => new Vector(-7, 19);
 
-        private static readonly int[] PointerIncrements = new int[] { 36, 46, 27 };
+        private static readonly int[] PointerIncrements = new int[] { 54, 48 };
 
         private static int GetTotalIncrement(int index)
         {
@@ -47,7 +43,7 @@ namespace Library.GameState.Battle
         }
 
         public static Rectangle PointerTargetRectangle => new Rectangle(new Point(BattleMenuLocation.X + MenuPointerStartingPosition.X + GetTotalIncrement(AshSelectHelper.SelectedIndex), BattleMenuLocation.Y + MenuPointerStartingPosition.Y), (MenuGraphicsHelper.PointerTextureSize * Constants.ScaledTileSize).ToPoint());
-
+        public static Rectangle PointerTargetRectangleIndex(int index) => new Rectangle(new Point(BattleMenuLocation.X + MenuPointerStartingPosition.X + GetTotalIncrement(index) + (int)(Constants.ScaledTileSize * 0.75f), BattleMenuLocation.Y + MenuPointerStartingPosition.Y), (MenuGraphicsHelper.PointerTextureSize * Constants.ScaledTileSize).ToPoint());
 
         public static PokemonDrawingObject GetPokemonDrawingObject(BattlePokemon pokemon, int index)
         {
@@ -114,15 +110,6 @@ namespace Library.GameState.Battle
         public virtual Texture2D GetWhiteTexture() => TextureManager.WhiteBasicTextures[SpeciesName];
         public virtual Vector2 GetScale() => Vector2.One;
         public virtual SpriteEffects GetSpriteEffects() => SpriteEffects.None;
-    }
-
-    public class Wallpaper : IDrawingObject
-    {
-        public Rectangle GetSourceRectangle() => BattleGraphicsHelper.BattleWallpaperSourceRectangle;
-
-        public Texture2D GetTexture() => TextureManager.BasicTextures[TextureName.BattleWallpaper];
-
-        public Vector2 GetPosition() => BattleGraphicsHelper.BattleWallpaperTargetRectangle.Location.ToVector2();
     }
 
     public class BattleAsh : IDrawingObject

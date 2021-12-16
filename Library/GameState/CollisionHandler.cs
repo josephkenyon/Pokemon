@@ -31,6 +31,19 @@ namespace Library.GameState
             return false;
         }
 
+        public static bool IsJumpableMove(CharacterState characterState, Vector movement)
+        {
+            Point newTilePosition = (movement / Constants.ScaledTileSize).ToPoint();
+            LocationLayout location = LocationManager.LocationLayouts[characterState.CurrentLocation];
+
+            if (characterState.Position.Y < movement.Y && location.ForegroundTiles.ContainsKey(newTilePosition) && TileHelper.TileIsJumpable(location.ForegroundTiles[newTilePosition]))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private static bool IsValidMove(LocationName locationName, Point newTilePosition)
         {
             Vector movement = new Vector(newTilePosition) * Constants.ScaledTileSize;

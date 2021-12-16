@@ -21,8 +21,8 @@ namespace Library.GameState.Battle
 
                 switch (BattleStateManager.Battle.State)
                 {
-                    case BattleState.FightSelect:
-                        FightSelectHelper.Update();
+                    case BattleState.PokemonSelect:
+                        PokemonSelectHelper.Update();
                         break;
                     case BattleState.AshSelect:
                         AshSelectHelper.Update();

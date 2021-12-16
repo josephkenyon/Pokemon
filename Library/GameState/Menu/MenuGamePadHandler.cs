@@ -1,5 +1,6 @@
 ﻿using Library.Content;
 using Library.Domain;
+using Library.GameState.Base;
 using Library.GameState.Input;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Input;
@@ -66,6 +67,9 @@ namespace Library.GameState.Menu
                             case MenuItem.Return:
                                 MenuStateManager.Instance.SelectedIndex = 0;
                                 GameStateManager.Instance.UIStateStack.Pop();
+                                break;
+                            case MenuItem.Bag:
+                                GameStateManager.Instance.UIStateStack.Push(UIState.Bag);
                                 break;
                             case MenuItem.Save:
                                 MenuStateManager.Instance.Saving = true;

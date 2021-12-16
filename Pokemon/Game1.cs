@@ -36,6 +36,7 @@ namespace GameManager
             GraphicsManager.Initialize(Graphics);
 
             Encyclopedia.Load(Content);
+            ItemManager.Load(Content);
             MoveManager.Load(Content);
             TypeManager.Load(Content);
             TextureManager.Load(Content);
@@ -44,9 +45,10 @@ namespace GameManager
             DrawingManager.Initialize(Content);
 
             GameStateManager.Initialize();
+            SpecialActionManager.Initialize();
+
             BaseDrawingManager.Initialize();
             StitchDrawingManager.Initialize();
-            SpecialActionManager.Initialize();
 
             CutsceneManager.Load(Content);
         }

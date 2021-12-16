@@ -20,6 +20,7 @@ namespace Library.Content
         // Files
         public static string LocationStichesFileName = "\\locationStiches";
         public static string CutScenesFileName = "\\cutScenes";
+        public static string ItemConfigurationsFileName = "\\itemConfigurations";
         public static string MoveFileName = "\\moves";
 
         // Miscellaneous

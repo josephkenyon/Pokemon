@@ -1,6 +1,8 @@
 ﻿using Library.Domain;
 using System.Linq;
 using System.Diagnostics;
+using System.Collections.Generic;
+using System;
 
 namespace Library.GameState.Battle
 {
@@ -10,7 +12,10 @@ namespace Library.GameState.Battle
         {
             foreach (BattlePokemon battlePokemon in BattleStateManager.Battle.BattleCharacterStates[Direction.Right].Pokemon.Where(poke => !poke.IsFainted))
             {
-                BattlePokemon target = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].Pokemon.Where(poke => !poke.IsFainted).OrderBy(poke => poke.CurrentHealth).First();
+                List<BattlePokemon> availableTargets = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].Pokemon.Where(poke => !poke.IsFainted).ToList();
+
+                BattlePokemon target = availableTargets[new Random().Next(1, availableTargets.Count) - 1];
+
                 MoveResult moveResult = MoveManager.GetMoveResult(battlePokemon.Moves.OrderByDescending(move => move.Power).First(), battlePokemon, target, BattleStateManager.Battle);
 
                 float moveDamage = battlePokemon.CurrentHealth > moveResult.Damage ? moveResult.Damage / 30f : battlePokemon.CurrentHealth / 30f;

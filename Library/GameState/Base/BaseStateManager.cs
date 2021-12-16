@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Library.Content;
 using Library.Domain;
+using Library.GameState.BagState;
 using Library.GameState.Base.CutsceneState;
 using Library.GameState.Base.GamePadHandling;
 using Library.GameState.Base.MessageState;

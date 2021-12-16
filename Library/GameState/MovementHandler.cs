@@ -8,6 +8,7 @@ using Library.GameState.Base.TransitionState;
 using Library.World;
 using Library.World.Json;
 using Microsoft.Xna.Framework;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -27,6 +28,18 @@ namespace Library.GameState
             };
         }
 
+        public static Vector GetNewJumpPath(Direction direction, Vector position)
+        {
+            return direction switch
+            {
+                Direction.Up => new Vector(position.X, position.Y - Constants.ScaledTileSize * 2),
+                Direction.Down => new Vector(position.X, position.Y + Constants.ScaledTileSize * 2),
+                Direction.Left => new Vector(position.X - Constants.ScaledTileSize * 2, position.Y),
+                Direction.Right => new Vector(position.X + Constants.ScaledTileSize * 2, position.Y),
+                _ => Vector.Zero,
+            };
+        }
+
         public static void MoveCharacter(Character character)
         {
             Vector position = character.CharacterState.Position;
@@ -35,21 +48,22 @@ namespace Library.GameState
             int xDiff = position.X - movementPath.X;
             int yDiff = position.Y - movementPath.Y;
 
+            float speed = Constants.CharacterSpeed * (character.CharacterState.IsJumping || character.CharacterState.IsFalling ? 0.5f : 1f);
             if (xDiff < 0)
             {
-                character.Move(new Vector(position.X + Constants.CharacterSpeed, position.Y));
+                character.Move(new Vector(position.X + (speed > Math.Abs(xDiff) ? Math.Abs(xDiff) : speed), position.Y));
             }
             else if (xDiff > 0)
             {
-                character.Move(new Vector(position.X - Constants.CharacterSpeed, position.Y));
+                character.Move(new Vector(position.X - (speed > xDiff ? xDiff : speed), position.Y));
             }
             else if (yDiff < 0)
             {
-                character.Move(new Vector(position.X, position.Y + Constants.CharacterSpeed));
+                character.Move(new Vector(position.X, position.Y + (speed > Math.Abs(yDiff) ? Math.Abs(yDiff) : speed)));
             }
             else if (yDiff > 0)
             {
-                character.Move(new Vector(position.X, position.Y - Constants.CharacterSpeed));
+                character.Move(new Vector(position.X, position.Y - (speed > yDiff ? yDiff : speed)));
             }
             else
             {
@@ -112,7 +126,10 @@ namespace Library.GameState
                     }
                     else
                     {
-                        SpriteEffectsManager.CharacterMovementCompleted(character);
+                        if (!EncounterManager.EncounterPokemon())
+                        {
+                            SpriteEffectsManager.CharacterMovementCompleted(character);
+                        }
                     }
                 }
 

@@ -1,0 +1,8 @@
+{
+    "Items": [
+        {"ItemType": "Potion", "Heal": 20},
+        {"ItemType": "Super_Potion", "Heal": 50},
+        {"ItemType": "Hyper_Potion", "Heal": 200},
+        {"ItemType": "Max_Potion", "Heal": 2000}
+    ]
+}

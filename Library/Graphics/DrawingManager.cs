@@ -9,6 +9,7 @@ namespace Library.Graphics
     public static class DrawingManager
     {
         public static SpriteFont DefaultFont { get; private set; }
+        public static SpriteFont SmallFont { get; private set; }
         private static void BeginSpriteBatch(SpriteBatch spriteBatch) => spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.PointClamp);
         private static void EndSpriteBatch(SpriteBatch spriteBatch) => spriteBatch.End();
 
@@ -38,16 +39,35 @@ namespace Library.Graphics
             EndSpriteBatch(spriteBatch);
         }
 
-        public static void DrawString(SpriteBatch spriteBatch, IDrawingString drawingString)
+        public static void DrawSingleString(SpriteBatch spriteBatch, IDrawingString drawingString, bool small = false)
         {
             BeginSpriteBatch(spriteBatch);
-            spriteBatch.DrawString(DefaultFont, drawingString.GetString(), drawingString.GetPosition() + new Vector2(0, -3), Color.DarkGray);
-            spriteBatch.DrawString(DefaultFont, drawingString.GetString(), drawingString.GetPosition(), Color.DarkGray);
-            spriteBatch.DrawString(DefaultFont, drawingString.GetString(), drawingString.GetPosition() + new Vector2(4, 4), Color.DarkGray);
+            spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition() + new Vector2(0, -3), Color.DarkGray);
+            spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition(), Color.DarkGray);
+            spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition() + new Vector2(4, 4), Color.DarkGray);
             EndSpriteBatch(spriteBatch);
 
             BeginSpriteBatch(spriteBatch);
-            spriteBatch.DrawString(DefaultFont, drawingString.GetString(), drawingString.GetPosition() + Vector2.One * 1, new Color(82, 82, 82));
+            spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition() + Vector2.One * 1, new Color(82, 82, 82));
+            EndSpriteBatch(spriteBatch);
+        }
+
+        public static void DrawStringBatch(SpriteBatch spriteBatch, IEnumerable<IDrawingString> drawingStrings, bool small = false)
+        {
+            BeginSpriteBatch(spriteBatch);
+            foreach (IDrawingString drawingString in drawingStrings)
+            {
+                spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition() + new Vector2(0, -3), Color.DarkGray);
+                spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition(), Color.DarkGray);
+                spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition() + new Vector2(4, 4), Color.DarkGray);
+            }
+            EndSpriteBatch(spriteBatch);
+
+            BeginSpriteBatch(spriteBatch);
+            foreach (IDrawingString drawingString in drawingStrings)
+            {
+                spriteBatch.DrawString(small ? SmallFont : DefaultFont, drawingString.GetString(), drawingString.GetPosition() + Vector2.One * 1, new Color(82, 82, 82));
+            }
             EndSpriteBatch(spriteBatch);
         }
 
@@ -85,6 +105,7 @@ namespace Library.Graphics
         public static void Initialize(ContentManager content)
         {
             DefaultFont = content.Load<SpriteFont>("fonts/default");
+            SmallFont = content.Load<SpriteFont>("fonts/small");
         }
     }
 

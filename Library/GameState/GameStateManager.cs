@@ -6,7 +6,7 @@ using Library.GameState.Base;
 using Library.GameState.Battle;
 using Library.GameState.Menu;
 using Microsoft.Xna.Framework.Graphics;
-using System;
+using Library.GameState.BagState;
 
 namespace Library.GameState
 {
@@ -28,6 +28,7 @@ namespace Library.GameState
                     { UIState.Base, new BaseStateManager() },
                     { UIState.Battle, new BattleStateManager() },
                     { UIState.Menu, new MenuStateManager() },
+                    { UIState.Bag, new BagStateManager() },
                 }
             };
 
@@ -49,9 +50,7 @@ namespace Library.GameState
 
         public Player GetPlayer()
         {
-            BaseStateManager baseStateManager = (BaseStateManager)StateManagers[UIState.Base];
-
-            return (Player)baseStateManager.LocationStates[baseStateManager.GetPlayerLocation()].Characters.Find(character => character.Name == CharacterName.Ash);
+            return (Player) GetCharacter(CharacterName.Ash);
         }
 
         public Character GetCharacter(CharacterName characterName)

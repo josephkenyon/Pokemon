@@ -16,6 +16,9 @@
 #begin configuration/cutScenes.json
 /copy:configuration/cutScenes.json
 
+#begin configuration/itemConfigurations.json
+/copy:configuration/itemConfigurations.json
+
 #begin configuration/locationStiches.json
 /copy:configuration/locationStiches.json
 
@@ -43,6 +46,13 @@
 
 #begin fonts/pokemon_fire_red.ttf
 /copy:fonts/pokemon_fire_red.ttf
+
+#begin fonts/small.spritefont
+/importer:FontDescriptionImporter
+/processor:FontDescriptionProcessor
+/processorParam:PremultiplyAlpha=True
+/processorParam:TextureFormat=Compressed
+/build:fonts/small.spritefont
 
 #begin locations/ashHomeDownStairs.json
 /copy:locations/ashHomeDownStairs.json
@@ -515,6 +525,18 @@
 /processorParam:TextureFormat=Color
 /build:sprites/tilesets/grassTileSet.png
 
+#begin sprites/wallpapers/bag.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/wallpapers/bag.png
+
 #begin sprites/wallpapers/battleArea.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -526,4 +548,16 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:sprites/wallpapers/battleArea.png
+
+#begin sprites/wallpapers/pokemonMenu.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:sprites/wallpapers/pokemonMenu.png
 

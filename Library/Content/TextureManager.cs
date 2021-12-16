@@ -33,6 +33,8 @@ namespace Library.Content
                 { TextureName.Animation, contentManager.Load<Texture2D>("sprites\\tilesets\\animationTileset") },
                 { TextureName.Effects, contentManager.Load<Texture2D>("sprites\\tilesets\\effectsTileset") },
                 { TextureName.BattleWallpaper, contentManager.Load<Texture2D>("sprites\\wallpapers\\battleArea") },
+                { TextureName.BagWallpaper, contentManager.Load<Texture2D>("sprites\\wallpapers\\bag") },
+                { TextureName.PokemonWallpaper, contentManager.Load<Texture2D>("sprites\\wallpapers\\pokemonMenu") },
                 { TextureName.HealthExpBar, contentManager.Load<Texture2D>("sprites\\effects\\healthExpBar") },
                 { TextureName.EmptyWhiteTexture, contentManager.Load<Texture2D>("sprites\\effects\\blankWhiteTexture") },
                 { TextureName.BattleAsh, contentManager.Load<Texture2D>("sprites\\characters\\battleAsh") },

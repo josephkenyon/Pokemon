@@ -5,10 +5,12 @@ using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Linq;
 using System;
+using Library.GameState.BagState;
+using Library.Content;
 
 namespace Library.GameState.Battle.GamePadHelpers
 {
-    public static class FightSelectHelper
+    public static class PokemonSelectHelper
     {
         public static void Update()
         {
@@ -44,10 +46,15 @@ namespace Library.GameState.Battle.GamePadHelpers
             {
                 if (BattleStateManager.Battle.GetPreviousState() == BattleState.ItemSelect)
                 {
-                    //do item action
-
-                    BattleStateManager.Battle.ClearStateStack();
-                    BattleStateManager.Battle.SwitchToState(BattleState.AshSelect);
+                    ItemType? itemType = BagStateManager.UseSelectedItem();
+                    if (itemType != null)
+                    {
+                        int? healAmount = ItemManager.GetHealAmount((ItemType)itemType);
+                        if (healAmount != null)
+                        {
+                            BattleStateManager.Battle.HealSelectedPokemon(Direction.Left, (int)healAmount);
+                        }
+                    }
                 }
                 else
                 {

@@ -31,7 +31,7 @@ namespace Library.Assets
 
         public int GetStat(Stat stat)
             => Encyclopedia.GetSpeciesProperties(Species).StatSet.GetStat(stat)
-                + ((int)(Encyclopedia.GetSpeciesProperties(Species).StatSet.GetStat(stat) / 25f)
+                + ((int)(Encyclopedia.GetSpeciesProperties(Species).StatSet.GetStat(stat) / 35f * Level)
                 + (int)(Effort.GetStat(stat) / 50f)) * Level;
 
         public int ExperienceToLevelUp

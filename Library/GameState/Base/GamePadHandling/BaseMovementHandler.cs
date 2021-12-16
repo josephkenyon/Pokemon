@@ -13,12 +13,24 @@ namespace Library.GameState.Base.GamePadHandling
             if (nullableDir != null)
             {
                 Direction direction = (Direction)nullableDir;
-                Vector newLocation = MovementHandler.GetNewPath(direction, GameStateManager.Instance.GetPlayer().CharacterState.Position);
-                if (CollisionHandler.IsValidMove(GameStateManager.Instance.GetPlayer().CharacterState, newLocation))
+
+                CharacterState playerState = GameStateManager.Instance.GetPlayer().CharacterState;
+
+                Vector newLocation = MovementHandler.GetNewPath(direction, playerState.Position);
+
+                if (CollisionHandler.IsValidMove(playerState, newLocation))
                 {
-                    GameStateManager.Instance.GetPlayer().CharacterState.StartMoving(direction);
+                    playerState.StartMoving(direction);
+
                 }
-                GameStateManager.Instance.GetPlayer().CharacterState.Direction = direction;
+                else if (CollisionHandler.IsJumpableMove(playerState, newLocation))
+                {
+                    playerState.StartJumping(direction);
+                }
+                else
+                {
+                    playerState.Direction = direction;
+                }
             }
         }
     }

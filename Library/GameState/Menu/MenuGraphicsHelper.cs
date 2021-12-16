@@ -17,7 +17,7 @@ namespace Library.GameState.Menu
         public static Vector PointerTextureSize => new Vector(1, 1);
         private static Vector MenuPointerStartingPosition => new Vector(2 * Constants.Scaler, 11 * Constants.Scaler);
         private static int PointerIncrement => (int)(15 * Constants.Scaler);
-        public static Rectangle PointerSourceRectangle => GraphicsHelper.GetSourceRectangle(new Vector(1, 0), PointerTextureSize);
+        public static Rectangle PointerSourceRectangle => GraphicsHelper.GetSourceRectangle(new Vector(1, 0), Vector.One);
         public static Rectangle PointerTargetRectangle => new Rectangle(new Point(MenuTargetRectangle.Location.X + MenuPointerStartingPosition.X, MenuTargetRectangle.Location.Y + MenuPointerStartingPosition.Y + PointerIncrement * MenuStateManager.Instance.SelectedIndex), (PointerTextureSize * Constants.ScaledTileSize).ToPoint());
 
         private static Vector SaveLoadMenuPointerStartingPosition => new Vector(2 * Constants.Scaler, 11 * Constants.Scaler);

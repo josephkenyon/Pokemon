@@ -79,6 +79,13 @@ namespace Library.Domain
         Caught,
     }
 
+    public enum BagStateState
+    {
+        Items,
+        Key_Items,
+        Poke_Balls,
+    }
+
     public enum UIState
     {
         Base,
@@ -94,7 +101,7 @@ namespace Library.Domain
         Base,
         Message,
         Transition,
-        Cutscene
+        Cutscene,
     }
     public enum MenuItem
     {
@@ -108,9 +115,24 @@ namespace Library.Domain
         ExitGame
     }
 
-    public enum ItemType { 
-        Pokeball,
+    public enum ItemType
+    {
         Potion,
+        Super_Potion,
+        Hyper_Potion,
+        Max_Potion,
+    }
+
+    public enum KeyItemType { 
+    }
+
+    public enum PokeBallType
+    {
+        Poke_Ball,
+        Great_Ball,
+        Lure_Ball,
+        Ultra_Ball,
+        Master_Ball
     }
 
     public enum Direction
@@ -143,6 +165,8 @@ namespace Library.Domain
         NPCTileset,
         Oak,
         Green,
+        BagWallpaper,
+        PokemonWallpaper,
     }
 
     public enum Badge {
@@ -159,7 +183,6 @@ namespace Library.Domain
     public enum BattleState
     {
         AshSelect,
-        FightSelect,
         PokemonSelect,
         MoveSelect,
         ItemSelect,
@@ -177,7 +200,6 @@ namespace Library.Domain
     public enum BattleMenuItem
     {
         Fight,
-        Pokemon,
         Bag,
         Run
     }

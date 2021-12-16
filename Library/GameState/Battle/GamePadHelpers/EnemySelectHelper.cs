@@ -34,7 +34,7 @@ namespace Library.GameState.Battle.GamePadHelpers
 
             if (direction != null)
             {
-                int? index = FightSelectHelper.GetIndexOf((Direction)direction, rightCharacterState.Pokemon, rightCharacterState.SelectedPokemonIndex, false);
+                int? index = PokemonSelectHelper.GetIndexOf((Direction)direction, rightCharacterState.Pokemon, rightCharacterState.SelectedPokemonIndex, false);
 
                 if (index != null)
                 {
@@ -46,14 +46,12 @@ namespace Library.GameState.Battle.GamePadHelpers
 
             if (gamePadState.Buttons.A == ButtonState.Pressed)
             {
-
                 BattlePokemon PokemonThatsAttacking = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemon;
                 BattlePokemon attackedPokemon = rightCharacterState.Pokemon[rightCharacterState.SelectedPokemonIndex];
 
                 MoveResult moveResult = MoveManager.GetMoveResult(MoveSelectHelper.SelectedMove, PokemonThatsAttacking, attackedPokemon, BattleStateManager.Battle);
 
-                float moveDamage = PokemonThatsAttacking.CurrentHealth > moveResult.Damage ? moveResult.Damage / 30f : PokemonThatsAttacking.CurrentHealth / 30f;
-
+                float moveDamage = moveResult.Damage / 30f;
                 BattleStateManager.Battle.QueueNewTransaction(
                     () =>
                     {

@@ -1,5 +1,4 @@
 ﻿using Library.Domain;
-using Library.Graphics;
 using Library.Menu;
 using Microsoft.Xna.Framework.Graphics;
 using System;

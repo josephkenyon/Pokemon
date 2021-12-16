@@ -20,7 +20,8 @@ namespace Library.GameState
         public List<CutsceneJson> Cutscenes { get; set; }
         public LocationName Name { get; set; }
 
-        public LocationState() {
+        public LocationState()
+        {
             SpriteEffects = new List<SpriteEffect>();
             Cutscenes = new List<CutsceneJson>();
         }
@@ -33,7 +34,7 @@ namespace Library.GameState
             }
 
             SpriteEffects.Where(effect => !effect.Update()).ToList().ForEach(effect => SpriteEffects.Remove(effect));
-            
+
             LocationManager.LocationLayouts[Name].BackgroundGrassTiles.Select(tile => tile.Value).Where(tile => tile.NumFrames != null).ToList().ForEach(tile => tile.Update());
             LocationManager.LocationLayouts[Name].ForegroundGrassTiles.Select(tile => tile.Value).Where(tile => tile.NumFrames != null).ToList().ForEach(tile => tile.Update());
 
@@ -41,7 +42,16 @@ namespace Library.GameState
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            Characters.OrderBy(character => character.CharacterState.Position.Y).ToList().ForEach(character => BaseDrawingManager.Instance.DrawSingle(spriteBatch, character));
+            Characters.OrderBy(character => character.CharacterState.Position.Y).ToList().ForEach(character =>
+            {
+                if (character.CharacterState.ZPosition != 0)
+                {
+                    BaseDrawingManager.Instance.DrawSingle(spriteBatch, character.GetShadow());
+                }
+
+                BaseDrawingManager.Instance.DrawSingle(spriteBatch, character);
+            });
+
             BaseDrawingManager.Instance.DrawBatch(spriteBatch, Items);
             BaseDrawingManager.Instance.DrawBatch(spriteBatch, CapturedPokemon);
             BaseDrawingManager.Instance.DrawBatch(spriteBatch, SpriteEffects);

@@ -27,11 +27,11 @@ namespace Library.GameState.Battle
                 CurrentHealth -= amount;
         }
 
-        public void Heal(int amount)
+        public void Heal(float amount)
         {
 
-            if (CurrentHealth + amount > Encyclopedia.GetSpeciesProperties(Species).StatSet.GetStat(Stat.HP))
-                CurrentHealth = Encyclopedia.GetSpeciesProperties(Species).StatSet.GetStat(Stat.HP);
+            if (CurrentHealth + amount > GetStat(Stat.HP))
+                CurrentHealth = GetStat(Stat.HP);
             else
                 CurrentHealth += amount;
         }

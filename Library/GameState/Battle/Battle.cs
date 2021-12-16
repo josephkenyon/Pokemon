@@ -32,6 +32,7 @@ namespace Library.GameState.Battle
 
             return returnState;
         }
+
         public Battle(CharacterState leftCharacterState, CharacterState rightCharacterState)
         {
             LeftCharacterState = leftCharacterState;
@@ -52,6 +53,7 @@ namespace Library.GameState.Battle
         public void ClearStateStack()
         {
             StateStack.Clear();
+            BattleCharacterStates[Direction.Left].SelectedPokemonIndex = 0;
         }
 
         public void SwitchToState(BattleState state)
@@ -77,7 +79,8 @@ namespace Library.GameState.Battle
 
         public void UpdateTransaction()
         {
-            if (Transactions.Peek().Complete) {
+            if (Transactions.Peek().Complete)
+            {
                 Transactions.Dequeue();
             }
 
@@ -133,6 +136,18 @@ namespace Library.GameState.Battle
         {
             TimerDescending = false;
             Timer = 0.5f;
+        }
+
+        public void HealSelectedPokemon(Direction direction, int amount)
+        {
+            BattlePokemon target = BattleCharacterStates[direction].SelectedPokemon;
+            float healAmount = amount / 30f;
+            QueueNewTransaction(() => target.Heal(healAmount), () =>
+            {
+                target.UsedMove = true;
+                BattleStateManager.Battle.ClearStateStack();
+                BattleStateManager.Battle.SwitchToState(BattleState.AshSelect);
+            }, 30);
         }
     }
 }
