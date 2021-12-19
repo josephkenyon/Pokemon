@@ -21,7 +21,8 @@ namespace Library.Cutscenes
             {
                 { SpecialActionKey.Give_Rival_Pokemon, GivePokemonToRival },
                 { SpecialActionKey.Battle_Rival, BattleRival },
-                { SpecialActionKey.Put_Missing_Pokemon_Back, PutMissingPokemonBack }
+                { SpecialActionKey.Put_Missing_Pokemon_Back, PutMissingPokemonBack },
+                { SpecialActionKey.Heal_All_Pokemon, HealAllPokemon }
             };
         }
 
@@ -60,10 +61,20 @@ namespace Library.Cutscenes
 
         private static void BattleRival()
         {
-            Player player = (Player) GameStateManager.Instance.GetCharacter(CharacterName.Ash);
+            Player player = GameStateManager.Instance.GetPlayer();
             Character rival = GameStateManager.Instance.GetCharacter(CharacterName.Green);
 
             BattleStateManager.CreateNewBattle(player.CharacterState, rival.CharacterState);
+        }
+
+
+        private static void HealAllPokemon()
+        {
+            Player player = GameStateManager.Instance.GetPlayer();
+            foreach(Pokemon pokemon in player.CharacterState.Pokemon)
+            {
+                pokemon.FullHeal();
+            }
         }
     }
 }

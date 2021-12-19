@@ -16,7 +16,7 @@ namespace Library.Content
         public static string TileSetDirectory = "\\tilesets";
         public static string WallpaperDirectory = "\\wallpapers";
         public static string ConfigurationDirectory = "\\configuration";
-        public static string SaveDirectory = "\\Saves";
+        public static string SaveDirectory = Directory.GetCurrentDirectory() + "\\saves\\";
 
         // Files
         public static string LocationStichesFileName = "\\locationStiches";
@@ -34,18 +34,21 @@ namespace Library.Content
 
         public static void SaveState(int SaveSlot)
         {
+            Directory.CreateDirectory(SaveDirectory);
+
             string jsonText = JsonConvert.SerializeObject(GameStateManager.Instance, JsonSerializerSettings);
 
-            File.WriteAllText(SaveFileName(SaveSlot), JToken.Parse(jsonText).ToString(Formatting.Indented));
+            File.WriteAllText(SaveDirectory + SaveFileName(SaveSlot), JToken.Parse(jsonText).ToString(Formatting.Indented));
         }
 
         public static GameStateManager LoadState(int SaveSlot)
         {
             GameStateManager gameStateManager = null;
 
+            Directory.CreateDirectory(SaveDirectory);
             if (File.Exists(SaveFileName(SaveSlot)))
             {
-                using StreamReader r = new StreamReader(SaveFileName(SaveSlot));
+                using StreamReader r = new StreamReader(SaveDirectory + SaveFileName(SaveSlot));
                 gameStateManager = JsonConvert.DeserializeObject<GameStateManager>(r.ReadToEnd(), JsonSerializerSettings);
             }
 

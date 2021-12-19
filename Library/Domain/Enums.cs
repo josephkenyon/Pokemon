@@ -32,6 +32,7 @@ namespace Library.Domain
         Give_Rival_Pokemon,
         Battle_Rival,
         Put_Missing_Pokemon_Back,
+        Heal_All_Pokemon,
     }
 
     public enum CutsceneTriggerType

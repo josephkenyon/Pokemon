@@ -123,6 +123,9 @@
             },
             {
                 "CutsceneTransactionType": "Special_Action",  "SpecialActionKey": "Put_Missing_Pokemon_Back"
+            },
+            {
+                "CutsceneTransactionType": "Special_Action",  "SpecialActionKey": "Heal_All_Pokemon"
             }
         ]
     }
