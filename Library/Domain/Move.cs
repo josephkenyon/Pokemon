@@ -9,12 +9,12 @@ namespace Library.Domain
         public string Name { get; set; }
         public int PP { get; set; }
         public Type Type { get; set; }
-        public int Power { get; set; }
+        public int? Power { get; set; }
         public int SecondaryPower { get; set; }
         public int Accuracy { get; set; }
         public int SecondaryAccuracy { get; set; }
         public List<MoveType> MoveTypes { get; set; }
-        public Stat StatInteraction { get; set; }
+        public Stat? StatInteraction { get; set; }
         public string FormattedName => Name.Replace("_", " ").ToUpper();
         public MoveName MoveName => (MoveName)Enum.Parse(typeof(MoveName), Name, true);
 

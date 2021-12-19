@@ -56,7 +56,7 @@ namespace Library.Domain
                 modifer *= 1.5f;
             }
 
-            damage = (((user.Level * 2f / 5f) + 2) * move.Power * userAttack / targetDefense / 50f * 2) + 2f;
+            damage = (((user.Level * 2f / 5f) + 2) * (int)move.Power * userAttack / targetDefense / 50f * 2) + 2f;
 
             double randomValue = 0.85 + (1 - 0.85) * new Random().NextDouble();
 
@@ -124,6 +124,21 @@ namespace Library.Domain
     public class MoveResult
     {
         public MoveResultType MoveResultType { get; set; }
-        public float Damage { get; set; }
+        public float? Damage { get; set; }
+        public Stat? StatInteraction { get; set; }
+        public int? StatInteractionPower { get; set; }
+
+        public MoveResult()
+        {
+        }
+
+        public MoveResult(Move move)
+        {
+            if (move.StatInteraction != null)
+            {
+                StatInteraction = move.StatInteraction;
+                StatInteractionPower = move.SecondaryPower;
+            }
+        }
     }
 }

@@ -46,72 +46,89 @@ namespace Library.GameState.Battle.GamePadHelpers
                 BattlePokemon PokemonThatsAttacking = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemon;
                 BattlePokemon attackedPokemon = rightCharacterState.Pokemon[rightCharacterState.SelectedPokemonIndex];
 
-                MoveResult moveResult = MoveManager.GetMoveResult(MoveSelectHelper.SelectedMove, PokemonThatsAttacking, attackedPokemon, BattleStateManager.Battle);
+                if (MoveSelectHelper.SelectedMove.Power != null)
+                {
+                    MoveResult moveResult = MoveManager.GetMoveResult(MoveSelectHelper.SelectedMove, PokemonThatsAttacking, attackedPokemon, BattleStateManager.Battle);
 
-                float moveDamage = moveResult.Damage / 30f;
-                BattleStateManager.Battle.QueueNewTransaction(
-                    () =>
-                    {
-                        attackedPokemon.Damage(moveDamage);
-                    },
-                    () =>
-                    {
-                        if (attackedPokemon.IsFainted)
+                    float moveDamage = (float)(moveResult.Damage / 30f);
+                    BattleStateManager.Battle.QueueNewTransaction(
+                        () =>
                         {
-                            int experienceReward = attackedPokemon.GetExperienceReward();
-
-                            foreach (BattlePokemon rewardedPokemon in leftCharacterState.Pokemon)
-                            {
-                                if (!rewardedPokemon.IsFainted)
-                                {
-                                    rewardedPokemon.GainExperience(experienceReward);
-                                }
-                            }
-
-                            bool allFainted = true;
-                            foreach (BattlePokemon faintedPokemon in rightCharacterState.Pokemon)
-                            {
-                                if (!faintedPokemon.IsFainted)
-                                {
-                                    allFainted = false;
-                                    break;
-                                }
-                            }
-
-                            if (allFainted)
-                            {
-                                BattleStateManager.EndBattle();
-                                return;
-                            }
-                        }
-
-                        leftCharacterState.Pokemon[leftCharacterState.SelectedPokemonIndex].UsedMove = true;
-
-                        bool allUsedMove = true;
-
-                        leftCharacterState.Pokemon.ForEach(pokemon => allUsedMove = (pokemon.UsedMove || pokemon.IsFainted) && allUsedMove);
-
-                        BattleStateManager.Battle.ConsoleText = moveResult.MoveResultType.ToString();
-
-                        Debug.WriteLine(BattleStateManager.Battle.ConsoleText);
-
-                        if (allUsedMove)
+                            attackedPokemon.Damage(moveDamage);
+                        },
+                        () =>
                         {
-                            BattleStateManager.Battle.ClearStateStack();
+                            OnMoveComplete(attackedPokemon, moveResult);
+                        },
+                        30
+                    );
+                }
+                else if (MoveSelectHelper.SelectedMove.StatInteraction != null)
+                {
+                    attackedPokemon.ApplyStatDebuff(MoveSelectHelper.SelectedMove);
+                    OnMoveComplete(attackedPokemon, new MoveResult(MoveSelectHelper.SelectedMove));
+                }
 
-                            leftCharacterState.Pokemon.ForEach(poke => poke.UsedMove = false);
-
-                            BattleStateManager.Battle.SwitchToState(BattleState.EnemyAttack);
-                        }
-                        else
-                        {
-                            BattleStateManager.Battle.ClearStateStack();
-                            BattleStateManager.Battle.SwitchToState(BattleState.AshSelect);
-                        }
-                    },
-                    30
-                );
                 GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
+            }
+        }
+
+        private static void OnMoveComplete(BattlePokemon attackedPokemon, MoveResult moveResult)
+        {
+            BattleCharacterState leftCharacterState = BattleStateManager.Battle.BattleCharacterStates[Direction.Left];
+            BattleCharacterState rightCharacterState = BattleStateManager.Battle.BattleCharacterStates[Direction.Right];
+
+            if (attackedPokemon.IsFainted)
+            {
+                int experienceReward = attackedPokemon.GetExperienceReward();
+
+                foreach (BattlePokemon rewardedPokemon in leftCharacterState.Pokemon)
+                {
+                    if (!rewardedPokemon.IsFainted)
+                    {
+                        rewardedPokemon.GainExperience(experienceReward);
+                    }
+                }
+
+                bool allFainted = true;
+                foreach (BattlePokemon faintedPokemon in rightCharacterState.Pokemon)
+                {
+                    if (!faintedPokemon.IsFainted)
+                    {
+                        allFainted = false;
+                        break;
+                    }
+                }
+
+                if (allFainted)
+                {
+                    BattleStateManager.EndBattle();
+                    return;
+                }
+            }
+
+            leftCharacterState.Pokemon[leftCharacterState.SelectedPokemonIndex].UsedMove = true;
+
+            bool allUsedMove = true;
+
+            leftCharacterState.Pokemon.ForEach(pokemon => allUsedMove = (pokemon.UsedMove || pokemon.IsFainted) && allUsedMove);
+
+            BattleStateManager.Battle.ConsoleText = moveResult.MoveResultType.ToString();
+
+            Debug.WriteLine(BattleStateManager.Battle.ConsoleText);
+
+            if (allUsedMove)
+            {
+                BattleStateManager.Battle.ClearStateStack();
+
+                leftCharacterState.Pokemon.ForEach(poke => poke.UsedMove = false);
+
+                BattleStateManager.Battle.SwitchToState(BattleState.EnemyAttack);
+            }
+            else
+            {
+                BattleStateManager.Battle.ClearStateStack();
+                BattleStateManager.Battle.SwitchToState(BattleState.AshSelect);
             }
         }
     }

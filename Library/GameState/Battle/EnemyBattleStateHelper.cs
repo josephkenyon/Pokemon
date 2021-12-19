@@ -18,7 +18,7 @@ namespace Library.GameState.Battle
 
                 MoveResult moveResult = MoveManager.GetMoveResult(battlePokemon.Moves.OrderByDescending(move => move.Power).First(), battlePokemon, target, BattleStateManager.Battle);
 
-                float moveDamage = battlePokemon.CurrentHealth > moveResult.Damage ? moveResult.Damage / 30f : battlePokemon.CurrentHealth / 30f;
+                float moveDamage = battlePokemon.CurrentHealth > moveResult.Damage ? (float) moveResult.Damage / 30f : battlePokemon.CurrentHealth / 30f;
 
                 BattleStateManager.Battle.QueueNewTransaction(
                     () =>
