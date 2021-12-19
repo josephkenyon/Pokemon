@@ -1,6 +1,5 @@
-﻿using Library.Domain;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
+﻿using Library.Controls;
+using Library.Domain;
 
 namespace Library.GameState.Base.MessageState
 {
@@ -8,9 +7,7 @@ namespace Library.GameState.Base.MessageState
     {
         public static void Update()
         {
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
-            if (gamePadState.Buttons.A == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.APressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 MessageStateManager.CompleteMessage();
                 GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounceLong;

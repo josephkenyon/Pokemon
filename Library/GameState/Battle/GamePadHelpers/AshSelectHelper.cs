@@ -1,7 +1,6 @@
-﻿using Library.Domain;
+﻿using Library.Controls;
+using Library.Domain;
 using Library.GameState.Input;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using System;
 using System.Diagnostics;
 
@@ -14,9 +13,7 @@ namespace Library.GameState.Battle.GamePadHelpers
 
         public static void Update()
         {
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
-            Direction? direction = GamePadHelper.GetDPadDirection(gamePadState);
+            Direction? direction = GamePadHelper.GetDPadDirection();
 
             if (direction != null)
             {
@@ -42,7 +39,7 @@ namespace Library.GameState.Battle.GamePadHelpers
                 Debug.WriteLine(ItemList[SelectedIndex].ToString());
             }
 
-            if (gamePadState.Buttons.A == ButtonState.Pressed)
+            if (ControlsManager.APressed())
             {
                 switch (ItemList[SelectedIndex])
                 {

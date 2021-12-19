@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using Microsoft.Xna.Framework.Input;
 using Library.Domain;
 using Library.Content;
 using Library.GameState;
 using Library.Graphics;
-using Microsoft.Xna.Framework.Input;
 using Library.Base;
 using Library.World;
 using Library.Cutscenes;

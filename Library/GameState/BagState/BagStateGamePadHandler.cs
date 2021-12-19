@@ -1,8 +1,6 @@
-﻿using Library.Content;
+﻿using Library.Controls;
 using Library.Domain;
 using Library.GameState.Battle;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 
 namespace Library.GameState.BagState
 {
@@ -10,9 +8,7 @@ namespace Library.GameState.BagState
     {
         public static void Update()
         {
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
-            if (gamePadState.Buttons.A == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.APressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 if (BattleStateManager.Battle != null)
                 {
@@ -21,7 +17,7 @@ namespace Library.GameState.BagState
 
                 GameStateManager.Instance.UIStateStack.Pop();
             }
-            else if (gamePadState.Buttons.B == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.BPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 if (BattleStateManager.Battle != null)
                 {
@@ -30,18 +26,18 @@ namespace Library.GameState.BagState
 
                 GameStateManager.Instance.UIStateStack.Pop();
             }
-            else if (gamePadState.DPad.Down == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.DownPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 BagStateManager.ItemIndex++;
             }
-            else if (gamePadState.DPad.Up == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.UpPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 if (BagStateManager.ItemIndex > 0)
                 {
                     BagStateManager.ItemIndex--;
                 }
             }
-            else if (gamePadState.DPad.Left == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.LeftPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 int index = (int)BagStateManager.BagState;
                 if (index != 0)
@@ -54,7 +50,7 @@ namespace Library.GameState.BagState
                     }
                 }
             }
-            else if (gamePadState.DPad.Right == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.RightPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 int index = (int)BagStateManager.BagState;
                 if (index != 2)

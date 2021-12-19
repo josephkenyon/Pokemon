@@ -1,7 +1,6 @@
-﻿using Library.Domain;
+﻿using Library.Controls;
+using Library.Domain;
 using Library.GameState.Battle.GamePadHelpers;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 
 namespace Library.GameState.Battle
 {
@@ -11,7 +10,7 @@ namespace Library.GameState.Battle
         {
             if (GameStateManager.Instance.InputDebounceTimer == 0)
             {
-                if (GamePad.GetState(PlayerIndex.One).Buttons.B == ButtonState.Pressed)
+                if (ControlsManager.BPressed())
                 {
                     if (BattleStateManager.Battle.SwitchToPreviousState())
                     {

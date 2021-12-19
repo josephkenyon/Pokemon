@@ -16,6 +16,7 @@ namespace Library.Content
         public static string TileSetDirectory = "\\tilesets";
         public static string WallpaperDirectory = "\\wallpapers";
         public static string ConfigurationDirectory = "\\configuration";
+        public static string SaveDirectory = "\\Saves";
 
         // Files
         public static string LocationStichesFileName = "\\locationStiches";

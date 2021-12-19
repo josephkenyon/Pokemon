@@ -1,5 +1,6 @@
 ﻿using Library.Assets;
 using Library.Content;
+using Library.Controls;
 using Library.Cutscenes;
 using Library.Domain;
 using Library.GameState.Base.MessageState;
@@ -14,10 +15,9 @@ namespace Library.GameState.Base.GamePadHandling
 {
     public static class BaseButtonsHandler
     {
-        public static void Update(GamePadState gamePadState)
+        public static void Update()
         {
-
-            if (gamePadState.Buttons.A == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.APressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 Player player = GameStateManager.Instance.GetPlayer();
                 Vector newLocation = MovementHandler.GetNewPath(player.CharacterState.Direction, player.CharacterState.Position);
@@ -65,7 +65,7 @@ namespace Library.GameState.Base.GamePadHandling
                 }
             }
 
-            if (gamePadState.Buttons.Start == ButtonState.Pressed && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.StartPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
                 GameStateManager.Instance.UIStateStack.Push(UIState.Menu);
                 GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;

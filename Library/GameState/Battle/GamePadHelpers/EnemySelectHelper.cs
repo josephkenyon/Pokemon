@@ -1,7 +1,6 @@
-﻿using Library.Domain;
+﻿using Library.Controls;
+using Library.Domain;
 using Library.GameState.Input;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using System.Diagnostics;
 
 namespace Library.GameState.Battle.GamePadHelpers
@@ -10,8 +9,6 @@ namespace Library.GameState.Battle.GamePadHelpers
     {
         public static void Update()
         {
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
             BattleCharacterState leftCharacterState = BattleStateManager.Battle.BattleCharacterStates[Direction.Left];
             BattleCharacterState rightCharacterState = BattleStateManager.Battle.BattleCharacterStates[Direction.Right];
 
@@ -30,7 +27,7 @@ namespace Library.GameState.Battle.GamePadHelpers
                 }
             }
 
-            Direction? direction = GamePadHelper.GetDPadDirection(gamePadState);
+            Direction? direction = GamePadHelper.GetDPadDirection();
 
             if (direction != null)
             {
@@ -44,7 +41,7 @@ namespace Library.GameState.Battle.GamePadHelpers
                 }
             }
 
-            if (gamePadState.Buttons.A == ButtonState.Pressed)
+            if (ControlsManager.APressed())
             {
                 BattlePokemon PokemonThatsAttacking = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemon;
                 BattlePokemon attackedPokemon = rightCharacterState.Pokemon[rightCharacterState.SelectedPokemonIndex];

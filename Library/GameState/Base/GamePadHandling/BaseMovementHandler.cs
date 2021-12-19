@@ -1,14 +1,13 @@
 ﻿using Library.Domain;
 using Library.GameState.Input;
-using Microsoft.Xna.Framework.Input;
 
 namespace Library.GameState.Base.GamePadHandling
 {
     public static class BaseMovementHandler
     {
-        public static void Update(GamePadState gamePadState)
+        public static void Update()
         {
-            Direction? nullableDir = !GameStateManager.Instance.GetPlayer().CharacterState.IsMoving ? GamePadHelper.GetDPadDirection(gamePadState) : null;
+            Direction? nullableDir = !GameStateManager.Instance.GetPlayer().CharacterState.IsMoving ? GamePadHelper.GetDPadDirection() : null;
 
             if (nullableDir != null)
             {

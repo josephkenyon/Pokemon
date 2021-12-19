@@ -1,9 +1,7 @@
 ﻿using Library.Content;
+using Library.Controls;
 using Library.Domain;
-using Library.GameState.Base;
 using Library.GameState.Input;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 
 namespace Library.GameState.Menu
 {
@@ -11,17 +9,15 @@ namespace Library.GameState.Menu
     {
         public static bool Update()
         {
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
             if (GameStateManager.Instance.InputDebounceTimer == 0)
             {
-                if (gamePadState.Buttons.Start == ButtonState.Pressed || (gamePadState.Buttons.B == ButtonState.Pressed && !MenuStateManager.SavingOrLoading))
+                if (ControlsManager.StartPressed() || (ControlsManager.BPressed() && !MenuStateManager.SavingOrLoading))
                 {
                     MenuStateManager.Instance.CloseMenu();
                     return true;
                 }
 
-                Direction? direction = GamePadHelper.GetDPadDirection(gamePadState);
+                Direction? direction = GamePadHelper.GetDPadDirection();
 
                 if (direction != null)
                 {
@@ -32,7 +28,7 @@ namespace Library.GameState.Menu
                     return true;
                 }
 
-                if (gamePadState.Buttons.B == ButtonState.Pressed)
+                if (ControlsManager.BPressed())
                 {
                     if (MenuStateManager.Instance.Saving || MenuStateManager.Instance.Loading)
                     {
@@ -44,7 +40,7 @@ namespace Library.GameState.Menu
                     }
                 }
 
-                if (gamePadState.Buttons.A == ButtonState.Pressed)
+                if (ControlsManager.APressed())
                 {
                     if (MenuStateManager.Instance.Saving)
                     {

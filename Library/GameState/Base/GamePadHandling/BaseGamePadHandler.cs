@@ -11,10 +11,8 @@ namespace Library.GameState.Base.GamePadHandling
     {
         public static void Update()
         {
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
-            BaseButtonsHandler.Update(gamePadState);
-            BaseMovementHandler.Update(gamePadState);
+            BaseButtonsHandler.Update();
+            BaseMovementHandler.Update();
         }
     }
 }

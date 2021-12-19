@@ -1,12 +1,11 @@
 ﻿using Library.Domain;
 using Library.GameState.Input;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Linq;
 using System;
 using Library.GameState.BagState;
 using Library.Content;
+using Library.Controls;
 
 namespace Library.GameState.Battle.GamePadHelpers
 {
@@ -14,9 +13,7 @@ namespace Library.GameState.Battle.GamePadHelpers
     {
         public static void Update()
         {
-            GamePadState gamePadState = GamePad.GetState(PlayerIndex.One);
-
-            Direction? direction = GamePadHelper.GetDPadDirection(gamePadState);
+            Direction? direction = GamePadHelper.GetDPadDirection();
 
             int unselectedIndex = 0;
             BattlePokemon currentlySelectedPokemon = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemon;
@@ -42,7 +39,7 @@ namespace Library.GameState.Battle.GamePadHelpers
                 }
             }
 
-            if (gamePadState.Buttons.A == ButtonState.Pressed)
+            if (ControlsManager.APressed())
             {
                 if (BattleStateManager.Battle.GetPreviousState() == BattleState.ItemSelect)
                 {

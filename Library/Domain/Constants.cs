@@ -18,7 +18,7 @@
 
         public static readonly int TransitionTime = 60;
         public static readonly int ItemDebounce = 10;
-        public static readonly int MenuActivationDebounce = 10;
+        public static readonly int MenuActivationDebounce = 16;
         public static readonly int MenuActivationDebounceLong = 30;
 
         public static readonly float DefaultWildBattleChance = 0.1f;

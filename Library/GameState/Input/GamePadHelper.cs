@@ -1,26 +1,26 @@
-﻿using Library.Domain;
-using Microsoft.Xna.Framework.Input;
+﻿using Library.Controls;
+using Library.Domain;
 
 namespace Library.GameState.Input
 {
     public static class GamePadHelper
     {
-        public static Direction? GetDPadDirection(GamePadState gamePadState)
+        public static Direction? GetDPadDirection()
         {
 
-            if (gamePadState.DPad.Up == ButtonState.Pressed)
+            if (ControlsManager.UpPressed())
             {
                 return Direction.Up;
             }
-            else if (gamePadState.DPad.Down == ButtonState.Pressed)
+            else if (ControlsManager.DownPressed())
             {
                 return Direction.Down;
             }
-            else if (gamePadState.DPad.Left == ButtonState.Pressed)
+            else if (ControlsManager.LeftPressed())
             {
                 return Direction.Left;
             }
-            else if (gamePadState.DPad.Right == ButtonState.Pressed)
+            else if (ControlsManager.RightPressed())
             {
                 return Direction.Right;
             }
