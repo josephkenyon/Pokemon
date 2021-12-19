@@ -80,13 +80,6 @@ namespace Library.Domain
         Caught,
     }
 
-    public enum BagStateState
-    {
-        Items,
-        Key_Items,
-        Poke_Balls,
-    }
-
     public enum UIState
     {
         Base,
@@ -116,24 +109,23 @@ namespace Library.Domain
         ExitGame
     }
 
-    public enum ItemType
+    public enum ItemName
     {
+        Poke_Ball,
+        Great_Ball,
+        Lure_Ball,
+        Ultra_Ball,
+        Master_Ball,
         Potion,
         Super_Potion,
         Hyper_Potion,
         Max_Potion,
     }
 
-    public enum KeyItemType { 
-    }
-
-    public enum PokeBallType
-    {
-        Poke_Ball,
-        Great_Ball,
-        Lure_Ball,
-        Ultra_Ball,
-        Master_Ball
+    public enum ItemType {
+        Generic_Item,
+        Key_Item,
+        Poke_Ball
     }
 
     public enum Direction

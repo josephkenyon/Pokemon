@@ -43,10 +43,10 @@ namespace Library.GameState.Battle.GamePadHelpers
             {
                 if (BattleStateManager.Battle.GetPreviousState() == BattleState.ItemSelect)
                 {
-                    ItemType? itemType = BagStateManager.UseSelectedItem();
+                    ItemName? itemType = BagStateManager.UseSelectedItem();
                     if (itemType != null)
                     {
-                        int? healAmount = ItemManager.GetHealAmount((ItemType)itemType);
+                        int? healAmount = ItemManager.GetHealAmount((ItemName)itemType);
                         if (healAmount != null)
                         {
                             BattleStateManager.Battle.HealSelectedPokemon(Direction.Left, (int)healAmount);

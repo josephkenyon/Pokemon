@@ -58,6 +58,25 @@ namespace Library.GameState.Base.GamePadHandling
                 Character character = locationState.Characters.FirstOrDefault(character => character.CharacterState.Position == newLocation);
                 if (character != null && character.CharacterState is NPCState npcState)
                 {
+                    if (character.Name == null || character.CharacterState.Pokemon.Count == 0) {
+                        Bag bag = character.CharacterState.Bag;
+                        List<ItemName> itemNames = bag.ItemsDictionary.Keys.Where(itemName => bag.ItemsDictionary[itemName] > 0).ToList();
+                        foreach (ItemName itemName in itemNames)
+                        {
+                            GameStateManager.Instance.GetPlayer().CharacterState.Bag.AddItems(itemName, bag.ItemsDictionary[itemName]);
+                            bag.RemoveItems(itemName, bag.ItemsDictionary[itemName]);
+                            int count = bag.ItemsDictionary[itemName];
+                            if (count == 1)
+                            {
+                                npcState.Messages.Add(new Message("You recieved a " + itemName.ToString() + "!"));
+                            }
+                            else
+                            {
+                                npcState.Messages.Add(new Message("You recieved " + count.ToString() + " " + itemName.ToString() + "s!"));
+                            }
+                        }
+                    }
+
                     MessageStateManager.EnterMessageState(new List<Message>(npcState.Messages));
                     GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
 

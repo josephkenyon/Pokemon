@@ -28,7 +28,10 @@ namespace Library.GameState.BagState
             }
             else if (ControlsManager.DownPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
-                BagStateManager.ItemIndex++;
+                if (BagStateManager.ItemIndex < BagStateManager.AvailableItems.Count - 1)
+                {
+                    BagStateManager.ItemIndex++;
+                }
             }
             else if (ControlsManager.UpPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
             {
@@ -42,7 +45,7 @@ namespace Library.GameState.BagState
                 int index = (int)BagStateManager.BagState;
                 if (index != 0)
                 {
-                    BagStateState potentialBagState = BagStateManager.AllBagStates[index - 1];
+                    ItemType potentialBagState = BagStateManager.AllBagStates[index - 1];
                     if (BagStateManager.GetAllowedBagStates().Contains(potentialBagState))
                     {
                         BagStateManager.ItemIndex = 0;
@@ -55,7 +58,7 @@ namespace Library.GameState.BagState
                 int index = (int)BagStateManager.BagState;
                 if (index != 2)
                 {
-                    BagStateState potentialBagState = BagStateManager.AllBagStates[index + 1];
+                    ItemType potentialBagState = BagStateManager.AllBagStates[index + 1];
                     if (BagStateManager.GetAllowedBagStates().Contains(potentialBagState))
                     {
                         BagStateManager.ItemIndex = 0;

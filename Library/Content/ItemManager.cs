@@ -21,7 +21,10 @@ namespace Library.Content
             }
         }
 
-        public static int? GetHealAmount(ItemType itemType)
-            => ItemsConfiguration.Items.Where(item => item.ItemType == itemType).First().Heal;
+        public static int? GetHealAmount(ItemName itemName)
+            => ItemsConfiguration.Items.Where(item => item.ItemName == itemName).First().Heal;
+
+        public static ItemType GetItemType(ItemName itemName)
+            => ItemsConfiguration.Items.Where(item => item.ItemName == itemName).First().ItemType;
     }
 }

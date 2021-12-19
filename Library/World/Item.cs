@@ -5,10 +5,10 @@ namespace Library.World
 {
     public class Item : BaseObject
     {
-        public ItemType ItemType { get; set; }
+        public ItemName ItemType { get; set; }
 
         public Item() { }
-        public Item(ItemType itemType, Point position)
+        public Item(ItemName itemType, Point position)
         {
             ItemType = itemType;
             Position = new Vector(position);

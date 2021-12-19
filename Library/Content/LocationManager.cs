@@ -129,6 +129,12 @@ namespace Library.Content
                             CurrentLocation = locationName
                         };
 
+                        if (npcJson.ItemName != null && npcJson.ItemCount != null)
+                        {
+                            npc.CharacterState.Bag = new Bag();
+                            npc.CharacterState.Bag.AddItems((ItemName)npcJson.ItemName, (int)npcJson.ItemCount);
+                        }
+
                         locationLayout.InitialCharacters.Add(npc);
                     });
 

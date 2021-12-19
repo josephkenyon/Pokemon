@@ -5,12 +5,13 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Linq;
 using System.Collections.Generic;
+using Library.Content;
 
 namespace Library.GameState.BagState
 {
     public class BagStateManager : IStateManager
     {
-        public static BagStateState BagState { get; set; }
+        public static ItemType BagState { get; set; }
         public static int ItemIndex { get; set; }
         public static BagStateManager Instance { get; set; }
         public static Bag Bag => GameStateManager.Instance.GetPlayer().CharacterState.Bag;
@@ -20,17 +21,18 @@ namespace Library.GameState.BagState
             Instance = this;
         }
 
-        public static ItemType? UseSelectedItem()
+        public static List<ItemName> AvailableItems => Bag.ItemsDictionary.Keys.Where(item => ItemManager.GetItemType(item) == BagState).ToList();
+
+        public static ItemName? UseSelectedItem()
         {
-            if (BagState == BagStateState.Items) {
-                if (ItemIndex > -1 && ItemIndex < Bag.ItemsDictionary.Count)
+            List<ItemName> itemNames = AvailableItems;
+            if (ItemIndex > -1 && ItemIndex < itemNames.Count)
+            {
+                ItemName itemName = itemNames.ElementAt(ItemIndex);
+                if (Bag.ItemsDictionary[itemName] > 0)
                 {
-                    ItemType itemType = Bag.ItemsDictionary.Keys.ElementAt(ItemIndex);
-                    if (Bag.ItemsDictionary[itemType] > 0)
-                    {
-                        Bag.ItemsDictionary[itemType]--;
-                        return Bag.ItemsDictionary.Keys.ElementAt(ItemIndex);
-                    }
+                    Bag.ItemsDictionary[itemName]--;
+                    return itemName;
                 }
             }
 
@@ -47,23 +49,23 @@ namespace Library.GameState.BagState
             BagStateDrawingManager.Draw(spriteBatch);
         }
 
-        public static List<BagStateState> AllBagStates => new List<BagStateState>((IEnumerable<BagStateState>)Enum.GetValues(typeof(BagStateState)));
+        public static List<ItemType> AllBagStates => new List<ItemType>((IEnumerable<ItemType>)Enum.GetValues(typeof(ItemType)));
 
-        public static List<BagStateState> GetAllowedBagStates()
+        public static List<ItemType> GetAllowedBagStates()
         {
-            List<BagStateState> list = new List<BagStateState>
+            List<ItemType> list = new List<ItemType>
             {
-                BagStateState.Items
+                ItemType.Generic_Item
             };
 
             if (BattleStateManager.Battle == null)
             {
-                list.Add(BagStateState.Key_Items);
+                list.Add(ItemType.Key_Item);
             }
 
             if (BattleStateManager.Battle == null || BattleStateManager.IsWildPokemonBattle)
             {
-                list.Add(BagStateState.Poke_Balls);
+                list.Add(ItemType.Poke_Ball);
             }
 
             return list;

@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using Library.Domain;
-using Newtonsoft.Json;
+﻿using Library.Domain;
 
 namespace Library.Assets.Json
 {
     public class ItemsJson
     {
+        public ItemName ItemName { get; set; }
         public ItemType ItemType { get; set; }
         public int? Heal { get; set; }
+        public int? Level { get; set; }
     }
 }
