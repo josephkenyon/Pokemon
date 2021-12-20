@@ -46,10 +46,14 @@ namespace Library.Content
             GameStateManager gameStateManager = null;
 
             Directory.CreateDirectory(SaveDirectory);
-            if (File.Exists(SaveFileName(SaveSlot)))
+            if (File.Exists(SaveDirectory + SaveFileName(SaveSlot)))
             {
                 using StreamReader r = new StreamReader(SaveDirectory + SaveFileName(SaveSlot));
                 gameStateManager = JsonConvert.DeserializeObject<GameStateManager>(r.ReadToEnd(), JsonSerializerSettings);
+            }
+            else
+            {
+                return null;
             }
 
             Queue<UIState> uiStateQueue = new Queue<UIState>();

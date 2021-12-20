@@ -9,7 +9,7 @@ namespace Library.GameState.Menu
     {
         public static bool Update()
         {
-            if (ControlsManager.ControlPressed(Control.Start) || (ControlsManager.ControlPressed(Control.B) && !MenuStateManager.SavingOrLoading))
+            if (ControlsManager.ControlPressed(Control.Start) || (!MenuStateManager.SavingOrLoading && ControlsManager.ControlPressed(Control.B)))
             {
                 MenuStateManager.Instance.CloseMenu();
                 return true;
