@@ -2,6 +2,8 @@
     "Items": [
         {"ItemName": "Poke_Ball", "ItemType": "Poke_Ball", "Level": 1},
         {"ItemName": "Great_Ball", "ItemType": "Poke_Ball", "Level": 2},
+        {"ItemName": "Ultra_Ball", "ItemType": "Poke_Ball", "Level": 3},
+        {"ItemName": "Master_Ball", "ItemType": "Poke_Ball", "Level": 4},
         {"ItemName": "Potion", "ItemType": "Generic_Item", "Heal": 20},
         {"ItemName": "Super_Potion", "ItemType": "Generic_Item", "Heal": 50},
         {"ItemName": "Hyper_Potion", "ItemType": "Generic_Item", "Heal": 200},

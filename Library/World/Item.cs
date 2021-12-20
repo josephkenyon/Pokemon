@@ -5,13 +5,17 @@ namespace Library.World
 {
     public class Item : BaseObject
     {
-        public ItemName ItemType { get; set; }
+        public ItemName ItemName { get; set; }
+        public int Count { get; set; }
 
         public Item() { }
-        public Item(ItemName itemType, Point position)
+        public Item(ItemName itemType, Point position, int count = 1)
         {
-            ItemType = itemType;
+            ItemName = itemType;
             Position = new Vector(position);
+            TextureName = TextureName.Effects;
+            SpritePosition = new Vector(0, 3);
+            Count = count;
         }
     }
 }

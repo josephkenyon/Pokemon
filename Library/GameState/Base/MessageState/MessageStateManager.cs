@@ -11,8 +11,6 @@ namespace Library.GameState.Base.MessageState
 
         public static void EnterMessageState(List<Message> messages)
         {
-            GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
-
             Messages = messages;
             BaseStateManager.Instance.StateStack.Push(BaseState.Message);
         }

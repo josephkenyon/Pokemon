@@ -8,31 +8,25 @@ namespace Library.GameState.Battle
     {
         public static void Update()
         {
-            if (GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.ControlPressed(Control.B))
             {
-                if (ControlsManager.BPressed())
-                {
-                    if (BattleStateManager.Battle.SwitchToPreviousState())
-                    {
-                        GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
-                    }
-                }
+                BattleStateManager.Battle.SwitchToPreviousState();
+            }
 
-                switch (BattleStateManager.Battle.State)
-                {
-                    case BattleState.PokemonSelect:
-                        PokemonSelectHelper.Update();
-                        break;
-                    case BattleState.AshSelect:
-                        AshSelectHelper.Update();
-                        break;
-                    case BattleState.MoveSelect:
-                        MoveSelectHelper.Update();
-                        break;
-                    case BattleState.EnemySelect:
-                        EnemySelectHelper.Update();
-                        break;
-                }
+            switch (BattleStateManager.Battle.State)
+            {
+                case BattleState.PokemonSelect:
+                    PokemonSelectHelper.Update();
+                    break;
+                case BattleState.AshSelect:
+                    AshSelectHelper.Update();
+                    break;
+                case BattleState.MoveSelect:
+                    MoveSelectHelper.Update();
+                    break;
+                case BattleState.EnemySelect:
+                    EnemySelectHelper.Update();
+                    break;
             }
         }
     }

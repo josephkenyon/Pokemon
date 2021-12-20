@@ -15,7 +15,6 @@ namespace Library.GameState
         public Dictionary<UIState, IStateManager> StateManagers { get; set; }
         public Stack<UIState> UIStateStack { get; set; }
         public Vector CameraLocation { get; set; }
-        public int InputDebounceTimer { get; set; }
         public static GameStateManager Instance { get; set; }
 
         public static void Initialize()
@@ -37,8 +36,6 @@ namespace Library.GameState
 
         public bool Update()
         {
-            UpdateTimers();
-
             bool result = StateManagers[UIStateStack.Peek()].Update();
 
             CameraLocation = GetPlayer().CharacterState.Position + (new Vector(GetPlayer().GetTargetRectangle().Size) / 2);
@@ -68,13 +65,6 @@ namespace Library.GameState
             });
 
             return returnCharacter;
-        }
-
-        public void UpdateTimers() {
-            if (InputDebounceTimer != 0)
-            {
-                InputDebounceTimer--;
-            }
         }
     }
 }

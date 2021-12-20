@@ -13,10 +13,10 @@ namespace Library.GameState.Battle.GamePadHelpers
     {
         public static void Update()
         {
-            Direction? direction = GamePadHelper.GetDPadDirection();
+            Direction? direction = GamePadHelper.GetPressedDPadButton();
 
             int unselectedIndex = 0;
-            BattlePokemon currentlySelectedPokemon = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemon;
+            BattlePokemon currentlySelectedPokemon = BattleStateManager.Battle.BattleCharacterStates[Direction.Left].GetSelectedPokemon();
             if (currentlySelectedPokemon.UsedMove || currentlySelectedPokemon.IsFainted) {
                 foreach (BattlePokemon pokemon in BattleStateManager.Battle.BattleCharacterStates[Direction.Left].Pokemon) {
                     if (!pokemon.UsedMove && !pokemon.IsFainted) {
@@ -34,22 +34,25 @@ namespace Library.GameState.Battle.GamePadHelpers
                 if (index != null)
                 {
                     BattleStateManager.Battle.BattleCharacterStates[Direction.Left].SelectedPokemonIndex = (int)index;
-                    GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
                     BattleStateManager.Battle.ResetFadeTimer();
                 }
             }
 
-            if (ControlsManager.APressed())
+            if (ControlsManager.ControlPressed(Control.A))
             {
                 if (BattleStateManager.Battle.GetPreviousState() == BattleState.ItemSelect)
                 {
-                    ItemName? itemType = BagStateManager.UseSelectedItem();
-                    if (itemType != null)
+                    ItemName? itemName = BagStateManager.GetSelectedItem();
+                    if (itemName != null)
                     {
-                        int? healAmount = ItemManager.GetHealAmount((ItemName)itemType);
-                        if (healAmount != null)
+                        if (ItemManager.GetItemType((ItemName)itemName) == ItemType.Generic_Item)
                         {
-                            BattleStateManager.Battle.HealSelectedPokemon(Direction.Left, (int)healAmount);
+                            int? healAmount = ItemManager.GetHealAmount((ItemName)itemName);
+                            if (healAmount != null)
+                            {
+                                BattleStateManager.Battle.HealSelectedPokemon(Direction.Left, (int)healAmount);
+                                BagStateManager.UseSelectedItem();
+                            }
                         }
                     }
                 }
@@ -58,7 +61,6 @@ namespace Library.GameState.Battle.GamePadHelpers
                     MoveSelectHelper.SelectedIndex = 0;
                     BattleStateManager.Battle.SwitchToState(BattleState.MoveSelect);
                 }
-                GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
             }
         }
 

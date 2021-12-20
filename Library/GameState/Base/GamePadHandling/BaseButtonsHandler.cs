@@ -4,10 +4,10 @@ using Library.Controls;
 using Library.Cutscenes;
 using Library.Domain;
 using Library.GameState.Base.MessageState;
+using Library.Graphics;
 using Library.World;
 using Library.World.Json;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Input;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -17,7 +17,7 @@ namespace Library.GameState.Base.GamePadHandling
     {
         public static void Update()
         {
-            if (ControlsManager.APressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.ControlPressed(Control.A))
             {
                 Player player = GameStateManager.Instance.GetPlayer();
                 Vector newLocation = MovementHandler.GetNewPath(player.CharacterState.Direction, player.CharacterState.Position);
@@ -29,7 +29,6 @@ namespace Library.GameState.Base.GamePadHandling
                 if (cutscene != null)
                 {
                     CutsceneManager.BeginCutscene(cutscene);
-                    GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
                     return;
                 }
 
@@ -40,7 +39,6 @@ namespace Library.GameState.Base.GamePadHandling
                     sign.Messages.ForEach(message => messages.Add(new Message(message)));
 
                     MessageStateManager.EnterMessageState(messages);
-                    GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
 
                     return;
                 }
@@ -50,7 +48,20 @@ namespace Library.GameState.Base.GamePadHandling
                 {
                     locationState.CapturedPokemon.Remove(capturedPokemon);
                     player.GivePokemon(capturedPokemon.Pokemon);
-                    GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
+
+                    return;
+                }
+
+                Item item = locationState.Items.FirstOrDefault(item => item.Position.ToPoint() == nextPosition);
+                if (item != null)
+                {
+                    locationState.Items.Remove(item);
+                    player.CharacterState.Bag.AddItems(item.ItemName, item.Count);
+
+                    List<Message> messages = new List<Message>();
+                    AddItemMessage(messages, item.ItemName, item.Count);
+
+                    MessageStateManager.EnterMessageState(messages);
 
                     return;
                 }
@@ -63,33 +74,45 @@ namespace Library.GameState.Base.GamePadHandling
                         List<ItemName> itemNames = bag.ItemsDictionary.Keys.Where(itemName => bag.ItemsDictionary[itemName] > 0).ToList();
                         foreach (ItemName itemName in itemNames)
                         {
-                            GameStateManager.Instance.GetPlayer().CharacterState.Bag.AddItems(itemName, bag.ItemsDictionary[itemName]);
-                            bag.RemoveItems(itemName, bag.ItemsDictionary[itemName]);
                             int count = bag.ItemsDictionary[itemName];
-                            if (count == 1)
+                            if (count > 0)
                             {
-                                npcState.Messages.Add(new Message("You recieved a " + itemName.ToString() + "!"));
-                            }
-                            else
-                            {
-                                npcState.Messages.Add(new Message("You recieved " + count.ToString() + " " + itemName.ToString() + "s!"));
+                                GameStateManager.Instance.GetPlayer().CharacterState.Bag.AddItems(itemName, count);
+                                bag.RemoveItems(itemName, count);
+
+                                AddItemMessage(npcState.Messages, itemName, count);
                             }
                         }
                     }
 
                     MessageStateManager.EnterMessageState(new List<Message>(npcState.Messages));
-                    GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
+                    npcState.Messages.RemoveAll(message => message.Unique);
 
                     return;
                 }
             }
 
-            if (ControlsManager.StartPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.ControlPressed(Control.Start))
             {
                 GameStateManager.Instance.UIStateStack.Push(UIState.Menu);
-                GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
                 return;
             }
+        }
+
+        private static void AddItemMessage(List<Message> messages, ItemName itemName, int count)
+        {
+            Message message;
+            if (count == 1)
+            {
+                message = new Message("You recieved a " + GraphicsHelper.GetFormattedString(itemName.ToString()) + "!");
+            }
+            else
+            {
+                message = new Message("You recieved " + count.ToString() + " " + GraphicsHelper.GetFormattedString(itemName.ToString()) + "s!");
+            }
+
+            message.Unique = true;
+            messages.Add(message);
         }
     }
 }

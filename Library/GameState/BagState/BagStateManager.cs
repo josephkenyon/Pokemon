@@ -23,7 +23,7 @@ namespace Library.GameState.BagState
 
         public static List<ItemName> AvailableItems => Bag.ItemsDictionary.Keys.Where(item => ItemManager.GetItemType(item) == BagState).ToList();
 
-        public static ItemName? UseSelectedItem()
+        public static ItemName? GetSelectedItem()
         {
             List<ItemName> itemNames = AvailableItems;
             if (ItemIndex > -1 && ItemIndex < itemNames.Count)
@@ -39,8 +39,28 @@ namespace Library.GameState.BagState
             return null;
         }
 
+        public static void UseSelectedItem()
+        {
+            List<ItemName> itemNames = AvailableItems;
+            if (ItemIndex > -1 && ItemIndex < itemNames.Count)
+            {
+                ItemName itemName = itemNames.ElementAt(ItemIndex);
+                if (Bag.ItemsDictionary[itemName] > 0)
+                {
+                    Bag.ItemsDictionary[itemName]--;
+                }
+            }
+
+            ItemIndex = -1;
+        }
+
         public bool Update()
         {
+            if (ItemIndex == -1)
+            {
+                ItemIndex = 0;
+            }
+
             BagStateGamePadHandler.Update();
             return true;
         }

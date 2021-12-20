@@ -3,6 +3,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Library.GameState.BagState;
 
 namespace Library.GameState.Battle
 {
@@ -48,6 +49,7 @@ namespace Library.GameState.Battle
             };
 
             SwitchToState(BattleState.AshSelect);
+            BagStateManager.ItemIndex = -1;
         }
 
         public void ClearStateStack()
@@ -58,6 +60,8 @@ namespace Library.GameState.Battle
 
         public void SwitchToState(BattleState state)
         {
+            BattleStateManager.EndBattleIfAppropriate();
+
             ResetFadeTimer();
             StateStack.Push(state);
             Debug.WriteLine(State.ToString());
@@ -69,6 +73,12 @@ namespace Library.GameState.Battle
             {
                 BattleStateManager.Battle.ResetFadeTimer();
                 StateStack.Pop();
+
+                if (StateStack.Peek() == BattleState.ItemSelect)
+                {
+                    GameStateManager.Instance.UIStateStack.Push(UIState.Bag);
+                }
+
                 Debug.WriteLine(State.ToString());
                 return true;
             }
@@ -140,13 +150,12 @@ namespace Library.GameState.Battle
 
         public void HealSelectedPokemon(Direction direction, int amount)
         {
-            BattlePokemon target = BattleCharacterStates[direction].SelectedPokemon;
+            BattlePokemon target = BattleCharacterStates[direction].GetSelectedPokemon();
             float healAmount = amount / 30f;
             QueueNewTransaction(() => target.Heal(healAmount), () =>
             {
                 target.UsedMove = true;
-                BattleStateManager.Battle.ClearStateStack();
-                BattleStateManager.Battle.SwitchToState(BattleState.AshSelect);
+                BattleStateManager.AdvanceStateAfterMoveUsage();
             }, 30);
         }
     }

@@ -107,7 +107,7 @@ namespace Library.Content
 
                     locationLayoutJson.InitialItems.ForEach(itemJson =>
                     {
-                        locationLayout.InitialItems.Add(new Item(itemJson.ItemType, itemJson.Position));
+                        locationLayout.InitialItems.Add(new Item(itemJson.ItemName, itemJson.Position, count: (int)(itemJson.Count == null ? 1 : itemJson.Count)));
                     });
 
                     locationLayoutJson.InitialNPCS.ForEach(npcJson =>

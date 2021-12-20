@@ -10,7 +10,15 @@ namespace Library.GameState.Battle
         public List<BattlePokemon> Pokemon { get; set; }
         public int SelectedPokemonIndex { get; set; }
         public Direction Direction { get; set; }
-        public BattlePokemon SelectedPokemon => Pokemon[SelectedPokemonIndex];
+        public BattlePokemon GetSelectedPokemon()
+        {
+            if (SelectedPokemonIndex >= Pokemon.Count)
+            {
+                SelectedPokemonIndex = 0;
+            }
+
+            return Pokemon[SelectedPokemonIndex];
+        }
 
         public BattleCharacterState(CharacterState characterState, Direction direction, int numPokemon) {
             Bag = characterState.Bag;

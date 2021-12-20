@@ -13,6 +13,7 @@ namespace Library.GameState.Battle
         public Dictionary<Stat, int> StatInfluences { get; }
         public StatSet StatChanges { get; set; }
         public bool UsedMove { get; set; }
+        public Pokemon OriginalPokemon { get; private set; }
 
         public BattlePokemon(Direction direction, Pokemon pokemon, int index) : base(pokemon)
         {
@@ -20,6 +21,7 @@ namespace Library.GameState.Battle
             Direction = direction;
             Position = BattleStateManager.GetBattlePositions(direction, index);
             StatInfluences = new Dictionary<Stat, int>();
+            OriginalPokemon = pokemon;
             foreach (Stat stat in Enum.GetValues(typeof(Stat)))
             {
                 StatInfluences.Add(stat, 0);

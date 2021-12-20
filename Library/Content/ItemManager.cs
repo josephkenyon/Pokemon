@@ -4,6 +4,7 @@ using System.Linq;
 using Library.Assets.Json;
 using Newtonsoft.Json;
 using Library.Domain;
+using System;
 
 namespace Library.Content
 {
@@ -26,5 +27,8 @@ namespace Library.Content
 
         public static ItemType GetItemType(ItemName itemName)
             => ItemsConfiguration.Items.Where(item => item.ItemName == itemName).First().ItemType;
+
+        public static int GetItemLevel(ItemName itemName)
+            => ItemsConfiguration.Items.Where(item => item.ItemName == itemName).First().Level;
     }
 }

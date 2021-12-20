@@ -13,7 +13,7 @@ namespace Library.GameState.Battle.GamePadHelpers
 
         public static void Update()
         {
-            Direction? direction = GamePadHelper.GetDPadDirection();
+            Direction? direction = GamePadHelper.GetPressedDPadButton();
 
             if (direction != null)
             {
@@ -24,7 +24,6 @@ namespace Library.GameState.Battle.GamePadHelpers
                     {
                         SelectedIndex = ItemList.Length - 1;
                     }
-                    GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
                 }
                 else if ((Direction)direction == Direction.Right)
                 {
@@ -34,12 +33,10 @@ namespace Library.GameState.Battle.GamePadHelpers
                         SelectedIndex = 0;
                     }
 
-                    GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
                 }
-                Debug.WriteLine(ItemList[SelectedIndex].ToString());
             }
 
-            if (ControlsManager.APressed())
+            if (ControlsManager.ControlPressed(Control.A))
             {
                 switch (ItemList[SelectedIndex])
                 {
@@ -51,11 +48,9 @@ namespace Library.GameState.Battle.GamePadHelpers
                         GameStateManager.Instance.UIStateStack.Push(UIState.Bag);
                         break;
                     case BattleMenuItem.Run:
-                        GameStateManager.Instance.UIStateStack.Pop();;
+                        BattleStateManager.EndBattle();
                         break;
                 };
-
-                GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
             }
         }
     }

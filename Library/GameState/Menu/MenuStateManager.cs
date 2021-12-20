@@ -44,7 +44,6 @@ namespace Library.GameState.Menu
                     SelectedIndex = SelectedIndex == Enum.GetValues(typeof(MenuItem)).Length ? 0 : SelectedIndex;
                 }
             }
-            GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
         }
 
         public bool Update()
@@ -70,7 +69,6 @@ namespace Library.GameState.Menu
         {
             Instance.Saving = false;
             Instance.Loading = false;
-            GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
         }
 
         public void CloseMenu()
@@ -80,7 +78,6 @@ namespace Library.GameState.Menu
             Instance.SelectedIndex = 0;
             Instance.SaveLoadSelectedIndex = 0;
             GameStateManager.Instance.UIStateStack.Pop();
-            GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
         }
     }
 }

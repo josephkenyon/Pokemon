@@ -8,6 +8,7 @@ using Library.Graphics;
 using Library.Base;
 using Library.World;
 using Library.Cutscenes;
+using Library.Controls;
 
 namespace GameManager
 {
@@ -49,12 +50,15 @@ namespace GameManager
 
             BaseDrawingManager.Initialize();
             StitchDrawingManager.Initialize();
+            ControlsManager.Initialize();
 
             CutsceneManager.Load(Content);
         }
 
         protected override void Update(GameTime gameTime)
         {
+            ControlsManager.Update();
+
             if (Keyboard.GetState().IsKeyDown(Keys.F5))
             {
                 FileHelper.SaveState(SaveSlot);

@@ -1,6 +1,7 @@
 ﻿using Library.Controls;
 using Library.Domain;
 using Library.GameState.Battle;
+using System.Collections.Generic;
 
 namespace Library.GameState.BagState
 {
@@ -8,70 +9,70 @@ namespace Library.GameState.BagState
     {
         public static void Update()
         {
-            if (ControlsManager.APressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.ControlPressed(Control.A))
             {
                 if (BattleStateManager.Battle != null)
                 {
-                    BattleStateManager.Battle.SwitchToState(BattleState.PokemonSelect);
+                    if (BagStateManager.BagState == ItemType.Generic_Item)
+                    {
+                        BattleStateManager.Battle.SwitchToState(BattleState.PokemonSelect);
+                    }
+                    else if (BagStateManager.BagState == ItemType.Poke_Ball)
+                    {
+                        BattleStateManager.Battle.SwitchToState(BattleState.EnemySelect);
+                    }
                 }
 
                 GameStateManager.Instance.UIStateStack.Pop();
             }
-            else if (ControlsManager.BPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.ControlPressed(Control.B))
             {
                 if (BattleStateManager.Battle != null)
                 {
                     BattleStateManager.Battle.SwitchToPreviousState();
                 }
 
+                BagStateManager.ItemIndex = -1;
                 GameStateManager.Instance.UIStateStack.Pop();
             }
-            else if (ControlsManager.DownPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.ControlPressed(Control.Down))
             {
                 if (BagStateManager.ItemIndex < BagStateManager.AvailableItems.Count - 1)
                 {
                     BagStateManager.ItemIndex++;
                 }
             }
-            else if (ControlsManager.UpPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.ControlPressed(Control.Up))
             {
                 if (BagStateManager.ItemIndex > 0)
                 {
                     BagStateManager.ItemIndex--;
                 }
             }
-            else if (ControlsManager.LeftPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.ControlPressed(Control.Left))
             {
-                int index = (int)BagStateManager.BagState;
-                if (index != 0)
+                List<ItemType> allowedBagStates = BagStateManager.GetAllowedBagStates();
+                int index = allowedBagStates.IndexOf(BagStateManager.BagState);
+                if (index > 0)
                 {
-                    ItemType potentialBagState = BagStateManager.AllBagStates[index - 1];
-                    if (BagStateManager.GetAllowedBagStates().Contains(potentialBagState))
-                    {
-                        BagStateManager.ItemIndex = 0;
-                        BagStateManager.BagState = potentialBagState;
-                    }
+                    BagStateManager.ItemIndex = 0;
+                    BagStateManager.BagState = allowedBagStates[index - 1];
                 }
             }
-            else if (ControlsManager.RightPressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            else if (ControlsManager.ControlPressed(Control.Right))
             {
-                int index = (int)BagStateManager.BagState;
-                if (index != 2)
+                List<ItemType> allowedBagStates = BagStateManager.GetAllowedBagStates();
+                int index = allowedBagStates.IndexOf(BagStateManager.BagState);
+                if (index + 1 < allowedBagStates.Count)
                 {
-                    ItemType potentialBagState = BagStateManager.AllBagStates[index + 1];
-                    if (BagStateManager.GetAllowedBagStates().Contains(potentialBagState))
-                    {
-                        BagStateManager.ItemIndex = 0;
-                        BagStateManager.BagState = potentialBagState;
-                    }
+                    BagStateManager.ItemIndex = 0;
+                    BagStateManager.BagState = allowedBagStates[index + 1];
                 }
             }
             else
             {
                 return;
             }
-
-            GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
         }
     }
 }

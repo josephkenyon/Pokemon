@@ -3,6 +3,7 @@ using Library.Battle;
 using Library.Domain;
 using Library.Graphics;
 using Microsoft.Xna.Framework.Graphics;
+using System.Linq;
 
 namespace Library.GameState.Battle
 {
@@ -21,10 +22,14 @@ namespace Library.GameState.Battle
         public static void EndBattle()
         {
             BattleCharacterState battleCharacterState = Battle.BattleCharacterStates[Direction.Left];
-            foreach(Pokemon pokemon in Battle.LeftCharacterState.Pokemon)
+            foreach (Pokemon pokemon in Battle.LeftCharacterState.Pokemon)
             {
-                int index = Battle.LeftCharacterState.Pokemon.FindIndex(poke => poke == pokemon);
-                pokemon.UpdateAfterBattle(battleCharacterState.Pokemon[index]);
+                BattlePokemon battlePokemon = battleCharacterState.Pokemon.Where(poke => poke.OriginalPokemon == pokemon).FirstOrDefault();
+
+                if (battlePokemon != null)
+                {
+                    pokemon.UpdateAfterBattle(battlePokemon);
+                }
             }
 
             Battle = null;
@@ -70,6 +75,52 @@ namespace Library.GameState.Battle
             Vector vector = new Vector(9 - ((index - 1) / 2 * 3), index == 1 || index == 3 ? mediumY : index == 0 ? shortY : largeY);
             vector.X += direction == Direction.Right ? vector.Y == mediumY ? 9 : vector.Y == shortY ? 6 : 12 : 0;
             return vector;
+        }
+
+        public static void AdvanceStateAfterMoveUsage()
+        {
+            BattleCharacterState leftCharacterState = Battle.BattleCharacterStates[Direction.Left];
+            bool allUsedMove = true;
+
+            leftCharacterState.Pokemon.ForEach(pokemon => allUsedMove = (pokemon.UsedMove || pokemon.IsFainted) && allUsedMove);
+
+            if (allUsedMove)
+            {
+                Battle.ClearStateStack();
+
+                leftCharacterState.Pokemon.ForEach(poke => poke.UsedMove = false);
+
+                Battle.SwitchToState(BattleState.EnemyAttack);
+            }
+            else
+            {
+                Battle.ClearStateStack();
+                Battle.SwitchToState(BattleState.AshSelect);
+            }
+        }
+
+        public static void EndBattleIfAppropriate()
+        {
+            if (Battle != null)
+            {
+                BattleCharacterState rightCharacterState = Battle.BattleCharacterStates[Direction.Right];
+
+                bool allFainted = true;
+                foreach (BattlePokemon faintedPokemon in rightCharacterState.Pokemon)
+                {
+                    if (!faintedPokemon.IsFainted)
+                    {
+                        allFainted = false;
+                        break;
+                    }
+                }
+
+                if (allFainted)
+                {
+                    EndBattle();
+                    return;
+                }
+            }
         }
     }
 }

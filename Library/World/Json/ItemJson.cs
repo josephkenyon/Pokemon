@@ -5,7 +5,8 @@ namespace Library.World.Json
 {
     public class ItemJson
     {
-        public ItemName ItemType { get; set; }
+        public ItemName ItemName { get; set; }
+        public int? Count { get; set; }
         public Point Position { get; set; }
     }
 }

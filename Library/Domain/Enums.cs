@@ -1,9 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Library.Domain
+﻿namespace Library.Domain
 {
+    public enum Control
+    {
+        A,
+        B,
+        Start,
+        Select,
+        Up,
+        Down,
+        Left,
+        Right
+    }
     public enum StatusEffect
     {
         Paralyzed,
@@ -11,6 +18,7 @@ namespace Library.Domain
         Burned,
         Frozen,
         Confused,
+        Asleep,
     }
 
     public enum CharacterName
@@ -113,7 +121,6 @@ namespace Library.Domain
     {
         Poke_Ball,
         Great_Ball,
-        Lure_Ball,
         Ultra_Ball,
         Master_Ball,
         Potion,

@@ -7,10 +7,9 @@ namespace Library.GameState.Base.MessageState
     {
         public static void Update()
         {
-            if (ControlsManager.APressed() && GameStateManager.Instance.InputDebounceTimer == 0)
+            if (ControlsManager.ControlPressed(Control.A))
             {
                 MessageStateManager.CompleteMessage();
-                GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounceLong;
                 return;
             }
         }

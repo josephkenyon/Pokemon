@@ -2,7 +2,6 @@
 using Library.Domain;
 using Library.GameState.Input;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace Library.GameState.Battle.GamePadHelpers
 {
@@ -14,7 +13,7 @@ namespace Library.GameState.Battle.GamePadHelpers
 
         public static void Update()
         {
-            Direction? direction = GamePadHelper.GetDPadDirection();
+            Direction? direction = GamePadHelper.GetPressedDPadButton();
 
             if (direction != null)
             {
@@ -25,7 +24,6 @@ namespace Library.GameState.Battle.GamePadHelpers
                     {
                         SelectedIndex = MoveList.Count - 1;
                     }
-                    GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
                 }
                 else if ((Direction)direction == Direction.Right)
                 {
@@ -34,7 +32,6 @@ namespace Library.GameState.Battle.GamePadHelpers
                     {
                         SelectedIndex = 0;
                     }
-                    GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
                 }
                 else if ((Direction)direction == Direction.Up)
                 {
@@ -42,7 +39,6 @@ namespace Library.GameState.Battle.GamePadHelpers
                     {
                         SelectedIndex -= 2;
                     }
-                    GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
                 }
                 else if ((Direction)direction == Direction.Down)
                 {
@@ -50,14 +46,12 @@ namespace Library.GameState.Battle.GamePadHelpers
                     {
                         SelectedIndex += 2;
                     }
-                    GameStateManager.Instance.InputDebounceTimer = Constants.ItemDebounce;
                 }
             }
 
-            if (ControlsManager.APressed())
+            if (ControlsManager.ControlPressed(Control.A))
             {
                 BattleStateManager.Battle.SwitchToState(BattleState.EnemySelect);
-                GameStateManager.Instance.InputDebounceTimer = Constants.MenuActivationDebounce;
             }
         }
     }

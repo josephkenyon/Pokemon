@@ -7,7 +7,7 @@ namespace Library.GameState.Base.GamePadHandling
     {
         public static void Update()
         {
-            Direction? nullableDir = !GameStateManager.Instance.GetPlayer().CharacterState.IsMoving ? GamePadHelper.GetDPadDirection() : null;
+            Direction? nullableDir = !GameStateManager.Instance.GetPlayer().CharacterState.IsMoving ? GamePadHelper.GetHeldDPadButton() : null;
 
             if (nullableDir != null)
             {

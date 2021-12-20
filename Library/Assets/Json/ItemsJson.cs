@@ -7,6 +7,6 @@ namespace Library.Assets.Json
         public ItemName ItemName { get; set; }
         public ItemType ItemType { get; set; }
         public int? Heal { get; set; }
-        public int? Level { get; set; }
+        public int Level { get; set; }
     }
 }

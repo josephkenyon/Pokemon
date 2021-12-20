@@ -5,22 +5,45 @@ namespace Library.GameState.Input
 {
     public static class GamePadHelper
     {
-        public static Direction? GetDPadDirection()
+        public static Direction? GetPressedDPadButton()
         {
 
-            if (ControlsManager.UpPressed())
+            if (ControlsManager.ControlPressed(Control.Up))
             {
                 return Direction.Up;
             }
-            else if (ControlsManager.DownPressed())
+            else if (ControlsManager.ControlPressed(Control.Down))
             {
                 return Direction.Down;
             }
-            else if (ControlsManager.LeftPressed())
+            else if (ControlsManager.ControlPressed(Control.Left))
             {
                 return Direction.Left;
             }
-            else if (ControlsManager.RightPressed())
+            else if (ControlsManager.ControlPressed(Control.Right))
+            {
+                return Direction.Right;
+            }
+
+            return null;
+        }
+
+        public static Direction? GetHeldDPadButton()
+        {
+
+            if (ControlsManager.ControlHeld(Control.Up))
+            {
+                return Direction.Up;
+            }
+            else if (ControlsManager.ControlHeld(Control.Down))
+            {
+                return Direction.Down;
+            }
+            else if (ControlsManager.ControlHeld(Control.Left))
+            {
+                return Direction.Left;
+            }
+            else if (ControlsManager.ControlHeld(Control.Right))
             {
                 return Direction.Right;
             }
