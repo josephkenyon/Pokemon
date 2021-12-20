@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Library.Base;
 using Library.Content;
@@ -21,7 +22,18 @@ namespace Library.GameState
             {
                 return true;
             }
-            else if (IsValidMove(StitchDrawingManager.StitchHelperObject.Location, WorldManager.GetStitchLocation(newTilePosition)))
+
+            Point locationPoint = characterState.TileSetPosition.ToPoint();
+            LocationName currentLocationName = characterState.CurrentLocation;
+            List<LocationStitch> stitches = WorldManager.LocationStitches.Where(stitch => stitch.LocationA == currentLocationName || stitch.LocationB == currentLocationName).ToList();
+            StitchDrawingManager.StitchHelperObject = new StitchHelperObject(
+                stitches.OrderBy(
+                    s => Math.Abs(s.Orientation == Orientation.Vertical
+                    ? s.GetEdge(currentLocationName) - locationPoint.Y
+                    : s.GetEdge(currentLocationName) - locationPoint.X)
+                ).First());
+
+            if (IsValidMove(StitchDrawingManager.StitchHelperObject.Location, WorldManager.GetStitchLocation(newTilePosition)))
             {
                 NewStitchLocationName = StitchDrawingManager.StitchHelperObject.Location;
                 NewStitchLocation = WorldManager.GetStitchLocation(newTilePosition);
