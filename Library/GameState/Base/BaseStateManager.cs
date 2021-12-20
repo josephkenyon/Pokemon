@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Library.Base;
 using Library.Content;
 using Library.Domain;
 using Library.GameState.BagState;
@@ -9,6 +10,7 @@ using Library.GameState.Base.GamePadHandling;
 using Library.GameState.Base.MessageState;
 using Library.GameState.Base.TransitionState;
 using Library.World;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Library.GameState.Base
@@ -81,6 +83,15 @@ namespace Library.GameState.Base
             List<LocationStitch> stitches = WorldManager.LocationStitches.Where(stitch => stitch.LocationA == currentLocation || stitch.LocationB == currentLocation).ToList();
             stitches.ForEach(stitch => WorldManager.DrawStitch(spriteBatch, stitch));
 
+            Point playerLocation = GameStateManager.Instance.GetPlayer().CharacterState.TileSetPosition.ToPoint();
+
+            StitchDrawingManager.StitchHelperObject = new StitchHelperObject(
+                stitches.OrderBy(
+                    s => Math.Abs(s.Orientation == Orientation.Vertical
+                    ? s.GetEdge(currentLocation) - playerLocation.Y
+                    : s.GetEdge(currentLocation) - playerLocation.X)
+                ).First());
+
             LocationStates[currentLocation].Draw(spriteBatch);
 
             LocationManager.LocationLayouts[currentLocation].DrawForeground(spriteBatch);
@@ -95,8 +106,9 @@ namespace Library.GameState.Base
             }
         }
 
-        public LocationName GetPlayerLocation() { 
-             return LocationStates.Values.Single(state => state.Characters.Exists(character => character.Name == CharacterName.Ash)).Name;
+        public LocationName GetPlayerLocation()
+        {
+            return LocationStates.Values.Single(state => state.Characters.Exists(character => character.Name == CharacterName.Ash)).Name;
         }
     }
 }

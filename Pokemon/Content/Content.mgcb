@@ -69,6 +69,9 @@
 #begin locations/route1.json
 /copy:locations/route1.json
 
+#begin locations/viridianCity.json
+/copy:locations/viridianCity.json
+
 #begin sprites/characters/ashWalking.png
 /importer:TextureImporter
 /processor:TextureProcessor

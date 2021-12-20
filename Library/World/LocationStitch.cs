@@ -13,5 +13,17 @@ namespace Library.World
         public int LocationALeast { get; set; }
         public int LocationBGreatest { get; set; }
         public int LocationBLeast { get; set; }
+
+        public int GetEdge(LocationName fromLocation)
+        {
+            if (LocationA == fromLocation)
+            {
+                return LocationAGreatest;
+            }
+            else
+            {
+                return LocationBLeast;
+            }
+        }
     }
 }

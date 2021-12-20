@@ -1,1 +1,4 @@
-[{"LocationA": "Route1", "LocationB": "PalletTown", "Orientation": "Vertical", "Offset": 8}]
+[
+    {"LocationA": "Route1", "LocationB": "PalletTown", "Orientation": "Vertical", "Offset": 8},
+    {"LocationA": "ViridianCity", "LocationB": "Route1", "Orientation": "Vertical", "Offset": 1}
+]

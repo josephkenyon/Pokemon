@@ -66,7 +66,7 @@
         AshHomeDownStairs,
         OakPokemonResearchLab,
         Route1,
-        //ViridianCity,
+        ViridianCity,
     }
 
     public enum Stat
