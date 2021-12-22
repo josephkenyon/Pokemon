@@ -62,6 +62,7 @@ namespace Library.Base
 
     public class StitchHelperObject
     {
+        public LocationStitch LocationStitch { get; set; }
         public LocationName Location { get; set; }
         public Direction Direction { get; set; }
         public Point OffsetPoint { get; set; }
@@ -84,6 +85,8 @@ namespace Library.Base
                 Direction = locationStitch.LocationA == currentLocation ? Direction.Right : Direction.Left;
                 OffsetPoint = new Point(Direction == Direction.Right ? -offset : offset, secondOffset);
             }
+
+            LocationStitch = locationStitch;
         }
     }
 }

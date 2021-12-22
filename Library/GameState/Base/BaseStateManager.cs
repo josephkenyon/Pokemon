@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Library.Base;
 using Library.Content;
 using Library.Domain;
 using Library.GameState.Base.CutsceneState;
@@ -77,8 +78,11 @@ namespace Library.GameState.Base
             LocationName currentLocation = GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation;
             LocationManager.LocationLayouts[currentLocation].DrawBackground(spriteBatch);
 
-            List<LocationStitch> stitches = WorldManager.LocationStitches.Where(stitch => stitch.LocationA == currentLocation || stitch.LocationB == currentLocation).ToList();
-            stitches.ForEach(stitch => WorldManager.DrawStitch(spriteBatch, stitch));
+            StitchHelperObject stitchHelperObject = WorldManager.GetClosestStitchHelperObject();
+            if (stitchHelperObject != null)
+            {
+                WorldManager.DrawStitch(spriteBatch, stitchHelperObject.LocationStitch);
+            }
 
             LocationStates[currentLocation].Draw(spriteBatch);
 

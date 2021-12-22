@@ -72,6 +72,12 @@
 #begin locations/viridianCity.json
 /copy:locations/viridianCity.json
 
+#begin locations/viridianMart.json
+/copy:locations/viridianMart.json
+
+#begin locations/viridianPokemonCenter.json
+/copy:locations/viridianPokemonCenter.json
+
 #begin sprites/characters/ashWalking.png
 /importer:TextureImporter
 /processor:TextureProcessor

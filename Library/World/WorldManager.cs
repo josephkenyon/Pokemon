@@ -1,10 +1,13 @@
 ﻿using Library.Base;
 using Library.Content;
 using Library.Domain;
+using Library.GameState;
+using Library.GameState.Base;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -63,9 +66,22 @@ namespace Library.World
             locationLayout.DrawForeground(spriteBatch, stitchHelperObject);
         }
 
-        public static Point GetStitchLocation(Point newLocation)
+        public static StitchHelperObject GetClosestStitchHelperObject()
         {
-            return newLocation - StitchDrawingManager.StitchHelperObject.OffsetPoint;
+            LocationName currentLocationName = GameStateManager.Instance.GetPlayer().CharacterState.CurrentLocation;
+            List<LocationStitch> stitches = LocationStitches.Where(stitch => stitch.LocationA == currentLocationName || stitch.LocationB == currentLocationName).ToList();
+            LocationStitch stitch = stitches.Where(s => s.GetDistanceFromPlayer() < 12).OrderBy(s => s.GetDistanceFromPlayer()).FirstOrDefault();
+            if (stitch == null)
+            {
+                return null;
+            }
+
+            return new StitchHelperObject(stitch);
+        }
+
+        public static Point GetStitchLocation(StitchHelperObject stitchHelperObject, Point newLocation)
+        {
+            return newLocation - stitchHelperObject.OffsetPoint;
         }
     }
 }

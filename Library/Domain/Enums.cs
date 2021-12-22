@@ -67,6 +67,8 @@
         OakPokemonResearchLab,
         Route1,
         ViridianCity,
+        ViridianMart,
+        ViridianPokemonCenter,
     }
 
     public enum Stat
