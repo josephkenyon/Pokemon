@@ -116,9 +116,12 @@ namespace Library.GameState.Battle.GamePadHelpers
 
             BattleStateManager.EndBattleIfAppropriate();
 
-            leftCharacterState.Pokemon[leftCharacterState.SelectedPokemonIndex].UsedMove = true;
 
-            BattleStateManager.AdvanceStateAfterMoveUsage();
+            if (BattleStateManager.Battle != null)
+            {
+                leftCharacterState.Pokemon[leftCharacterState.SelectedPokemonIndex].UsedMove = true;
+                BattleStateManager.AdvanceStateAfterMoveUsage();
+            }
         }
     }
 }
