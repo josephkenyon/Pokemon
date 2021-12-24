@@ -16,6 +16,11 @@ namespace Library.GameState.Base
 
         public static bool EncounterPokemon()
         {
+            if (GameStateManager.Instance.GetPlayer().CharacterState.Pokemon.Count == 0)
+            {
+                return false;
+            }
+
             LocationLayout locationLayout = LocationManager.LocationLayouts[BaseStateManager.Instance.GetPlayerLocation()];
 
             if (locationLayout.ForegroundGrassTiles.Values.Any(tile => CollisionHandler.AreColliding(GameStateManager.Instance.GetPlayer(), tile)))

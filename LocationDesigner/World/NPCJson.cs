@@ -10,6 +10,7 @@ namespace LocationDesigner.World
         public Point Position { get; set; }
         public string CharacterName { get; set; }
         public List<Message> Messages { get; set; }
+        public bool Stationary { get; set; }
         public string ItemName { get; set; }
         public int? ItemCount { get; set; }
     }

@@ -125,8 +125,8 @@ namespace Library.Content
                         {
                             Position = new Vector(npcJson.Position),
                             Messages = messages,
-                            Wanders = npcJson.CharacterName == null,
-                            CurrentLocation = locationName
+                            Wanders = npcJson.CharacterName == null && !npcJson.Stationary,
+                            CurrentLocation = locationName,
                         };
 
                         if (npcJson.ItemName != null && npcJson.ItemCount != null)

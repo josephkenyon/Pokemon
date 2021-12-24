@@ -66,7 +66,7 @@ namespace Library.GameState.Base.GamePadHandling
                     return;
                 }
 
-                Character character = locationState.Characters.FirstOrDefault(character => character.CharacterState.Position == newLocation);
+                Character character = locationState.Characters.FirstOrDefault(character => ValidNPC(character, newLocation));
                 if (character != null && character.CharacterState is NPCState npcState)
                 {
                     List<Message> messages = new List<Message>(npcState.Messages);
@@ -110,6 +110,19 @@ namespace Library.GameState.Base.GamePadHandling
                 GameStateManager.Instance.UIStateStack.Push(UIState.Menu);
                 return;
             }
+        }
+
+        private static bool ValidNPC(Character character, Vector newLocation)
+        {
+            if (character.CharacterState.Position == newLocation) {
+                return true;
+            }
+
+            if (character.Name == CharacterName.Pokemon_Center_Person && character.CharacterState.Position == new Vector(newLocation.X, newLocation.Y - Constants.ScaledTileSize)) {
+                return true;
+            }
+
+            return false;
         }
 
         private static void AddItemMessage(List<Message> messages, ItemName itemName, int count)

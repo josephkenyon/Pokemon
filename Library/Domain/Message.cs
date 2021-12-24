@@ -5,6 +5,7 @@
         public string Content { get; set; }
         public bool Unique { get; set; }
         public MessageDependency? MessageDependency { get; set; }
+        public SpecialActionKey? SpecialActionKey { get; set; }
 
         public Message(string content)
         {

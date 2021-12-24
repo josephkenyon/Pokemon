@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Library.Cutscenes;
 using Library.Domain;
 
 namespace Library.GameState.Base.MessageState
@@ -23,10 +24,18 @@ namespace Library.GameState.Base.MessageState
         }
 
         public static void CompleteMessage() {
+            Message message = null;
+
             if (Messages.Count > 0)
             {
+                message = Messages[0];
                 Messages.RemoveAt(0);
                 RevealedLetters = 0;
+            }
+
+            if (message != null && message.SpecialActionKey != null)
+            {
+                SpecialActionManager.SpecialActions[(SpecialActionKey)message.SpecialActionKey].Invoke();
             }
 
             if (Messages.Count == 0) {

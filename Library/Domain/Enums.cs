@@ -33,7 +33,8 @@
     {
         Ash,
         Oak,
-        Green
+        Green,
+        Pokemon_Center_Person,
     }
 
     public enum LocationDoodad
@@ -49,6 +50,7 @@
         Battle_Rival,
         Put_Missing_Pokemon_Back,
         Heal_All_Pokemon,
+        Heal_All_Pokemon_Center,
     }
 
     public enum CutsceneTriggerType

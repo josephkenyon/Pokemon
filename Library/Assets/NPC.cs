@@ -24,7 +24,7 @@ namespace Library.Assets
 
         public override Rectangle GetSourceRectangle()
         {
-            if (Name != null)
+            if (Name != null && Name != CharacterName.Pokemon_Center_Person)
             {
                 return base.GetSourceRectangle();
             }
@@ -60,6 +60,6 @@ namespace Library.Assets
             return new Rectangle(x * Constants.TileSize, y * Constants.TileSize, 1 * Constants.TileSize, 2 * Constants.TileSize);
         }
 
-        public override TextureName GetTextureName() => Name != null ? (TextureName) Enum.Parse(typeof(TextureName), Name.ToString()) : TextureName.NPCTileset;
+        public override TextureName GetTextureName() => Name != null && Name != CharacterName.Pokemon_Center_Person ? (TextureName) Enum.Parse(typeof(TextureName), Name.ToString()) : TextureName.NPCTileset;
     }
 }

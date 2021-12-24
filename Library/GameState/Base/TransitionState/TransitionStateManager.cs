@@ -24,10 +24,10 @@ namespace Library.GameState.Base.TransitionState
                 teleportTransaction
             };
 
-            StartTransition(TeleportTransactions);
+            StartTransitionList(TeleportTransactions);
         }
 
-        public static void StartTransition(List<TeleportTransaction> teleportTransactions)
+        public static void StartTransitionList(List<TeleportTransaction> teleportTransactions)
         {
             TeleportTransactions = teleportTransactions;
             Counter = 0;
@@ -42,6 +42,11 @@ namespace Library.GameState.Base.TransitionState
 
         private static void Transition()
         {
+            if (TeleportTransactions == null)
+            {
+                return;
+            }
+
             TeleportTransactions.ForEach(teleportTransaction =>
             {
                 Character character = GameStateManager.Instance.GetCharacter(teleportTransaction.CharacterName);
@@ -85,9 +90,9 @@ namespace Library.GameState.Base.TransitionState
 
         public static void Update()
         {
-            if (Counter == Constants.TransitionTime / 2 || !TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
+            if (Counter == Constants.TransitionTime / 2 || (TeleportTransactions != null && !TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant)))
             {
-                if (!TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
+                if (TeleportTransactions != null && !TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
                 {
                     BaseStateManager.Instance.StateStack.Pop();
                 }
@@ -106,7 +111,7 @@ namespace Library.GameState.Base.TransitionState
         public static void Draw(SpriteBatch spriteBatch)
         {
             float scaler = 0f;
-            if (TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
+            if (TeleportTransactions == null || TeleportTransactions.Exists(teleportTransaction => !teleportTransaction.Instant))
             {
                 if (Counter < Constants.TransitionTime / 2)
                 {

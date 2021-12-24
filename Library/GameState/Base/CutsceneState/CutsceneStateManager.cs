@@ -30,7 +30,7 @@ namespace Library.GameState.Base.CutsceneState
             }
             else if (cutsceneTransaction is TeleportCutsceneTransaction teleportCutsceneTransaction)
             {
-                TransitionStateManager.StartTransition(teleportCutsceneTransaction.TeleportTransactions);
+                TransitionStateManager.StartTransitionList(teleportCutsceneTransaction.TeleportTransactions);
 
                 CutsceneManager.ActiveCutscene.CutsceneTransactions.Remove(cutsceneTransaction);
             }

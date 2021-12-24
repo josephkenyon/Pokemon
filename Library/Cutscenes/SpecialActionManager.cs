@@ -2,6 +2,7 @@
 using Library.Domain;
 using Library.GameState;
 using Library.GameState.Base;
+using Library.GameState.Base.TransitionState;
 using Library.GameState.Battle;
 using Library.World;
 using Microsoft.Xna.Framework;
@@ -22,7 +23,8 @@ namespace Library.Cutscenes
                 { SpecialActionKey.Give_Rival_Pokemon, GivePokemonToRival },
                 { SpecialActionKey.Battle_Rival, BattleRival },
                 { SpecialActionKey.Put_Missing_Pokemon_Back, PutMissingPokemonBack },
-                { SpecialActionKey.Heal_All_Pokemon, HealAllPokemon }
+                { SpecialActionKey.Heal_All_Pokemon, HealAllPokemon },
+                { SpecialActionKey.Heal_All_Pokemon_Center, HealAllPokemonCenter },
             };
         }
 
@@ -75,6 +77,12 @@ namespace Library.Cutscenes
             {
                 pokemon.FullHeal();
             }
+        }
+
+        private static void HealAllPokemonCenter()
+        {
+            HealAllPokemon();
+            TransitionStateManager.StartTransitionList(null);
         }
     }
 }
