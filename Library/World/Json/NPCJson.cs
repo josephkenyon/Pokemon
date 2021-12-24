@@ -9,7 +9,7 @@ namespace Library.World.Json
         public Point SpriteLocation { get; set; }
         public Point Position { get; set; }
         public CharacterName? CharacterName { get; set; }
-        public List<string> Messages { get; set; }
+        public List<Message> Messages { get; set; }
         public ItemName? ItemName { get; set; }
         public int? ItemCount { get; set; }
     }

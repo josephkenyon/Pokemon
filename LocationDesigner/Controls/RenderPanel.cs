@@ -235,6 +235,8 @@ namespace LevelDesigner.Controls
                     LocationLayoutManager.LocationLayout.LocationDoodads.Remove(tile);
                 }
             }
+
+            Draw();
         }
     }
 }

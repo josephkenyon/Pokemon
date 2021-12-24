@@ -113,7 +113,7 @@ namespace Library.Content
                     locationLayoutJson.InitialNPCS.ForEach(npcJson =>
                     {
                         List<Message> messages = new List<Message>();
-                        npcJson.Messages.ForEach(message => messages.Add(new Message(message)));
+                        npcJson.Messages.ForEach(message => messages.Add(message));
 
                         NPC npc = new NPC
                         {

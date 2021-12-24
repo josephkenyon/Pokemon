@@ -11,6 +11,14 @@
         Left,
         Right
     }
+
+    public enum MessageDependency
+    {
+        HasAnItem,
+        HasNoItems,
+        Flag
+    }
+
     public enum StatusEffect
     {
         Paralyzed,

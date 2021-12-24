@@ -76,6 +76,7 @@
     </Compile>
     <Compile Include="Domain\Constants.cs" />
     <Compile Include="Domain\Enums.cs" />
+    <Compile Include="Domain\Message.cs" />
     <Compile Include="FileHandling\TextureManager.cs" />
     <Compile Include="FileHandling\BitmapManager.cs" />
     <Compile Include="FileHandling\CacheManager.cs" />

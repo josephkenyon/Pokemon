@@ -69,9 +69,11 @@ namespace Library.GameState.Base.GamePadHandling
                 Character character = locationState.Characters.FirstOrDefault(character => character.CharacterState.Position == newLocation);
                 if (character != null && character.CharacterState is NPCState npcState)
                 {
+                    List<Message> messages = new List<Message>(npcState.Messages);
                     if (character.Name == null || character.CharacterState.Pokemon.Count == 0) {
                         Bag bag = character.CharacterState.Bag;
                         List<ItemName> itemNames = bag.ItemsDictionary.Keys.Where(itemName => bag.ItemsDictionary[itemName] > 0).ToList();
+                        bool hasItems = false;
                         foreach (ItemName itemName in itemNames)
                         {
                             int count = bag.ItemsDictionary[itemName];
@@ -80,13 +82,24 @@ namespace Library.GameState.Base.GamePadHandling
                                 GameStateManager.Instance.GetPlayer().CharacterState.Bag.AddItems(itemName, count);
                                 bag.RemoveItems(itemName, count);
 
-                                AddItemMessage(npcState.Messages, itemName, count);
+                                AddItemMessage(messages, itemName, count);
+                                hasItems = true;
                             }
+                        }
+
+                        if (hasItems)
+                        {
+                            messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.HasNoItems);
+                        } else
+                        {
+                            messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.HasAnItem);
                         }
                     }
 
-                    MessageStateManager.EnterMessageState(new List<Message>(npcState.Messages));
-                    npcState.Messages.RemoveAll(message => message.Unique);
+                    if (messages.Count > 0)
+                    {
+                        MessageStateManager.EnterMessageState(messages);
+                    }
 
                     return;
                 }
