@@ -69,31 +69,42 @@ namespace Library.GameState.Base.GamePadHandling
                 Character character = locationState.Characters.FirstOrDefault(character => ValidNPC(character, newLocation));
                 if (character != null && character.CharacterState is NPCState npcState)
                 {
+                    bool hasItems = false;
                     List<Message> messages = new List<Message>(npcState.Messages);
                     if (character.Name == null || character.CharacterState.Pokemon.Count == 0) {
                         Bag bag = character.CharacterState.Bag;
                         List<ItemName> itemNames = bag.ItemsDictionary.Keys.Where(itemName => bag.ItemsDictionary[itemName] > 0).ToList();
-                        bool hasItems = false;
                         foreach (ItemName itemName in itemNames)
                         {
                             int count = bag.ItemsDictionary[itemName];
                             if (count > 0)
                             {
-                                GameStateManager.Instance.GetPlayer().CharacterState.Bag.AddItems(itemName, count);
+                                player.CharacterState.Bag.AddItems(itemName, count);
                                 bag.RemoveItems(itemName, count);
 
                                 AddItemMessage(messages, itemName, count);
                                 hasItems = true;
                             }
                         }
+                    }
 
-                        if (hasItems)
-                        {
-                            messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.HasNoItems);
-                        } else
-                        {
-                            messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.HasAnItem);
-                        }
+
+                    if (hasItems)
+                    {
+                        messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.HasNoItems);
+                    }
+                    else
+                    {
+                        messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.HasAnItem);
+                    }
+
+                    if (player.CharacterState.Pokemon.Count == 0)
+                    {
+                        messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.AshHasAPokemon);
+                    }
+                    else
+                    {
+                        messages.RemoveAll(message => message.MessageDependency != null && message.MessageDependency == MessageDependency.AshHasNoPokemon);
                     }
 
                     if (messages.Count > 0)
@@ -112,13 +123,42 @@ namespace Library.GameState.Base.GamePadHandling
             }
         }
 
+        private static bool IsACounterAt(CharacterState characterState, Vector location)
+        {
+            if (characterState.Direction != Direction.Up)
+            {
+                return false;
+            }
+
+            Tile tile = null;
+            var point = (location / Constants.ScaledTileSize).ToPoint();
+            var dictionary = LocationManager.LocationLayouts[characterState.CurrentLocation].ForegroundTiles;
+            
+            if (dictionary.ContainsKey(point))
+            {
+                tile = dictionary[point];
+            }
+
+            if (tile == null)
+            {
+                return false;
+            }
+
+            if (tile.SpritePosition == new Vector(24, 10))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private static bool ValidNPC(Character character, Vector newLocation)
         {
             if (character.CharacterState.Position == newLocation) {
                 return true;
             }
 
-            if (character.Name == CharacterName.Pokemon_Center_Person && character.CharacterState.Position == new Vector(newLocation.X, newLocation.Y - Constants.ScaledTileSize)) {
+            if (IsACounterAt(character.CharacterState, newLocation) && character.CharacterState.Position == new Vector(newLocation.X, newLocation.Y - Constants.ScaledTileSize)) {
                 return true;
             }
 

@@ -60,6 +60,9 @@
 #begin locations/ashHomeUpStairs.json
 /copy:locations/ashHomeUpStairs.json
 
+#begin locations/greenHome.json
+/copy:locations/greenHome.json
+
 #begin locations/oakPokemonResearchLab.json
 /copy:locations/oakPokemonResearchLab.json
 
@@ -77,6 +80,9 @@
 
 #begin locations/viridianPokemonCenter.json
 /copy:locations/viridianPokemonCenter.json
+
+#begin locations/void.json
+/copy:locations/void.json
 
 #begin sprites/characters/ashWalking.png
 /importer:TextureImporter

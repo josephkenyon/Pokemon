@@ -32,6 +32,8 @@ namespace LocationDesigner
             timer.Elapsed += new ElapsedEventHandler(OnTimeTick);
             timer.Interval = 200;
             timer.Enabled = true;
+
+            SelectedTag = -1;
         }
 
         private void SetTileSetDirectory_Click(object sender, EventArgs e)

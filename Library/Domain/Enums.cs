@@ -16,6 +16,8 @@
     {
         HasAnItem,
         HasNoItems,
+        AshHasAPokemon,
+        AshHasNoPokemon,
         Flag
     }
 
@@ -34,7 +36,6 @@
         Ash,
         Oak,
         Green,
-        Pokemon_Center_Person,
     }
 
     public enum LocationDoodad
@@ -71,9 +72,11 @@
 
     public enum LocationName
     {
+        Void,
         PalletTown,
         AshHomeUpStairs,
         AshHomeDownStairs,
+        GreenHome,
         OakPokemonResearchLab,
         Route1,
         ViridianCity,
