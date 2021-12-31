@@ -119,7 +119,7 @@
                 "CutsceneTransactionType": "Message", "Messages": ["Green: I'm gonna make my POKEMON battle to toughen it up!", "Ash, Gramps!  Smell ya later!"]
             },
             {
-                "CutsceneTransactionType": "Teleport", "TeleportTransactions": [{"CharacterName": "Green", "ToLocationName": "AshHomeUpStairs", "Instant": "false", "ToLocationPoint": {"X": 0, "Y": 0}, "FinalDirection": "Down"}]
+                "CutsceneTransactionType": "Teleport", "TeleportTransactions": [{"CharacterName": "Green", "ToLocationName": "Void", "Instant": "false", "ToLocationPoint": {"X": 0, "Y": 0}, "FinalDirection": "Down"}]
             },
             {
                 "CutsceneTransactionType": "Special_Action",  "SpecialActionKey": "Put_Missing_Pokemon_Back"

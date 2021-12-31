@@ -125,7 +125,7 @@ namespace Library.GameState.Base.GamePadHandling
 
         private static bool IsACounterAt(CharacterState characterState, Vector location)
         {
-            if (characterState.Direction != Direction.Up)
+            if (characterState.Direction != Direction.Down)
             {
                 return false;
             }
